@@ -25,7 +25,21 @@ class WBNavigationController: UINavigationController {
         if children.count > 0 {
             /// 隐藏底部的 TabBar
             viewController.hidesBottomBarWhenPushed = true
+            if let vc = viewController as? WBBaseViewController {
+                
+                var title: String = "返回"
+                /// 判断控制器的级数
+                if children.count == 1 {
+                    title = children.first?.title ?? "返回"
+                }
+                /// 取出自定义的navItem
+                vc.navItem.leftBarButtonItem = UIBarButtonItem(title: title, target: self, action: #selector(popTpParent))
+            }
         }
+       
         super.pushViewController(viewController, animated: true)
+    }
+    @objc private func popTpParent() {
+        popViewController(animated: true)
     }
 }
