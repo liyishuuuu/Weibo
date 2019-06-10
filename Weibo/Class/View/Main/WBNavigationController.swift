@@ -10,9 +10,10 @@ import UIKit
 
 class WBNavigationController: UINavigationController {
     
+    // MRAK - override
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // 隐藏默认的NavigationBar
         navigationBar.isHidden = true
     }
@@ -36,9 +37,10 @@ class WBNavigationController: UINavigationController {
                 vc.navItem.leftBarButtonItem = UIBarButtonItem(title: title, target: self, action: #selector(popTpParent))
             }
         }
-       
         super.pushViewController(viewController, animated: true)
     }
+    
+    /// 返回上一级
     @objc private func popTpParent() {
         popViewController(animated: true)
     }
