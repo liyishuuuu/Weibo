@@ -17,7 +17,7 @@
 @interface UIScreen (CZAddition)
 
 ///
-+ (CGFloat)cz_ScreenWidth;
++ (CGFLoat)cz_ScreenWidth;
 ///
 + (CGFloat)cz_ScreenHeight;
 ///

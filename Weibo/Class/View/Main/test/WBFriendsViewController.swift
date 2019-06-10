@@ -26,6 +26,6 @@ extension WBFriendsViewController {
     override func setUpUI() {
         super.setUpUI()
         /// 自定义rightBarButton
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", target: self, action: #selector(showNext))
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", target: self, action: #selector(showNext))
     }
 }

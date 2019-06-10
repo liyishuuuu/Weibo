@@ -11,7 +11,9 @@ import UIKit
 class WBBaseViewController: UIViewController {
 
     /// 自定义导航条
-    lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: 390, height: 80))
+    lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 20, width: self.view.frame.size.width, height: 64))
+    
+    /// 以后设置导航栏按钮使用 navItem
     lazy var navItem = UINavigationItem()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +23,7 @@ class WBBaseViewController: UIViewController {
     /// 重写title的didset
     override var title: String? {
         didSet {
-            navItem.title = title
+                navItem.title = title
         }
     }
 }
@@ -34,5 +36,9 @@ extension WBBaseViewController {
         /// 添加导航条
         view.addSubview(navigationBar)
         navigationBar.items = [navItem]
+        if #available(iOS 11.0, *) {
+            navigationBar.barTintColor = UIColor(named: "#F6F6F6")
+        } else {
+        }
     }
 }
