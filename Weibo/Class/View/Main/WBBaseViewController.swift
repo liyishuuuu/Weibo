@@ -15,6 +15,9 @@ class WBBaseViewController: UIViewController {
     
     /// 以后设置导航栏按钮使用 navItem
     lazy var navItem = UINavigationItem()
+
+    // MARK - override
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
@@ -23,7 +26,7 @@ class WBBaseViewController: UIViewController {
     /// 重写title的didset
     override var title: String? {
         didSet {
-                navItem.title = title
+            navItem.title = title
         }
     }
 }
@@ -31,8 +34,6 @@ class WBBaseViewController: UIViewController {
 // MARK: - 设置界面
 extension WBBaseViewController {
     @objc func setUpUI() {
-        view.backgroundColor = UIColor.gray
-        
         /// 添加导航条
         view.addSubview(navigationBar)
         navigationBar.items = [navItem]
@@ -40,5 +41,10 @@ extension WBBaseViewController {
             navigationBar.barTintColor = UIColor(named: "#F6F6F6")
         } else {
         }
+        
+        /// 设置navigationBar的字体颜色
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.darkGray,
+                                             NSAttributedString.Key.font:UIFont.systemFont(ofSize:19)]
+        navigationBar.tintColor=UIColor.darkGray
     }
 }

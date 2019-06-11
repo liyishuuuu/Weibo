@@ -34,7 +34,7 @@ class WBNavigationController: UINavigationController {
                     title = children.first?.title ?? "返回"
                 }
                 /// 取出自定义的navItem
-                vc.navItem.leftBarButtonItem = UIBarButtonItem(title: title, target: self, action: #selector(popTpParent))
+                vc.navItem.leftBarButtonItem = UIBarButtonItem(title: title, target: self, action: #selector(popTpParent), isBack: true)
             }
         }
         super.pushViewController(viewController, animated: true)

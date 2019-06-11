@@ -52,7 +52,6 @@ extension WBMainViewController {
         // 计算每一个tab 的宽度，解决容错点的问题
         let w = tabBar.bounds.width/count - 1
         composeButton.frame = tabBar.bounds.insetBy(dx: 2 * w, dy: 0)
-        
         /// 按钮监听方法
         composeButton.addTarget(self, action: #selector(componseStatus), for: .touchUpInside)
         
