@@ -24,15 +24,11 @@ class WBBaseViewController: UIViewController {
     }
     @objc private func register() {
         print(#function)
-        let vc = WBLoginViewController()
-        
-        navigationController?.pushViewController(vc, animated: true)
+        print("注册")
     }
     @objc private func login() {
         print(#function)
-        let vc = WBRegisterViewController()
-        
-        navigationController?.pushViewController(vc, animated: true)
+        print("登录")
     }
     /// 重写title的didset
     override var title: String? {
@@ -50,15 +46,10 @@ extension WBBaseViewController {
         navItem.leftBarButtonItem = UIBarButtonItem(title: "注册", target: self, action: #selector(register))
         navItem.rightBarButtonItem = UIBarButtonItem(title: "登录", target: self, action: #selector(login))
         navigationBar.items = [navItem]
-        if #available(iOS 11.0, *) {
-            navigationBar.barTintColor = UIColor(named: "#F6F6F6")
-        } else {
-        }
-        
         /// 设置navigationBar的字体颜色
         navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.darkGray,
                                              NSAttributedString.Key.font:UIFont.systemFont(ofSize:19)]
         navigationBar.tintColor = UIColor.orange
-        navigationBar.barTintColor = UIColor.gray
+        navigationBar.barTintColor = UIColor.white
     }
 }
