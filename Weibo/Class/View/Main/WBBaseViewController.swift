@@ -25,7 +25,8 @@ class WBBaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpUI()
+        self.setUpUI()
+        self.loadData()
     }
     @objc private func register() {
         print(#function)
@@ -40,6 +41,9 @@ class WBBaseViewController: UIViewController {
         didSet {
             navItem.title = title
         }
+    }
+    func loadData() {
+        
     }
 }
 
