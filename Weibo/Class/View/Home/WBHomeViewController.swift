@@ -21,19 +21,17 @@ class WBHomeViewController: WBBaseViewController {
             statusList.insert(i.description, at: 0)
         }
     }
-    @objc private func showFriends() {
-        print(#function)
-        let vc = WBFriendsViewController()
-        
-        navigationController?.pushViewController(vc, animated: true)
-    }
 }
 
 // MARK: - 具体的数据源方法实现，override 重写父类方法，不需要super，在基类中已经实现
 extension WBHomeViewController {
+
+    /// 设置cell的个数
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return statusList.count
     }
+
+    /// 填充数据源
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         /// 注册原型cell
@@ -46,6 +44,7 @@ extension WBHomeViewController {
         return cell
     }
 }
+
 // MARK: - 设置界面
 extension WBHomeViewController {
     /// 重写父类的方法

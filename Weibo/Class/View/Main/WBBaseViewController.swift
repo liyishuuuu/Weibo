@@ -14,6 +14,8 @@ import UIKit
 ///
 class WBBaseViewController: UIViewController {
 
+    // MARK - 变量
+
     /// 自定义导航条
     lazy var navigationBar = SecondNavigationBar(frame: CGRect(x: 0,
                                                                y: 0,
@@ -32,14 +34,7 @@ class WBBaseViewController: UIViewController {
         self.setUpUI()
         self.loadData()
     }
-    @objc private func register() {
-        print(#function)
-        print("注册")
-    }
-    @objc private func login() {
-        print(#function)
-        print("登录")
-    }
+
     /// 重写title的didset
     override var title: String? {
         didSet {
@@ -98,6 +93,19 @@ extension WBBaseViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+// MARK: - 监听方法
+extension WBHomeViewController {
+    @objc private func register() {
+        print(#function)
+        print("注册")
+    }
+    @objc private func login() {
+        print(#function)
+        print("登录")
+    }
+}
+
+/// 解决NavigationBar高度问题
 class SecondNavigationBar: UINavigationBar {
     override func layoutSubviews() {
         super.layoutSubviews()
