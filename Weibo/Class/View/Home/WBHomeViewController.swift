@@ -8,13 +8,19 @@
 
 import UIKit
 
+/// 定义全局常量，使用private修饰
+private let cellId = "cellId"
 class WBHomeViewController: WBBaseViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setUpUI()
+    /// 微博数据数组
+    private lazy var statusList = [String]()
+    /// 加载数据
+    override func loadData() {
+        for i in 0..<19  {
+            /// 将数据插入到数组的顶部
+            statusList.insert(i.description, at: 0)
+        }
     }
-
     @objc private func showFriends() {
         print(#function)
         let vc = WBFriendsViewController()
@@ -23,6 +29,23 @@ class WBHomeViewController: WBBaseViewController {
     }
 }
 
+// MARK: - 具体的数据源方法实现，override 重写父类方法，不需要super，在基类中已经实现
+extension WBHomeViewController {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return statusList.count
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        /// 注册原型cell
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        /// 取cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        /// 设置cell
+        cell.textLabel?.text = statusList[indexPath.row]
+        /// 返回cell
+        return cell
+    }
+}
 // MARK: - 设置界面
 extension WBHomeViewController {
     /// 重写父类的方法

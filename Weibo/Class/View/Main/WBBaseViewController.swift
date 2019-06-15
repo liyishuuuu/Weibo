@@ -15,7 +15,10 @@ import UIKit
 class WBBaseViewController: UIViewController {
 
     /// 自定义导航条
-    lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 20, width: self.view.frame.size.width, height: 64))
+    lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0,
+                                                           y: 20,
+                                                           width: self.view.frame.size.width,
+                                                           height: 64))
     /// 定义tableView, 如果用户没有登录就不创建
     var tableView: UITableView?
     /// 自定义导航条目，以后设置导航栏按钮使用 navItem
@@ -43,22 +46,30 @@ class WBBaseViewController: UIViewController {
         }
     }
     func loadData() {
-        
+        tableView?.delegate = self
+        tableView?.dataSource = self
     }
 }
 
 // MARK: - 设置界面
 extension WBBaseViewController {
     @objc func setUpUI() {
-       self.setupNavigation()
+        /// 取消自动缩进m，如果隐藏了导航栏，会自动缩进20点
+        automaticallyAdjustsScrollViewInsets = false
+        self.setupNavigation()
         self.setupTableView()
     }
     
     /// 设置tableView
     private func setupTableView() {
         let tableView: UITableView = UITableView(frame: view.bounds, style: .plain)
+        ///  设置atableView在navigation的下面 
         view.insertSubview(tableView, belowSubview: navigationBar)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
+
     /// 设置导航条
     private func setupNavigation() {
         /// 添加导航条
@@ -84,6 +95,4 @@ extension WBBaseViewController: UITableViewDelegate, UITableViewDataSource {
         // 只是保证没有语法错误
         return UITableViewCell()
     }
-    
-    
 }
