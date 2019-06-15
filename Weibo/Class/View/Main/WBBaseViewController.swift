@@ -15,10 +15,11 @@ import UIKit
 class WBBaseViewController: UIViewController {
 
     /// 自定义导航条
-    lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0,
-                                                           y: 20,
-                                                           width: self.view.frame.size.width,
-                                                           height: 64))
+    lazy var navigationBar = SecondNavigationBar(frame: CGRect(x: 0,
+                                                               y: 0,
+                                                               width: self.view.frame.size.width,
+                                                               height: 64))
+    
     /// 定义tableView, 如果用户没有登录就不创建
     var tableView: UITableView?
     /// 自定义导航条目，以后设置导航栏按钮使用 navItem
@@ -67,7 +68,7 @@ extension WBBaseViewController {
         view.insertSubview(tableView, belowSubview: navigationBar)
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 40, left: 0, bottom: 0, right: 0)
     }
 
     /// 设置导航条
@@ -94,5 +95,21 @@ extension WBBaseViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 只是保证没有语法错误
         return UITableViewCell()
+    }
+}
+
+class SecondNavigationBar: UINavigationBar {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        for subview in self.subviews {
+            let stringFromClass = NSStringFromClass(subview.classForCoder)
+            print("--------- \(stringFromClass)")
+            if stringFromClass.contains("BarBackground") {
+                subview.frame = self.bounds
+            } else if stringFromClass.contains("UINavigationBarContentView") {
+                subview.frame = CGRect(x: 0, y: 20, width: UIScreen.main.bounds.size.width, height: 44)
+            }
+        }
     }
 }
