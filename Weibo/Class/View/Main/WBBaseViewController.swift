@@ -24,6 +24,8 @@ class WBBaseViewController: UIViewController {
     
     /// 定义tableView, 如果用户没有登录就不创建
     var tableView: UITableView?
+    // 定义刷新控件
+    var refreshControl: UIRefreshControl?
     /// 自定义导航条目，以后设置导航栏按钮使用 navItem
     lazy var navItem = UINavigationItem()
 
@@ -41,7 +43,7 @@ class WBBaseViewController: UIViewController {
             navItem.title = title
         }
     }
-    func loadData() {
+    @objc func loadData() {
         tableView?.delegate = self
         tableView?.dataSource = self
     }
@@ -63,7 +65,20 @@ extension WBBaseViewController {
         view.insertSubview(tableView, belowSubview: navigationBar)
         tableView.dataSource = self
         tableView.delegate = self
+        
+        // 设置内容缩进
         tableView.contentInset = UIEdgeInsets(top: 40, left: 0, bottom: 0, right: 0)
+
+        // 设置刷新控件
+        /// 1.实例化控件
+        self.refreshControl = UIRefreshControl()
+
+        /// 1.添加到表格视图
+        tableView.addSubview(refreshControl!)
+        
+        /// 1.添加监听方法
+        refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        
     }
 
     /// 设置导航条
