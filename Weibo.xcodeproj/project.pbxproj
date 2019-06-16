@@ -24,6 +24,27 @@
 		4498560722AD41300077653C /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498560622AD41300077653C /* UIButton+Extension.swift */; };
 		4498E25922B60134007D8E64 /* WBVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E25822B60134007D8E64 /* WBVisitorView.swift */; };
 		4498E25F22B63FC7007D8E64 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E25E22B63FC7007D8E64 /* UIColor+Extension.swift */; };
+		4498E27D22B641B8007D8E64 /* TimerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E26122B641B8007D8E64 /* TimerButton.swift */; };
+		4498E27E22B641B8007D8E64 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E26222B641B8007D8E64 /* EntryView.swift */; };
+		4498E27F22B641B8007D8E64 /* SwiftPopMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E26322B641B8007D8E64 /* SwiftPopMenu.swift */; };
+		4498E28022B641B8007D8E64 /* LocationTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E26422B641B8007D8E64 /* LocationTool.swift */; };
+		4498E28422B641B8007D8E64 /* JHRegularHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E26A22B641B8007D8E64 /* JHRegularHelp.swift */; };
+		4498E28522B641B8007D8E64 /* ValueChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E26B22B641B8007D8E64 /* ValueChange.swift */; };
+		4498E28622B641B8007D8E64 /* Array+JHExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E26C22B641B8007D8E64 /* Array+JHExtension.swift */; };
+		4498E28722B641B8007D8E64 /* Color+JHExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E26D22B641B8007D8E64 /* Color+JHExtension.swift */; };
+		4498E28822B641B8007D8E64 /* Date+JHExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E26E22B641B8007D8E64 /* Date+JHExtension.swift */; };
+		4498E28922B641B8007D8E64 /* String+JHExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E26F22B641B8007D8E64 /* String+JHExtension.swift */; };
+		4498E28A22B641B8007D8E64 /* Dictionary+JHExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E27022B641B8007D8E64 /* Dictionary+JHExtension.swift */; };
+		4498E28B22B641B8007D8E64 /* UIView+JHExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E27222B641B8007D8E64 /* UIView+JHExtension.swift */; };
+		4498E28C22B641B8007D8E64 /* UIImage+JHExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E27322B641B8007D8E64 /* UIImage+JHExtension.swift */; };
+		4498E28D22B641B8007D8E64 /* UILabel+JHExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E27422B641B8007D8E64 /* UILabel+JHExtension.swift */; };
+		4498E28E22B641B8007D8E64 /* JHLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E27522B641B8007D8E64 /* JHLabel.swift */; };
+		4498E28F22B641B8007D8E64 /* JHTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E27622B641B8007D8E64 /* JHTextView.swift */; };
+		4498E29022B641B8007D8E64 /* UITextField+JHExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E27722B641B8007D8E64 /* UITextField+JHExtension.swift */; };
+		4498E29122B641B8007D8E64 /* UIButton+JHExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E27822B641B8007D8E64 /* UIButton+JHExtension.swift */; };
+		4498E29222B641B8007D8E64 /* UITapGestureRecognizer+JHExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E27922B641B8007D8E64 /* UITapGestureRecognizer+JHExtension.swift */; };
+		4498E29322B641B8007D8E64 /* JHPOPAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E27A22B641B8007D8E64 /* JHPOPAlertView.swift */; };
+		4498E29422B641B8007D8E64 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E27C22B641B8007D8E64 /* ServiceManager.swift */; };
 		44F02EEC22AFFB40004D25CD /* WBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F02EEB22AFFB40004D25CD /* WBLoginViewController.swift */; };
 		44F02EEE22AFFB58004D25CD /* WBRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F02EED22AFFB58004D25CD /* WBRegisterViewController.swift */; };
 /* End PBXBuildFile section */
@@ -69,6 +90,27 @@
 		4498560622AD41300077653C /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		4498E25822B60134007D8E64 /* WBVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBVisitorView.swift; sourceTree = "<group>"; };
 		4498E25E22B63FC7007D8E64 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		4498E26122B641B8007D8E64 /* TimerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerButton.swift; sourceTree = "<group>"; };
+		4498E26222B641B8007D8E64 /* EntryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
+		4498E26322B641B8007D8E64 /* SwiftPopMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftPopMenu.swift; sourceTree = "<group>"; };
+		4498E26422B641B8007D8E64 /* LocationTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTool.swift; sourceTree = "<group>"; };
+		4498E26A22B641B8007D8E64 /* JHRegularHelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHRegularHelp.swift; sourceTree = "<group>"; };
+		4498E26B22B641B8007D8E64 /* ValueChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueChange.swift; sourceTree = "<group>"; };
+		4498E26C22B641B8007D8E64 /* Array+JHExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+JHExtension.swift"; sourceTree = "<group>"; };
+		4498E26D22B641B8007D8E64 /* Color+JHExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+JHExtension.swift"; sourceTree = "<group>"; };
+		4498E26E22B641B8007D8E64 /* Date+JHExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+JHExtension.swift"; sourceTree = "<group>"; };
+		4498E26F22B641B8007D8E64 /* String+JHExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+JHExtension.swift"; sourceTree = "<group>"; };
+		4498E27022B641B8007D8E64 /* Dictionary+JHExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+JHExtension.swift"; sourceTree = "<group>"; };
+		4498E27222B641B8007D8E64 /* UIView+JHExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+JHExtension.swift"; sourceTree = "<group>"; };
+		4498E27322B641B8007D8E64 /* UIImage+JHExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+JHExtension.swift"; sourceTree = "<group>"; };
+		4498E27422B641B8007D8E64 /* UILabel+JHExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+JHExtension.swift"; sourceTree = "<group>"; };
+		4498E27522B641B8007D8E64 /* JHLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHLabel.swift; sourceTree = "<group>"; };
+		4498E27622B641B8007D8E64 /* JHTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHTextView.swift; sourceTree = "<group>"; };
+		4498E27722B641B8007D8E64 /* UITextField+JHExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+JHExtension.swift"; sourceTree = "<group>"; };
+		4498E27822B641B8007D8E64 /* UIButton+JHExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+JHExtension.swift"; sourceTree = "<group>"; };
+		4498E27922B641B8007D8E64 /* UITapGestureRecognizer+JHExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer+JHExtension.swift"; sourceTree = "<group>"; };
+		4498E27A22B641B8007D8E64 /* JHPOPAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHPOPAlertView.swift; sourceTree = "<group>"; };
+		4498E27C22B641B8007D8E64 /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		44F02EEA22AE8072004D25CD /* UIScreen+CZAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScreen+CZAddition.h"; sourceTree = "<group>"; };
 		44F02EEB22AFFB40004D25CD /* WBLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBLoginViewController.swift; sourceTree = "<group>"; };
 		44F02EED22AFFB58004D25CD /* WBRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBRegisterViewController.swift; sourceTree = "<group>"; };
@@ -170,7 +212,12 @@
 		449855EB22AC9BD40077653C /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				4498E26922B641B8007D8E64 /* Foundation */,
+				4498E27B22B641B8007D8E64 /* Hardware */,
+				4498E26022B641B8007D8E64 /* Other */,
+				4498E27122B641B8007D8E64 /* UiKit */,
 				44F02EE922AE8001004D25CD /* Additions */,
+				4498E25E22B63FC7007D8E64 /* UIColor+Extension.swift */,
 				4498560122ACABDA0077653C /* Bundle+Extensions.swift */,
 				4498560622AD41300077653C /* UIButton+Extension.swift */,
 			);
@@ -266,11 +313,59 @@
 			path = VisitorView;
 			sourceTree = "<group>";
 		};
+		4498E26022B641B8007D8E64 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				4498E26122B641B8007D8E64 /* TimerButton.swift */,
+				4498E26222B641B8007D8E64 /* EntryView.swift */,
+				4498E26322B641B8007D8E64 /* SwiftPopMenu.swift */,
+				4498E26422B641B8007D8E64 /* LocationTool.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		4498E26922B641B8007D8E64 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				4498E26A22B641B8007D8E64 /* JHRegularHelp.swift */,
+				4498E26B22B641B8007D8E64 /* ValueChange.swift */,
+				4498E26C22B641B8007D8E64 /* Array+JHExtension.swift */,
+				4498E26D22B641B8007D8E64 /* Color+JHExtension.swift */,
+				4498E26E22B641B8007D8E64 /* Date+JHExtension.swift */,
+				4498E26F22B641B8007D8E64 /* String+JHExtension.swift */,
+				4498E27022B641B8007D8E64 /* Dictionary+JHExtension.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		4498E27122B641B8007D8E64 /* UiKit */ = {
+			isa = PBXGroup;
+			children = (
+				4498E27222B641B8007D8E64 /* UIView+JHExtension.swift */,
+				4498E27322B641B8007D8E64 /* UIImage+JHExtension.swift */,
+				4498E27422B641B8007D8E64 /* UILabel+JHExtension.swift */,
+				4498E27522B641B8007D8E64 /* JHLabel.swift */,
+				4498E27622B641B8007D8E64 /* JHTextView.swift */,
+				4498E27722B641B8007D8E64 /* UITextField+JHExtension.swift */,
+				4498E27822B641B8007D8E64 /* UIButton+JHExtension.swift */,
+				4498E27922B641B8007D8E64 /* UITapGestureRecognizer+JHExtension.swift */,
+				4498E27A22B641B8007D8E64 /* JHPOPAlertView.swift */,
+			);
+			path = UiKit;
+			sourceTree = "<group>";
+		};
+		4498E27B22B641B8007D8E64 /* Hardware */ = {
+			isa = PBXGroup;
+			children = (
+				4498E27C22B641B8007D8E64 /* ServiceManager.swift */,
+			);
+			path = Hardware;
+			sourceTree = "<group>";
+		};
 		44F02EE922AE8001004D25CD /* Additions */ = {
 			isa = PBXGroup;
 			children = (
 				44F02EEA22AE8072004D25CD /* UIScreen+CZAddition.h */,
-				4498E25E22B63FC7007D8E64 /* UIColor+Extension.swift */,
 			);
 			name = Additions;
 			sourceTree = "<group>";
@@ -406,21 +501,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4498E28922B641B8007D8E64 /* String+JHExtension.swift in Sources */,
+				4498E29122B641B8007D8E64 /* UIButton+JHExtension.swift in Sources */,
+				4498E28E22B641B8007D8E64 /* JHLabel.swift in Sources */,
+				4498E28422B641B8007D8E64 /* JHRegularHelp.swift in Sources */,
+				4498E28722B641B8007D8E64 /* Color+JHExtension.swift in Sources */,
 				449855F822AC9D630077653C /* WBBaseViewController.swift in Sources */,
 				4498560022AC9E000077653C /* WBProfileViewController.swift in Sources */,
+				4498E29022B641B8007D8E64 /* UITextField+JHExtension.swift in Sources */,
 				449855FE22AC9DF50077653C /* WBMessageViewController.swift in Sources */,
+				4498E29322B641B8007D8E64 /* JHPOPAlertView.swift in Sources */,
 				44F02EEC22AFFB40004D25CD /* WBLoginViewController.swift in Sources */,
 				4498560722AD41300077653C /* UIButton+Extension.swift in Sources */,
 				4498560222ACABDA0077653C /* Bundle+Extensions.swift in Sources */,
+				4498E28D22B641B8007D8E64 /* UILabel+JHExtension.swift in Sources */,
+				4498E29422B641B8007D8E64 /* ServiceManager.swift in Sources */,
 				4498E25F22B63FC7007D8E64 /* UIColor+Extension.swift in Sources */,
 				449855F422AC9C5B0077653C /* WBMainViewController.swift in Sources */,
+				4498E28622B641B8007D8E64 /* Array+JHExtension.swift in Sources */,
+				4498E28F22B641B8007D8E64 /* JHTextView.swift in Sources */,
 				449855FC22AC9DE80077653C /* WBDiscoveryViewController.swift in Sources */,
+				4498E27D22B641B8007D8E64 /* TimerButton.swift in Sources */,
+				4498E28022B641B8007D8E64 /* LocationTool.swift in Sources */,
+				4498E28A22B641B8007D8E64 /* Dictionary+JHExtension.swift in Sources */,
 				4498E25922B60134007D8E64 /* WBVisitorView.swift in Sources */,
+				4498E28C22B641B8007D8E64 /* UIImage+JHExtension.swift in Sources */,
+				4498E28B22B641B8007D8E64 /* UIView+JHExtension.swift in Sources */,
 				449855FA22AC9DA50077653C /* WBHomeViewController.swift in Sources */,
+				4498E29222B641B8007D8E64 /* UITapGestureRecognizer+JHExtension.swift in Sources */,
 				44F02EEE22AFFB58004D25CD /* WBRegisterViewController.swift in Sources */,
 				449855BC22AC88EF0077653C /* AppDelegate.swift in Sources */,
 				449855F622AC9D1B0077653C /* WBNavigationController.swift in Sources */,
+				4498E27E22B641B8007D8E64 /* EntryView.swift in Sources */,
+				4498E28822B641B8007D8E64 /* Date+JHExtension.swift in Sources */,
+				4498E27F22B641B8007D8E64 /* SwiftPopMenu.swift in Sources */,
 				4498560522AD14DD0077653C /* WBFriendsViewController.swift in Sources */,
+				4498E28522B641B8007D8E64 /* ValueChange.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
