@@ -22,6 +22,7 @@
 		4498560222ACABDA0077653C /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498560122ACABDA0077653C /* Bundle+Extensions.swift */; };
 		4498560522AD14DD0077653C /* WBFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498560422AD14DD0077653C /* WBFriendsViewController.swift */; };
 		4498560722AD41300077653C /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498560622AD41300077653C /* UIButton+Extension.swift */; };
+		4498E25922B60134007D8E64 /* WBVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E25822B60134007D8E64 /* WBVisitorView.swift */; };
 		44F02EEC22AFFB40004D25CD /* WBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F02EEB22AFFB40004D25CD /* WBLoginViewController.swift */; };
 		44F02EEE22AFFB58004D25CD /* WBRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F02EED22AFFB58004D25CD /* WBRegisterViewController.swift */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,7 @@
 		4498560122ACABDA0077653C /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		4498560422AD14DD0077653C /* WBFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBFriendsViewController.swift; sourceTree = "<group>"; };
 		4498560622AD41300077653C /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		4498E25822B60134007D8E64 /* WBVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBVisitorView.swift; sourceTree = "<group>"; };
 		44F02EEA22AE8072004D25CD /* UIScreen+CZAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScreen+CZAddition.h"; sourceTree = "<group>"; };
 		44F02EEB22AFFB40004D25CD /* WBLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBLoginViewController.swift; sourceTree = "<group>"; };
 		44F02EED22AFFB58004D25CD /* WBRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBRegisterViewController.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			children = (
 				4498560322AD14C60077653C /* test */,
 				4498E25622B5F2D1007D8E64 /* MainController */,
+				4498E25722B600E6007D8E64 /* VisitorView */,
 				449855F722AC9D630077653C /* WBBaseViewController.swift */,
 			);
 			path = Main;
@@ -251,6 +254,14 @@
 				44F02EED22AFFB58004D25CD /* WBRegisterViewController.swift */,
 			);
 			path = MainController;
+			sourceTree = "<group>";
+		};
+		4498E25722B600E6007D8E64 /* VisitorView */ = {
+			isa = PBXGroup;
+			children = (
+				4498E25822B60134007D8E64 /* WBVisitorView.swift */,
+			);
+			path = VisitorView;
 			sourceTree = "<group>";
 		};
 		44F02EE922AE8001004D25CD /* Additions */ = {
@@ -400,6 +411,7 @@
 				4498560222ACABDA0077653C /* Bundle+Extensions.swift in Sources */,
 				449855F422AC9C5B0077653C /* WBMainViewController.swift in Sources */,
 				449855FC22AC9DE80077653C /* WBDiscoveryViewController.swift in Sources */,
+				4498E25922B60134007D8E64 /* WBVisitorView.swift in Sources */,
 				449855FA22AC9DA50077653C /* WBHomeViewController.swift in Sources */,
 				44F02EEE22AFFB58004D25CD /* WBRegisterViewController.swift in Sources */,
 				449855BC22AC88EF0077653C /* AppDelegate.swift in Sources */,

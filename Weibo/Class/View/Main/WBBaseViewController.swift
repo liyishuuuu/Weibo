@@ -16,17 +16,19 @@ class WBBaseViewController: UIViewController {
 
     // MARK - 变量
 
-    /// 自定义导航条
-    lazy var navigationBar = SecondNavigationBar(frame: CGRect(x: 0,
-                                                               y: 0,
-                                                               width: self.view.frame.size.width,
-                                                               height: 64))
+    /// 用户登录标记
+    var userLogon = false
     /// 上拉加载标记
     var isPullup = false
     /// 定义tableView, 如果用户没有登录就不创建
     var tableView: UITableView?
     /// 定义刷新控件
     var refreshControl: UIRefreshControl?
+    /// 自定义导航条
+    lazy var navigationBar = SecondNavigationBar(frame: CGRect(x: 0,
+                                                               y: 0,
+                                                               width: self.view.frame.size.width,
+                                                               height: 64))
     /// 自定义导航条目，以后设置导航栏按钮使用 navItem
     lazy var navItem = UINavigationItem()
 
@@ -55,7 +57,7 @@ extension WBBaseViewController {
         /// 取消自动缩进，如果隐藏了导航栏，会自动缩进20点
         automaticallyAdjustsScrollViewInsets = false
         self.setupNavigation()
-        self.setupTableView()
+        userLogon ? setupTableView() : setupVisitorView()
     }
     
     /// 设置tableView
@@ -79,6 +81,16 @@ extension WBBaseViewController {
         /// 1.添加监听方法
         refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
         
+    }
+
+    // 设置访客视图
+    private func setupVisitorView() {
+
+        /// 定义访客视图
+        let visitView = WBVisitorView(frame: view.bounds)
+
+        /// 添加访客视图
+        view.insertSubview(visitView, belowSubview: navigationBar)
     }
 
     /// 设置导航条
