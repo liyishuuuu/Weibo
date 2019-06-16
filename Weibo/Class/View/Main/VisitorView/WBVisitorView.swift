@@ -25,6 +25,9 @@ class WBVisitorView: UIView {
     private lazy var iconView: UIImageView = UIImageView(image:
         UIImage(named: "visitordiscover_feed_image_smallicon"))
 
+    // mask图像
+    private lazy var  maskIconView: UIImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_mask_smallicon"))
+
     /// 小房子
     private lazy var houseIconView: UIImageView = UIImageView(image:
         UIImage(named: "visitordiscover_feed_image_house"))
@@ -58,10 +61,11 @@ class WBVisitorView: UIView {
 }
 extension WBVisitorView {
     func setupUI() {
-        backgroundColor = UIColor.white
+        backgroundColor = UIColor.colorWithHex(0xEDEDED)
         
         // 1.添加控件
         addSubview(iconView)
+        addSubview(maskIconView)
         addSubview(houseIconView)
         addSubview(registerButton)
         addSubview(loginButton)
@@ -172,6 +176,17 @@ extension WBVisitorView {
                                          multiplier: 1.0,
                                          constant: 0))
         
+        /// mask 图像
+        /// views 定义VFL中控件名称和实际名称的映射关系
+        let viewDict = ["maskIconView": maskIconView, "registerButton": registerButton]
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[maskIconView]-0-|",
+                                                      options: [],
+                                                      metrics: nil,
+                                                      views: viewDict))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[maskIconView]-0-[registerButton]",
+                                                      options: [],
+                                                      metrics: nil,
+                                                      views: viewDict))
     }
 }
 
