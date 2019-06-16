@@ -20,6 +20,8 @@ class WBBaseViewController: UIViewController {
     var userLogon = false
     /// 上拉加载标记
     var isPullup = false
+    /// 访客视图信息字典
+    var visitorInfoDict = [String: String]()
     /// 定义tableView, 如果用户没有登录就不创建
     var tableView: UITableView?
     /// 定义刷新控件
@@ -91,6 +93,9 @@ extension WBBaseViewController {
 
         /// 添加访客视图
         view.insertSubview(visitView, belowSubview: navigationBar)
+        
+        ///设置访客视图信息
+        visitView.visitorInfo = visitorInfoDict
     }
 
     /// 设置导航条

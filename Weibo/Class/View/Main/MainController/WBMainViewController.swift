@@ -59,7 +59,10 @@ extension WBMainViewController {
     
     /// 设置5个tab键
     private func setUpChildControllers() {
-        let array = [["clsName": "WBHomeViewController", "title": "首页", "imageName": "home"],
+        let array: [[String: Any]] = [["clsName": "WBHomeViewController",
+                                             "title": "首页",
+                                             "imageName": "home",
+                                             "visitorInfo": ["imageName": "", "message": "haha"]],
                      ["clsName": "WBDiscoveryViewController", "title": "发现", "imageName": "discover"],
                      ["clsName": "UIViewController"],
                      ["clsName": "WBMessageViewController", "title": "消息", "imageName": "message_center"],
@@ -72,16 +75,16 @@ extension WBMainViewController {
     }
     
     //// 使用字典创建一个子控制器
-    private func controller(dict: [String: String]) -> UIViewController {
+    private func controller(dict: [String: Any]) -> UIViewController {
         
         /// 取得字典内容
-        guard let clsName = dict["clsName"] else {
+        guard let clsName = dict["clsName"] as? String else {
                   return UIViewController()
         }
-        guard let title = dict["title"] else {
+        guard let title = dict["title"] as? String else {
             return UIViewController()
         }
-        guard let imageName = dict["imageName"] else {
+        guard let imageName = dict["imageName"] as? String else {
             return UIViewController()
         }
         guard let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? UIViewController.Type else {
