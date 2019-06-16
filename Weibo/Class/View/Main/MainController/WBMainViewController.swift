@@ -60,13 +60,28 @@ extension WBMainViewController {
     /// 设置5个tab键
     private func setUpChildControllers() {
         let array: [[String: Any]] = [["clsName": "WBHomeViewController",
-                                             "title": "首页",
-                                             "imageName": "home",
-                                             "visitorInfo": ["imageName": "", "message": "haha"]],
-                     ["clsName": "WBDiscoveryViewController", "title": "发现", "imageName": "discover"],
-                     ["clsName": "UIViewController"],
-                     ["clsName": "WBMessageViewController", "title": "消息", "imageName": "message_center"],
-                     ["clsName": "WBProfileViewController", "title": "我", "imageName": "profile"]]
+                                       "title": "首页",
+                                       "imageName": "home",
+                                       "visitorInfo": ["imageName": "", "message": "关注一些人，回这里看看"]],
+                                       ["clsName": "WBDiscoveryViewController",
+                                        "title": "发现",
+                                        "imageName": "discover",
+                                        "visitorInfo": ["imageName": "visitordiscover_image_message",
+                                                        "message": "登陆后，别人发给你的消息将在这里展示"]],
+                                       ["clsName": "UIViewController"],
+                                       ["clsName": "WBMessageViewController",
+                                        "title": "消息",
+                                        "imageName": "message_center",
+                                        "visitorInfo": ["imageName": "visitordiscover_image_message",
+                                                        "message": "，登陆后，最新最热微博尽在掌握"]],
+                                       ["clsName": "WBProfileViewController",
+                                        "title": "我",
+                                        "imageName": "profile",
+                                        "visitorInfo": ["imageName": "visitordiscover_image_profile",
+                                                        "message": "登陆后，你的信息将在这里展示"]]]
+        /// 测试数据格式是否正确
+        (array as NSArray).write(toFile: "/Users/liyishu/Desktop/files/Demo.plist", atomically: true)
+
         var arrayM = [UIViewController]()
         for dict in array {
             arrayM.append(controller(dict: dict))
@@ -75,6 +90,9 @@ extension WBMainViewController {
     }
     
     //// 使用字典创建一个子控制器
+    ///
+    /// - Parameter dict: 信息字典[clsName,title,imageName,visitorInfo] 
+    /// - Returns: UIViewController
     private func controller(dict: [String: Any]) -> UIViewController {
         
         /// 取得字典内容
