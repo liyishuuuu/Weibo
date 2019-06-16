@@ -16,21 +16,19 @@ class WBHomeViewController: WBBaseViewController {
     private lazy var statusList = [String]()
     /// 加载数据
     override func loadData() {
-        
         print("开始加载数据")
-        let delay = DispatchTime.now() + 3
-        DispatchQueue.main.asyncAfter(deadline: delay) {
-            for i in 0..<19 {
-
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+            for i in 0..<10 {
+                
                 /// 将数据插入到数组的顶部
-                 self.statusList.insert(i.description, at: 0)
+                self.statusList.insert(i.description, at: 0)
             }
-            print("刷新表格")
-            
-            /// 结束下拉刷新
-            self.refreshControl?.endRefreshing()
-            self.tableView?.reloadData()
         }
+        print("刷新表格")
+        /// 结束下拉刷新
+        refreshControl?.endRefreshing()
+        tableView?.reloadData()
     }
 }
 
@@ -41,7 +39,7 @@ extension WBHomeViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return statusList.count
     }
-
+    
     /// 填充数据源
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         

@@ -21,10 +21,11 @@ class WBBaseViewController: UIViewController {
                                                                y: 0,
                                                                width: self.view.frame.size.width,
                                                                height: 64))
-    
+    /// 上拉加载标记
+    var isPullup = false
     /// 定义tableView, 如果用户没有登录就不创建
     var tableView: UITableView?
-    // 定义刷新控件
+    /// 定义刷新控件
     var refreshControl: UIRefreshControl?
     /// 自定义导航条目，以后设置导航栏按钮使用 navItem
     lazy var navItem = UINavigationItem()
@@ -35,6 +36,7 @@ class WBBaseViewController: UIViewController {
         super.viewDidLoad()
         self.setUpUI()
         self.loadData()
+        tableView?.tableFooterView =  UIView.init(frame: CGRect.zero)
     }
 
     /// 重写title的didset
@@ -44,15 +46,13 @@ class WBBaseViewController: UIViewController {
         }
     }
     @objc func loadData() {
-        tableView?.delegate = self
-        tableView?.dataSource = self
     }
 }
 
 // MARK: - 设置界面
 extension WBBaseViewController {
     @objc func setUpUI() {
-        /// 取消自动缩进m，如果隐藏了导航栏，会自动缩进20点
+        /// 取消自动缩进，如果隐藏了导航栏，会自动缩进20点
         automaticallyAdjustsScrollViewInsets = false
         self.setupNavigation()
         self.setupTableView()
@@ -96,6 +96,8 @@ extension WBBaseViewController {
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension WBBaseViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    // 设置cell个数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0
     }
@@ -105,6 +107,26 @@ extension WBBaseViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 只是保证没有语法错误
         return UITableViewCell()
+    }
+
+    // 在显示最后一行的时候调用，做上拉刷新
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // 1.判断indexPath是否是最后一行
+        let row = indexPath.row
+        let section = tableView.numberOfSections - 1
+        if row < 0 || section < 0 {
+            return
+        }
+        
+        let count = tableView.numberOfRows(inSection: section)
+        
+        if row == (count - 1) && !isPullup {
+            print("上拉刷新")
+            self.isPullup = true
+            
+            /// 开始刷新
+            self.loadData()
+        }
     }
 }
 

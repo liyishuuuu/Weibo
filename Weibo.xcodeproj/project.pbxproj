@@ -228,11 +228,8 @@
 			isa = PBXGroup;
 			children = (
 				4498560322AD14C60077653C /* test */,
-				449855F322AC9C5B0077653C /* WBMainViewController.swift */,
-				449855F522AC9D1B0077653C /* WBNavigationController.swift */,
+				4498E25622B5F2D1007D8E64 /* MainController */,
 				449855F722AC9D630077653C /* WBBaseViewController.swift */,
-				44F02EEB22AFFB40004D25CD /* WBLoginViewController.swift */,
-				44F02EED22AFFB58004D25CD /* WBRegisterViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -243,6 +240,17 @@
 				4498560422AD14DD0077653C /* WBFriendsViewController.swift */,
 			);
 			path = test;
+			sourceTree = "<group>";
+		};
+		4498E25622B5F2D1007D8E64 /* MainController */ = {
+			isa = PBXGroup;
+			children = (
+				449855F322AC9C5B0077653C /* WBMainViewController.swift */,
+				449855F522AC9D1B0077653C /* WBNavigationController.swift */,
+				44F02EEB22AFFB40004D25CD /* WBLoginViewController.swift */,
+				44F02EED22AFFB58004D25CD /* WBRegisterViewController.swift */,
+			);
+			path = MainController;
 			sourceTree = "<group>";
 		};
 		44F02EE922AE8001004D25CD /* Additions */ = {
