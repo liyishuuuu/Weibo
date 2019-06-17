@@ -59,13 +59,19 @@ extension UIColor {
     }
 
     /// 16进制转rgb
+    /// 调用example: backgroundColor = UIColor.init(hexString: "0xEDEDED")
     public convenience init?(hexString: String, alpha: CGFloat = 1.0) {
+        
+        // 将传过来的字符串格式format ("0x" -> ""; "#" -> "")
         var formatted = hexString.replacingOccurrences(of: "0x", with: "")
-        formatted = formatted.replacingOccurrences(of: "#", with: "")
+            formatted = formatted.replacingOccurrences(of: "#", with: "")
+        // 将格式化后的字符串转为十六进制数
         if let hex = Int(formatted, radix: 16) {
-            let red = CGFloat(CGFloat((hex & 0xFF0000) >> 16)/255.0)
-            let green = CGFloat(CGFloat((hex & 0x00FF00) >> 8)/255.0)
-            let blue = CGFloat(CGFloat((hex & 0x0000FF) >> 0)/255.0)
+            
+            // 十六进制数转rgb
+            let red = CGFloat(CGFloat((hex & 0xFF0000) >> 16) / 255.0)
+            let green = CGFloat(CGFloat((hex & 0x00FF00) >> 8) / 255.0)
+            let blue = CGFloat(CGFloat((hex & 0x0000FF) >> 0) / 255.0)
             self.init(red: red, green: green, blue: blue, alpha: alpha)
         } else {
             return nil
