@@ -25,6 +25,7 @@ class WBVisitorView: UIView {
             
             // 3.设置图像，首页不需要设置
             if immageName == "" {
+                self.startAnimaiton()
                 return
             }
             iconView.image = UIImage(named: immageName)
@@ -44,6 +45,16 @@ class WBVisitorView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    private func startAnimaiton() {
+        let anim = CABasicAnimation(keyPath: "transform.rotation")
+        anim.toValue = 2 * Double.pi
+        anim.repeatCount = MAXFLOAT
+        anim.duration = 15
+        ///*** 动画完成不删除，如果iconView 销毁，动画会一起销毁
+        ///*** 在设置连续播放的时候非常有效
+        anim.isRemovedOnCompletion = false
+        iconView.layer.add(anim, forKey: nil)
+    }
     // 私有控件
     ///懒加载属性只有调用UIKit指定的构造函数，其他的都需要使用类型
     /// 图像视图
