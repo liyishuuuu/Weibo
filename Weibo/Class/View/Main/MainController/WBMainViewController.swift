@@ -59,31 +59,17 @@ extension WBMainViewController {
     
     /// 设置5个tab键
     private func setUpChildControllers() {
-        let array: [[String: Any]] = [["clsName": "WBHomeViewController",
-                                       "title": "首页",
-                                       "imageName": "home",
-                                       "visitorInfo": ["imageName": "", "message": "关注一些人，回这里看看"]],
-                                       ["clsName": "WBDiscoveryViewController",
-                                        "title": "发现",
-                                        "imageName": "discover",
-                                        "visitorInfo": ["imageName": "visitordiscover_image_message",
-                                                        "message": "登陆后，别人发给你的消息将在这里展示"]],
-                                       ["clsName": "UIViewController"],
-                                       ["clsName": "WBMessageViewController",
-                                        "title": "消息",
-                                        "imageName": "message_center",
-                                        "visitorInfo": ["imageName": "visitordiscover_image_message",
-                                                        "message": "登陆后，最新最热微博尽在掌握"]],
-                                       ["clsName": "WBProfileViewController",
-                                        "title": "我",
-                                        "imageName": "profile",
-                                        "visitorInfo": ["imageName": "visitordiscover_image_profile",
-                                                        "message": "登陆后，你的信息将在这里展示"]]]
-        /// 测试数据格式是否正确
-        /// (array as NSArray).write(toFile: "/Users/liyishu/Desktop/files/Demo.plist", atomically: true)
+        
+        // 从bundle加载配置的json
+        /// 1,路径 2.加载NSData 3.反序列化转换成数组
+        guard let path = Bundle.main.path(forResource: "main.json", ofType: nil),
+              let data = NSData(contentsOfFile: path),
+              let array = try? JSONSerialization.jsonObject(with: data as Data, options: []) as? [[String: Any]]
+            else {
+            return
+        }
 
-        let data = try! JSONSerialization.data(withJSONObject: array, options: [.prettyPrinted])
-        (data as NSData).write(toFile: "/Users/liyishu/Desktop/files/Demo.json" , atomically: true)
+        // 遍历数组循环创建控制器数组
         var arrayM = [UIViewController]()
         for dict in array {
             arrayM.append(controller(dict: dict))
