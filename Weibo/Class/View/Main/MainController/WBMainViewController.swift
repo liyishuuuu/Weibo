@@ -80,8 +80,10 @@ extension WBMainViewController {
                                         "visitorInfo": ["imageName": "visitordiscover_image_profile",
                                                         "message": "登陆后，你的信息将在这里展示"]]]
         /// 测试数据格式是否正确
-        (array as NSArray).write(toFile: "/Users/liyishu/Desktop/files/Demo.plist", atomically: true)
+        /// (array as NSArray).write(toFile: "/Users/liyishu/Desktop/files/Demo.plist", atomically: true)
 
+        let data = try! JSONSerialization.data(withJSONObject: array, options: [.prettyPrinted])
+        (data as NSData).write(toFile: "/Users/liyishu/Desktop/files/Demo.json" , atomically: true)
         var arrayM = [UIViewController]()
         for dict in array {
             arrayM.append(controller(dict: dict))
