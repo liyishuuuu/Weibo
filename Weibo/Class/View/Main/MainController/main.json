@@ -1,1 +1,41 @@
-[{"clsName":"WBHomeViewController","visitorInfo":{"imageName":"","message":"关注一些人，回这里看看"},"title":"首页","imageName":"home"},{"visitorInfo":{"message":"登陆后，别人发给你的消息将在这里展示","imageName":"visitordiscover_image_message"},"title":"发现","clsName":"WBDiscoveryViewController","imageName":"discover"},{"clsName":"UIViewController"},{"visitorInfo":{"imageName":"visitordiscover_image_message","message":"登陆后，最新最热微博尽在掌握"},"imageName":"message_center","clsName":"WBMessageViewController","title":"消息"},{"clsName":"WBProfileViewController","title":"我","imageName":"profile","visitorInfo":{"imageName":"visitordiscover_image_profile","message":"登陆后，你的信息将在这里展示"}}]
+[
+    {
+        "clsName": "WBHomeViewController",
+        "visitorInfo": {
+            "imageName": "",
+            "message": "关注一些人，回这里看看"
+        },
+        "title": "首页",
+        "imageName": "home"
+    },
+    {
+        "visitorInfo": {
+            "message": "登陆后，别人发给你的消息将在这里展示",
+            "imageName": "visitordiscover_image_message"
+        },
+        "title": "发现",
+        "clsName": "WBDiscoveryViewController",
+        "imageName": "discover"
+    },
+    {
+        "clsName": "UIViewController"
+    },
+    {
+        "visitorInfo": {
+            "imageName": "visitordiscover_image_message",
+            "message": "登陆后，最新最热微博尽在掌握"
+        },
+        "imageName": "message_center",
+        "clsName": "WBMessageViewController",
+        "title": "消息"
+    },
+    {
+        "clsName": "WBProfileViewController",
+        "title": "我",
+        "imageName": "profile",
+        "visitorInfo": {
+            "imageName": "visitordiscover_image_profile",
+            "message": "登陆后，你的信息将在这里展示"
+        }
+    }
+]
