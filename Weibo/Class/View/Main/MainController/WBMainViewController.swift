@@ -73,7 +73,7 @@ extension WBMainViewController {
                                         "title": "消息",
                                         "imageName": "message_center",
                                         "visitorInfo": ["imageName": "visitordiscover_image_message",
-                                                        "message": "，登陆后，最新最热微博尽在掌握"]],
+                                                        "message": "登陆后，最新最热微博尽在掌握"]],
                                        ["clsName": "WBProfileViewController",
                                         "title": "我",
                                         "imageName": "profile",
