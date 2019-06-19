@@ -17,7 +17,7 @@ class WBBaseViewController: UIViewController {
     // MARK - 变量
 
     /// 用户登录标记
-    var userLogon = false
+    var userLogon = true
     /// 上拉加载标记
     var isPullup = false
     /// 访客视图信息字典

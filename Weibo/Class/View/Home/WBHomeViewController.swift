@@ -16,6 +16,19 @@ class WBHomeViewController: WBBaseViewController {
     private lazy var statusList = [String]()
     /// 加载数据
     override func loadData() {
+        
+        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
+        let params = ["access_token": "2.00tV15KGehU_9B87cffd41cdGhkzoB"]
+        
+//        WBNetWorkManager.shared.get(urlString, parameters: params, progress: nil, success: { (_, json) in
+//            print(json)
+//        }) { (_, error) in
+//            print("网络请求失败\(error)")
+//        }
+        
+        WBNetWorkManager.shared.request(URLSting: urlString, parameters: params) { (json, isSuccess) in
+            print(json)
+        }
         print("开始加载数据")
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
