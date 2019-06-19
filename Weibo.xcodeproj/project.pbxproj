@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -47,6 +47,7 @@
 		4498E29222B641B8007D8E64 /* UITapGestureRecognizer+JHExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E27922B641B8007D8E64 /* UITapGestureRecognizer+JHExtension.swift */; };
 		4498E29322B641B8007D8E64 /* JHPOPAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E27A22B641B8007D8E64 /* JHPOPAlertView.swift */; };
 		4498E29422B641B8007D8E64 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E27C22B641B8007D8E64 /* ServiceManager.swift */; };
+		44DFE74822BA5D59004FD1E5 /* WBNetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DFE74722BA5D59004FD1E5 /* WBNetWorkManager.swift */; };
 		44F02EEC22AFFB40004D25CD /* WBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F02EEB22AFFB40004D25CD /* WBLoginViewController.swift */; };
 		44F02EEE22AFFB58004D25CD /* WBRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F02EED22AFFB58004D25CD /* WBRegisterViewController.swift */; };
 		DA5C5BBDDD27A274A0891910 /* Pods_WeiboTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6E6F4380AE8F83E07F4D7AA /* Pods_WeiboTests.framework */; };
@@ -116,6 +117,7 @@
 		4498E27922B641B8007D8E64 /* UITapGestureRecognizer+JHExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer+JHExtension.swift"; sourceTree = "<group>"; };
 		4498E27A22B641B8007D8E64 /* JHPOPAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHPOPAlertView.swift; sourceTree = "<group>"; };
 		4498E27C22B641B8007D8E64 /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		44DFE74722BA5D59004FD1E5 /* WBNetWorkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBNetWorkManager.swift; sourceTree = "<group>"; };
 		44F02EEA22AE8072004D25CD /* UIScreen+CZAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScreen+CZAddition.h"; sourceTree = "<group>"; };
 		44F02EEB22AFFB40004D25CD /* WBLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBLoginViewController.swift; sourceTree = "<group>"; };
 		44F02EED22AFFB58004D25CD /* WBRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBRegisterViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 		449855EB22AC9BD40077653C /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				44DFE74622BA5CC5004FD1E5 /* NetWork */,
 				4498E26922B641B8007D8E64 /* Foundation */,
 				4498E27B22B641B8007D8E64 /* Hardware */,
 				4498E26022B641B8007D8E64 /* Other */,
@@ -382,6 +385,14 @@
 			path = Hardware;
 			sourceTree = "<group>";
 		};
+		44DFE74622BA5CC5004FD1E5 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				44DFE74722BA5D59004FD1E5 /* WBNetWorkManager.swift */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
 		44F02EE922AE8001004D25CD /* Additions */ = {
 			isa = PBXGroup;
 			children = (
@@ -410,7 +421,6 @@
 				A186460CE84776C0CCF29A1F /* Pods-WeiboUITests.debug.xcconfig */,
 				C149530D804F83851113BCC2 /* Pods-WeiboUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -642,6 +652,7 @@
 				4498E28422B641B8007D8E64 /* JHRegularHelp.swift in Sources */,
 				4498E28722B641B8007D8E64 /* Color+JHExtension.swift in Sources */,
 				449855F822AC9D630077653C /* WBBaseViewController.swift in Sources */,
+				44DFE74822BA5D59004FD1E5 /* WBNetWorkManager.swift in Sources */,
 				4498560022AC9E000077653C /* WBProfileViewController.swift in Sources */,
 				4498E29022B641B8007D8E64 /* UITextField+JHExtension.swift in Sources */,
 				449855FE22AC9DF50077653C /* WBMessageViewController.swift in Sources */,
