@@ -47,6 +47,7 @@
 		4498E29222B641B8007D8E64 /* UITapGestureRecognizer+JHExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E27922B641B8007D8E64 /* UITapGestureRecognizer+JHExtension.swift */; };
 		4498E29322B641B8007D8E64 /* JHPOPAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E27A22B641B8007D8E64 /* JHPOPAlertView.swift */; };
 		4498E29422B641B8007D8E64 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E27C22B641B8007D8E64 /* ServiceManager.swift */; };
+		44D2945F22BAFCA70077A968 /* WBNetWorkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D2945E22BAFCA70077A968 /* WBNetWorkManager+Extension.swift */; };
 		44DFE74822BA5D59004FD1E5 /* WBNetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DFE74722BA5D59004FD1E5 /* WBNetWorkManager.swift */; };
 		44F02EEC22AFFB40004D25CD /* WBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F02EEB22AFFB40004D25CD /* WBLoginViewController.swift */; };
 		44F02EEE22AFFB58004D25CD /* WBRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F02EED22AFFB58004D25CD /* WBRegisterViewController.swift */; };
@@ -117,6 +118,7 @@
 		4498E27922B641B8007D8E64 /* UITapGestureRecognizer+JHExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer+JHExtension.swift"; sourceTree = "<group>"; };
 		4498E27A22B641B8007D8E64 /* JHPOPAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHPOPAlertView.swift; sourceTree = "<group>"; };
 		4498E27C22B641B8007D8E64 /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		44D2945E22BAFCA70077A968 /* WBNetWorkManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WBNetWorkManager+Extension.swift"; sourceTree = "<group>"; };
 		44DFE74722BA5D59004FD1E5 /* WBNetWorkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBNetWorkManager.swift; sourceTree = "<group>"; };
 		44F02EEA22AE8072004D25CD /* UIScreen+CZAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScreen+CZAddition.h"; sourceTree = "<group>"; };
 		44F02EEB22AFFB40004D25CD /* WBLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBLoginViewController.swift; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				44DFE74722BA5D59004FD1E5 /* WBNetWorkManager.swift */,
+				44D2945E22BAFCA70077A968 /* WBNetWorkManager+Extension.swift */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -670,6 +673,7 @@
 				4498E27D22B641B8007D8E64 /* TimerButton.swift in Sources */,
 				4498E28022B641B8007D8E64 /* LocationTool.swift in Sources */,
 				4498E28A22B641B8007D8E64 /* Dictionary+JHExtension.swift in Sources */,
+				44D2945F22BAFCA70077A968 /* WBNetWorkManager+Extension.swift in Sources */,
 				4498E25922B60134007D8E64 /* WBVisitorView.swift in Sources */,
 				4498E28C22B641B8007D8E64 /* UIImage+JHExtension.swift in Sources */,
 				4498E28B22B641B8007D8E64 /* UIView+JHExtension.swift in Sources */,

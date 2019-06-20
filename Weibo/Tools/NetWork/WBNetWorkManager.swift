@@ -27,7 +27,7 @@ class WBNetWorkManager: AFHTTPSessionManager {
     ///   - URLSting: URLSting
     ///   - parameters: 参数字典
     ///   - completion: 完成回调 json(数组/字典), 是否成功
-    func request(method: WBHttpMethod = .GET, URLSting: String, parameters: [String: Any?], completion: @escaping (_ json: AnyObject?, _ isSuccess: Bool)->()) {
+    func request(method: WBHttpMethod = .GET, URLSting: String, parameters: [String: AnyObject?], completion: @escaping (_ json: AnyObject?, _ isSuccess: Bool)->()) {
         
         let success = { (task: URLSessionDataTask, json: Any?) ->() in
             completion(json as AnyObject?, true)
