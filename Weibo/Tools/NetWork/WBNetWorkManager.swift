@@ -30,6 +30,7 @@ class WBNetWorkManager: AFHTTPSessionManager {
         // 0.判断token是否为nil，如果是直接返回
         guard let token = accessToken else {
             print("没有token， 需要登录")
+            // TODO: 发送通知，提醒用户登录
             completion(nil, false)
             return
         }
@@ -45,6 +46,7 @@ class WBNetWorkManager: AFHTTPSessionManager {
         // 调用request 发起真正的网络请求方法
         request(URLSting: URLSting, parameters: parameters!, completion: completion)
     }
+
     /// 封装 AFN 的GET/POST 请求
     ///
     /// - Parameters:
@@ -54,10 +56,20 @@ class WBNetWorkManager: AFHTTPSessionManager {
     ///   - completion: 完成回调 json(数组/字典), 是否成功
     func request(method: WBHttpMethod = .GET, URLSting: String, parameters: [String: AnyObject]?, completion: @escaping (_ json: AnyObject?, _ isSuccess: Bool)->()) {
         
+        // 成功回调
         let success = { (task: URLSessionDataTask, json: Any?) ->() in
             completion(json as AnyObject?, true)
         }
+        
+        // 失败回调
         let failure =  {(task: URLSessionDataTask?, Error: Error) ->() in
+            
+            // 针对403 处理用户token过期
+            if (task?.response as? HTTPURLResponse)?.statusCode == 403 {
+                print("token过期")
+                
+                // TODO:发送通知，提醒用户再次登录
+            }
             print("网络请求错误\(Error)")
             completion(nil, false)
         }
