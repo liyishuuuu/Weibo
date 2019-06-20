@@ -20,6 +20,31 @@ class WBNetWorkManager: AFHTTPSessionManager {
     /// 静态区，常量，闭包
     static let shared = WBNetWorkManager()
 
+    /// 访问令牌，每一个网络请求，都基于此令牌（登录除外）
+    var accessToken: String? = "2.00tV15KGehU_9B87cffd41cdGhkzoB"
+
+    /// 专门负责token的拼接 网络请求方法
+    func tokenRequest(method: WBHttpMethod = .GET, URLSting: String, parameters: [String: AnyObject]?, completion: @escaping (_ json: AnyObject?, _ isSuccess: Bool)->()) {
+        
+        // 处理token字典
+        // 0.判断token是否为nil，如果是直接返回
+        guard let token = accessToken else {
+            print("没有token， 需要登录")
+            completion(nil, false)
+            return
+        }
+        // 1.判断参数字典是否存在
+        var parameters = parameters
+        if parameters == nil {
+            // 实例化字典
+            parameters = [String: AnyObject]()
+        }
+        // 2. 设置参数字典，代码在此处字典一定有值
+        parameters!["access_token"] = token as AnyObject
+        
+        // 调用request 发起真正的网络请求方法
+        request(URLSting: URLSting, parameters: parameters!, completion: completion)
+    }
     /// 封装 AFN 的GET/POST 请求
     ///
     /// - Parameters:
@@ -27,7 +52,7 @@ class WBNetWorkManager: AFHTTPSessionManager {
     ///   - URLSting: URLSting
     ///   - parameters: 参数字典
     ///   - completion: 完成回调 json(数组/字典), 是否成功
-    func request(method: WBHttpMethod = .GET, URLSting: String, parameters: [String: AnyObject?], completion: @escaping (_ json: AnyObject?, _ isSuccess: Bool)->()) {
+    func request(method: WBHttpMethod = .GET, URLSting: String, parameters: [String: AnyObject]?, completion: @escaping (_ json: AnyObject?, _ isSuccess: Bool)->()) {
         
         let success = { (task: URLSessionDataTask, json: Any?) ->() in
             completion(json as AnyObject?, true)
