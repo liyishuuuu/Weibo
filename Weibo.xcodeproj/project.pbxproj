@@ -48,6 +48,7 @@
 		4498E29322B641B8007D8E64 /* JHPOPAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E27A22B641B8007D8E64 /* JHPOPAlertView.swift */; };
 		4498E29422B641B8007D8E64 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E27C22B641B8007D8E64 /* ServiceManager.swift */; };
 		44C2B3F722BC4D0700B014F6 /* WBStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C2B3F622BC4D0700B014F6 /* WBStatusModel.swift */; };
+		44C2B3F922BC50A900B014F6 /* WBStatusListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C2B3F822BC50A900B014F6 /* WBStatusListModel.swift */; };
 		44D2945F22BAFCA70077A968 /* WBNetWorkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D2945E22BAFCA70077A968 /* WBNetWorkManager+Extension.swift */; };
 		44DFE74822BA5D59004FD1E5 /* WBNetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DFE74722BA5D59004FD1E5 /* WBNetWorkManager.swift */; };
 		44F02EEC22AFFB40004D25CD /* WBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F02EEB22AFFB40004D25CD /* WBLoginViewController.swift */; };
@@ -120,6 +121,7 @@
 		4498E27A22B641B8007D8E64 /* JHPOPAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHPOPAlertView.swift; sourceTree = "<group>"; };
 		4498E27C22B641B8007D8E64 /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		44C2B3F622BC4D0700B014F6 /* WBStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusModel.swift; sourceTree = "<group>"; };
+		44C2B3F822BC50A900B014F6 /* WBStatusListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusListModel.swift; sourceTree = "<group>"; };
 		44D2945E22BAFCA70077A968 /* WBNetWorkManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WBNetWorkManager+Extension.swift"; sourceTree = "<group>"; };
 		44DFE74722BA5D59004FD1E5 /* WBNetWorkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBNetWorkManager.swift; sourceTree = "<group>"; };
 		44F02EEA22AE8072004D25CD /* UIScreen+CZAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScreen+CZAddition.h"; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 		449855EA22AC9BD40077653C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				44C2B3F822BC50A900B014F6 /* WBStatusListModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -664,6 +667,7 @@
 				449855FE22AC9DF50077653C /* WBMessageViewController.swift in Sources */,
 				4498E29322B641B8007D8E64 /* JHPOPAlertView.swift in Sources */,
 				44F02EEC22AFFB40004D25CD /* WBLoginViewController.swift in Sources */,
+				44C2B3F922BC50A900B014F6 /* WBStatusListModel.swift in Sources */,
 				4498560722AD41300077653C /* UIButton+Extension.swift in Sources */,
 				4498560222ACABDA0077653C /* Bundle+Extensions.swift in Sources */,
 				4498E28D22B641B8007D8E64 /* UILabel+JHExtension.swift in Sources */,
