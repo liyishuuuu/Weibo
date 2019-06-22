@@ -18,6 +18,7 @@ target 'Weibo' do
 pod "AFNetworking"
 pod "SDWebImage"
 pod "YYModel"
+pod "SwiftyJSON"
 pod "FMDB"
 pod "SVProgressHUD"
 pod "pop"

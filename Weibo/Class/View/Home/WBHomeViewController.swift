@@ -12,31 +12,16 @@ import UIKit
 private let cellId = "cellId"
 class WBHomeViewController: WBBaseViewController {
 
-    /// 微博数据数组
-    private lazy var statusList = [String]()
+    // 实例化ViewModel
+    private lazy var listViewModel = WBStatusListModel()
     /// 加载数据
     override func loadData() {
-        
-        // 用工具加载数据
-        WBNetWorkManager.shared.statusList { (list, isSuccess) in
-            
-            // 字典转模型 绑定数据
-            print(list)
-            print("加载数据结束")
+        listViewModel.loadStatus { (isSuccess) in
+            /// 结束下拉刷新
+            self.refreshControl?.endRefreshing()
+            self.isPullup = false
+            self.tableView?.reloadData()
         }
-        print("开始加载数据")
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-            for i in 0..<10 {
-                
-                /// 将数据插入到数组的顶部
-                self.statusList.insert(i.description, at: 0)
-            }
-        }
-        print("刷新表格")
-        /// 结束下拉刷新
-        refreshControl?.endRefreshing()
-        tableView?.reloadData()
     }
 }
 
@@ -45,7 +30,7 @@ extension WBHomeViewController {
 
     /// 设置cell的个数
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return statusList.count
+        return listViewModel.statusList.count
     }
     
     /// 填充数据源
@@ -56,7 +41,7 @@ extension WBHomeViewController {
         /// 取cell
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         /// 设置cell
-        cell.textLabel?.text = statusList[indexPath.row]
+        cell.textLabel?.text = listViewModel.statusList[indexPath.row].text
         /// 返回cell
         return cell
     }
