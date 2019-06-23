@@ -17,8 +17,8 @@ class WBHomeViewController: WBBaseViewController {
 
     /// 加载数据
     override func loadData() {
-        listViewModel.loadStatus(isPullUp: isPullup) { (isSuccess) in
-
+        listViewModel.loadStatus(isPullUp: isPullup) { (isSuccess, isMorePullUp) in
+ 
             /// 结束下拉刷新
             self.refreshControl?.endRefreshing()
 
@@ -29,7 +29,9 @@ class WBHomeViewController: WBBaseViewController {
             self.setupTableView()
 
             /// 加载数据
-            self.tableView?.reloadData()
+            if isMorePullUp {
+                self.tableView?.reloadData()
+            }
         }
     }
 }
