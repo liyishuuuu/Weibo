@@ -38,8 +38,8 @@ class WBBaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setUpUI()
         self.loadData()
+        self.setUpUI()
         tableView?.tableFooterView =  UIView.init(frame: CGRect.zero)
     }
 

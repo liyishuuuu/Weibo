@@ -20,6 +20,7 @@ class WBHomeViewController: WBBaseViewController {
             /// 结束下拉刷新
             self.refreshControl?.endRefreshing()
             self.isPullup = false
+            self.setupTableView()
             self.tableView?.reloadData()
         }
     }
@@ -30,7 +31,7 @@ extension WBHomeViewController {
 
     /// 设置cell的个数
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listViewModel.statusList.count
+        return self.listViewModel.statusList.count
     }
     
     /// 填充数据源
@@ -41,7 +42,7 @@ extension WBHomeViewController {
         /// 取cell
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         /// 设置cell
-        cell.textLabel?.text = listViewModel.statusList[indexPath.row].text
+        cell.textLabel?.text = self.listViewModel.statusList[indexPath.row].text
         /// 返回cell
         return cell
     }
@@ -52,5 +53,35 @@ extension WBHomeViewController {
     /// 重写父类的方法
     override func setUpUI() {
         super.setUpUI()
+        view.addSubview(navigationBar)
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "微博", target: self, action: #selector(showBlog))
+    }
+    @objc private func showBlog() {
+        print(#function)
+        let vc = WBBlogViewController()
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
+    private func setupTableView() {
+        let tableView: UITableView = UITableView(frame: view.bounds, style: .plain)
+        ///  设置atableView在navigation的下面
+        view.insertSubview(tableView, belowSubview: navigationBar)
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        // 设置内容缩进
+        tableView.contentInset = UIEdgeInsets(top: 40, left: 0, bottom: 0, right: 0)
+        
+        // 设置刷新控件
+        /// 1.实例化控件
+        self.refreshControl = UIRefreshControl()
+        
+        /// 1.添加到表格视图
+        tableView.addSubview(refreshControl!)
+        
+        /// 1.添加监听方法
+        refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        
     }
 }

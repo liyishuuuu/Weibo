@@ -41,6 +41,4 @@ class WBStatusListModel: NSObject {
             completion(isSuccess)
         }
     }
-    
-    // 数组转模型数组
 }
