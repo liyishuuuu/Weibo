@@ -17,7 +17,7 @@ class WBHomeViewController: WBBaseViewController {
 
     /// 加载数据
     override func loadData() {
-        listViewModel.loadStatus { (isSuccess) in
+        listViewModel.loadStatus(isPullUp: isPullup) { (isSuccess) in
 
             /// 结束下拉刷新
             self.refreshControl?.endRefreshing()
@@ -61,6 +61,7 @@ extension WBHomeViewController {
 
 // MARK: - 设置界面
 extension WBHomeViewController {
+
     /// 重写父类的方法
     override func setUpUI() {
         super.setUpUI()
@@ -71,7 +72,8 @@ extension WBHomeViewController {
     /// 设置tableView
     private func setupTableView() {
         let tableView: UITableView = UITableView(frame: view.bounds, style: .plain)
-        ///  设置atableView在navigation的下面
+
+        /// 设置atableView在navigation的下面
         view.insertSubview(tableView, belowSubview: navigationBar)
         tableView.dataSource = self
         tableView.delegate = self

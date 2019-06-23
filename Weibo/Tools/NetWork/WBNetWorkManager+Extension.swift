@@ -17,7 +17,7 @@ extension WBNetWorkManager {
     func statusList(since_id: Int64 = 0, max_id: Int64 = 0, completion: @escaping (_ list: [[String: AnyObject]]?, _ isSuccess: Bool) -> ()) {
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
         
-        let params = ["since_id": "\(since_id)", "max_id": "\(max_id)"]
+        let params = ["since_id": "\(since_id)", "max_id": "\(max_id > 0 ? max_id - 1 : 0)"]
         tokenRequest(URLSting: urlString, parameters: params as [String : AnyObject]) { (json, isSuccess) in
 
             // 从json中获取status 字典数组，如果 as? 失败，result = nil  ****  statuses微博数组  ****

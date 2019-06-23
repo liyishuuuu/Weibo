@@ -22,10 +22,16 @@ class WBStatusListModel: NSObject {
 
     /// 加载微博列表
     ///
+    /// - Parameter isPullUp: 是否上拉刷新标记
     /// - Parameter completion: 完成回调(网络请求是否成功)
-    func loadStatus(completion: @escaping (_ isSuccess: Bool) -> ()) {
+    func loadStatus(isPullUp: Bool, completion: @escaping (_ isSuccess: Bool) -> ()) {
         
-        let since_id = statusList.first?.id ?? 0
+        // since_id: 取出数组的第一条微博id
+        let since_id = isPullUp ? 0 : (statusList.first?.id ?? 0)
+        
+        // since_id: 取出数组的最后一条微博id
+        let max_id = isPullUp ? 0 : (statusList.last?.id ?? 0)
+
         WBNetWorkManager.shared.statusList(since_id: since_id, max_id: 0) { (list, isSuccess) in
 
             // 字典转模型
@@ -34,8 +40,18 @@ class WBStatusListModel: NSObject {
                 return
             }
             print("刷新到\(array.count)条数据")
-            // 拼接数据
-            self.statusList = array + self.statusList
+            
+            if isPullUp {
+
+                // 上拉刷新
+                // 将结果拼接在数组的末尾
+                self.statusList += array
+            } else {
+
+                // 下拉刷新
+                // 将结果拼接在数组的前面
+                self.statusList = array + self.statusList
+            }
 
             // 完成回调
             completion(isSuccess)
