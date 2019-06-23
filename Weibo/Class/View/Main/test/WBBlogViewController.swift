@@ -11,7 +11,7 @@ import UIKit
 class WBBlogViewController: UIViewController {
     
     // 实例化ViewModel
-    private lazy var listViewModel = WBStatusListModel()
+    private lazy var listViewModel = WBStatusListViewModel()
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {

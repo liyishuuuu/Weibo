@@ -1,5 +1,5 @@
 //
-//  WBStatusListModel.swift
+//  WBStatusListViewModel.swift
 //  Weibo
 //
 //  Created by liyishu on 2019/6/21.
@@ -18,7 +18,7 @@ import YYModel
 
 // 上拉刷新最大次数
 private let maxPullUpTimes = 3
-class WBStatusListModel: NSObject {
+class WBStatusListViewModel: NSObject {
 
     // 微博模型数组懒加载
     @objc lazy var statusList = [WBStatusModel]()

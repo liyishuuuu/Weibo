@@ -13,7 +13,7 @@ private let cellId = "cellId"
 class WBHomeViewController: WBBaseViewController {
 
     // 实例化ViewModel
-    private lazy var listViewModel = WBStatusListModel()
+    private lazy var listViewModel = WBStatusListViewModel()
 
     /// 加载数据
     override func loadData() {
