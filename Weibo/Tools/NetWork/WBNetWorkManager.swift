@@ -22,7 +22,7 @@ class WBNetWorkManager: AFHTTPSessionManager {
 
     /// 访问令牌，每一个网络请求，都基于此令牌（登录除外）
     /// 为了保护用户安全，token是有时限的。默认是三天
-    var accessToken: String? = "2.00tV15KGehU_9B87cffd41cdGhkzoB"
+    var accessToken: String? = "2.00tV15KGy73f2B29b465489aGj4uqB"
 
     /// 专门负责token的拼接 网络请求方法
     func tokenRequest(method: WBHttpMethod = .GET, URLSting: String, parameters: [String: AnyObject]?, completion: @escaping (_ json: AnyObject?, _ isSuccess: Bool)->()) {

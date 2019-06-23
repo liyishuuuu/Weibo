@@ -22,7 +22,7 @@ class WBHomeViewController: WBBaseViewController {
             /// 结束下拉刷新
             self.refreshControl?.endRefreshing()
 
-            /// 恢复下拉刷新标记
+            /// 恢复上拉加载标记
             self.isPullup = false
 
             /// 设置tableView

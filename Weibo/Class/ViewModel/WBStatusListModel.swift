@@ -41,7 +41,7 @@ class WBStatusListModel: NSObject {
         let since_id = isPullUp ? 0 : (statusList.first?.id ?? 0)
         
         // max_id: 取出数组的最后一条微博id
-        let max_id = isPullUp ? 0 : (statusList.last?.id ?? 0)
+        let max_id = !isPullUp ? 0 : (statusList.last?.id ?? 0)
 
         WBNetWorkManager.shared.statusList(since_id: since_id, max_id: max_id) { (list, isSuccess) in
 
@@ -63,7 +63,6 @@ class WBStatusListModel: NSObject {
                 // 将结果拼接在数组的前面
                 self.statusList = array + self.statusList
             }
-
             if isPullUp && array.count == 0 {
                 self.pullUpTimes += 1
                 completion(true, false)
