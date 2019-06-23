@@ -14,13 +14,21 @@ class WBHomeViewController: WBBaseViewController {
 
     // 实例化ViewModel
     private lazy var listViewModel = WBStatusListModel()
+
     /// 加载数据
     override func loadData() {
         listViewModel.loadStatus { (isSuccess) in
+
             /// 结束下拉刷新
             self.refreshControl?.endRefreshing()
+
+            /// 恢复下拉刷新标记
             self.isPullup = false
+
+            /// 设置tableView
             self.setupTableView()
+
+            /// 加载数据
             self.tableView?.reloadData()
         }
     }
@@ -39,10 +47,13 @@ extension WBHomeViewController {
         
         /// 注册原型cell
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+
         /// 取cell
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+
         /// 设置cell
         cell.textLabel?.text = self.listViewModel.statusList[indexPath.row].text
+
         /// 返回cell
         return cell
     }
@@ -56,13 +67,8 @@ extension WBHomeViewController {
         view.addSubview(navigationBar)
         navItem.leftBarButtonItem = UIBarButtonItem(title: "微博", target: self, action: #selector(showBlog))
     }
-    @objc private func showBlog() {
-        print(#function)
-        let vc = WBBlogViewController()
-        
-        navigationController?.pushViewController(vc, animated: true)
-    }
 
+    /// 设置tableView
     private func setupTableView() {
         let tableView: UITableView = UITableView(frame: view.bounds, style: .plain)
         ///  设置atableView在navigation的下面
@@ -83,5 +89,11 @@ extension WBHomeViewController {
         /// 1.添加监听方法
         refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
         
+    }
+
+    @objc private func showBlog() {
+        print(#function)
+        let vc = WBBlogViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
