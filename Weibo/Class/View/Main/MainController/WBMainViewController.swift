@@ -26,12 +26,17 @@ class WBMainViewController: UITabBarController {
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
+
     // MARK - 监听方法
     // 撰写微博
     // TODO:
     // @objc 允许这个函数在‘运行时’ 通过OC的消息机制被调用
     @objc private func userLogin(n: Notification) {
         print("用户登录通知\(n)")
+        
+        // 展现登录控制器
+        let vc = WBOAuthViewController()
+        present(vc, animated: true, completion: nil)
     }
     @objc private func componseStatus() {
         print("撰写微博")

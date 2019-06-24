@@ -78,7 +78,7 @@ class WBVisitorView: UIView {
     }()
 
     /// 注册按钮
-    private lazy var registerButton: UIButton = {
+    lazy var registerButton: UIButton = {
         let registerButton = UIButton()
         registerButton.setTitle("注册", for: .normal)
         registerButton.setTitleColor(.orange, for: .normal)
@@ -87,7 +87,7 @@ class WBVisitorView: UIView {
     }()
 
     /// 登录按钮
-    private lazy var loginButton: UIButton = {
+    lazy var loginButton: UIButton = {
         let loginButton = UIButton()
         loginButton.setTitle("登录", for: .normal)
         loginButton.setTitleColor(.darkGray, for: .normal)

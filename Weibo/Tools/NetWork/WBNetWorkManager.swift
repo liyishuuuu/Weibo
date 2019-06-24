@@ -23,7 +23,7 @@ class WBNetWorkManager: AFHTTPSessionManager {
 
     /// 访问令牌，每一个网络请求，都基于此令牌（登录除外）
     /// 为了保护用户安全，token是有时限的。默认是三天
-    var accessToken: String? = "2.00tV15KGy73f2B29b465489aGj4uqB"
+    var accessToken: String? //= "2.00tV15KGy73f2B29b465489aGj4uqB"
     
     /// 用户登录标记
     var userlogon: Bool {

@@ -96,6 +96,12 @@ extension WBBaseViewController {
         
         ///设置访客视图信息
         visitView.visitorInfo = visitorInfoDict
+        
+        /// 登录按钮 点击
+        visitView.loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
+        
+        /// 注册按钮点击
+        visitView.registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
     }
 
     /// 设置导航条
@@ -148,16 +154,16 @@ extension WBBaseViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 // MARK: - 监听方法
-extension WBHomeViewController {
+extension WBBaseViewController {
     @objc private func register() {
         print(#function)
         print("注册")
-        // 发送通知
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBUsershouldLoginNotification), object: nil)
     }
     @objc private func login() {
         print(#function)
         print("登录")
+        // 发送通知
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBUsershouldLoginNotification), object: nil)
     }
 }
 
