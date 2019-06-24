@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E5D3D7405FF49B520F20BD2 /* Pods_Weibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CAFC313A3AF71596AB4C85C /* Pods_Weibo.framework */; };
+		4401619322C102FF008D48E0 /* WBCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4401619222C102FF008D48E0 /* WBCommon.swift */; };
 		444BF35422B7C714000CCAB0 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 444BF35322B7C714000CCAB0 /* main.json */; };
 		449855BC22AC88EF0077653C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449855BB22AC88EF0077653C /* AppDelegate.swift */; };
 		449855C122AC88EF0077653C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449855BF22AC88EF0077653C /* Main.storyboard */; };
@@ -76,6 +77,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4401619222C102FF008D48E0 /* WBCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBCommon.swift; sourceTree = "<group>"; };
 		444BF35322B7C714000CCAB0 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		449855B822AC88EF0077653C /* Weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449855BB22AC88EF0077653C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				4498E25E22B63FC7007D8E64 /* UIColor+Extension.swift */,
 				4498560122ACABDA0077653C /* Bundle+Extensions.swift */,
 				4498560622AD41300077653C /* UIButton+Extension.swift */,
+				4401619222C102FF008D48E0 /* WBCommon.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -678,6 +681,7 @@
 				4498560222ACABDA0077653C /* Bundle+Extensions.swift in Sources */,
 				4498E28D22B641B8007D8E64 /* UILabel+JHExtension.swift in Sources */,
 				4498E29422B641B8007D8E64 /* ServiceManager.swift in Sources */,
+				4401619322C102FF008D48E0 /* WBCommon.swift in Sources */,
 				4498E25F22B63FC7007D8E64 /* UIColor+Extension.swift in Sources */,
 				449855F422AC9C5B0077653C /* WBMainViewController.swift in Sources */,
 				4498E28622B641B8007D8E64 /* Array+JHExtension.swift in Sources */,
@@ -881,7 +885,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Nttdata.Weibo;
+				PRODUCT_BUNDLE_IDENTIFIER = Weibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Weibo/Class/Model/Weibo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -905,7 +909,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Nttdata.Weibo;
+				PRODUCT_BUNDLE_IDENTIFIER = Weibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Weibo/Class/Model/Weibo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

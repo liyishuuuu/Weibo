@@ -14,9 +14,12 @@ extension WBNetWorkManager {
     /// 加载微博数据数组
     ///
     /// - Parameter completion: 完成回调
-    func    statusList(since_id: Int64 = 0, max_id: Int64 = 0, completion: @escaping (_ list: [[String: AnyObject]]?, _ isSuccess: Bool) -> ()) {
+    func statusList(since_id: Int64 = 0, max_id: Int64 = 0, completion: @escaping (_ list: [[String: AnyObject]]?, _ isSuccess: Bool) -> ()) {
+        
+        /// url地址
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
         
+        /// 参数
         let params = ["since_id": "\(since_id)", "max_id": "\(max_id > 0 ? max_id - 1 : 0)"]
         tokenRequest(URLSting: urlString, parameters: params as [String : AnyObject]) { (json, isSuccess) in
 

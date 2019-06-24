@@ -17,7 +17,7 @@ class WBBaseViewController: UIViewController {
     // MARK - 变量
 
     /// 用户登录标记
-    var userLogon = true
+//    var userLogon = true
     /// 上拉加载标记
     var isPullup = false
     /// 访客视图信息字典
@@ -59,7 +59,7 @@ extension WBBaseViewController {
         /// 取消自动缩进，如果隐藏了导航栏，会自动缩进20点
         automaticallyAdjustsScrollViewInsets = false
         self.setupNavigation()
-        userLogon ? setupTableView() : setupVisitorView()
+        WBNetWorkManager.shared.userlogon ? setupTableView() : setupVisitorView()
     }
     
     /// 设置tableView
@@ -152,6 +152,8 @@ extension WBHomeViewController {
     @objc private func register() {
         print(#function)
         print("注册")
+        // 发送通知
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBUsershouldLoginNotification), object: nil)
     }
     @objc private func login() {
         print(#function)

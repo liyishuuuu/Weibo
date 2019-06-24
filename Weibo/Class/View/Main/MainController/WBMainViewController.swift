@@ -18,12 +18,21 @@ class WBMainViewController: UITabBarController {
         super.viewDidLoad()
         setUpChildControllers()
         setUpComposeButton()
+        
+        // 注册通知
+        NotificationCenter.default.addObserver(self, selector: #selector(userLogin), name: NSNotification.Name(rawValue: WBUsershouldLoginNotification), object: nil)
     }
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     // MARK - 监听方法
     // 撰写微博
     // TODO:
     // @objc 允许这个函数在‘运行时’ 通过OC的消息机制被调用
+    @objc private func userLogin(n: Notification) {
+        print("用户登录通知\(n)")
+    }
     @objc private func componseStatus() {
         print("撰写微博")
         

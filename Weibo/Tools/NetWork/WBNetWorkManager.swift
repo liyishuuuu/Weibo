@@ -9,7 +9,8 @@
 import UIKit
 import AFNetworking  /// 导入框架文件夹的名字
 
-/// swift 中支持任意数据类型
+/// enum swift 中支持任意数据类型
+/// 网络请求方式
 enum WBHttpMethod {
     case GET
     case POST
@@ -23,6 +24,11 @@ class WBNetWorkManager: AFHTTPSessionManager {
     /// 访问令牌，每一个网络请求，都基于此令牌（登录除外）
     /// 为了保护用户安全，token是有时限的。默认是三天
     var accessToken: String? = "2.00tV15KGy73f2B29b465489aGj4uqB"
+    
+    /// 用户登录标记
+    var userlogon: Bool {
+        return accessToken != nil
+    }
 
     /// 专门负责token的拼接 网络请求方法
     func tokenRequest(method: WBHttpMethod = .GET, URLSting: String, parameters: [String: AnyObject]?, completion: @escaping (_ json: AnyObject?, _ isSuccess: Bool)->()) {
