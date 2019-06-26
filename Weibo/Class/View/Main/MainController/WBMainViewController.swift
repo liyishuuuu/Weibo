@@ -35,7 +35,7 @@ class WBMainViewController: UITabBarController {
         print("用户登录通知\(n)")
         
         // 展现登录控制器
-        let vc = WBOAuthViewController()
+        let vc = UINavigationController(rootViewController: WBOAuthViewController())
         present(vc, animated: true, completion: nil)
     }
     @objc private func componseStatus() {
