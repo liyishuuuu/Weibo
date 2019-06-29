@@ -18,8 +18,14 @@ class WBUserAccountModel: NSObject {
     var uid: String?
     
     // access_Token的生命周期
-    var expires_in: TimeInterval = 0
-    
+    var expires_in: TimeInterval = 0 {
+        didSet {
+            expiresDate = Date(timeIntervalSinceNow: expires_in)
+        }
+    }
+
+    // access_Token过期日期
+    var expiresDate: Date?
     override var description: String {
         return yy_modelDescription()
     }
