@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 /// 通过VewView来加载新浪微博授权页面控制器
 class WBOAuthViewController: UIViewController {
@@ -100,15 +101,15 @@ extension WBOAuthViewController: UIWebViewDelegate {
         //从query中获取 授权码
         let code = request.url?.query?.substring(from: "code=".endIndex)
         print("获取授权码----\(String(describing: code))")
-        return false
+        return true
     }
 
     func webViewDidStartLoad(_ webView: UIWebView) {
-        
+        SVProgressHUD.show()
     }
 
     func webViewDidFinishLoad(_ webView: UIWebView) {
-        
+        SVProgressHUD.dismiss()
     }
 }
 
