@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import YYModel
 
 // MARK: - 封装新浪微博的网络请求
 extension WBNetWorkManager {
@@ -50,6 +51,10 @@ extension WBNetWorkManager {
         // 发起网络请求
         request(method: .POST, URLSting: urlString, parameters: params as [String : AnyObject]) { (json, isSuccess) in
             print(json)
+
+            // 直接用字典设置userAccount的属性
+            self.userAccount.yy_modelSet(with: json as? [String: AnyObject] ?? [:])
+            print("设置属性后\(self.userAccount)")
         }
     }
 }
