@@ -29,3 +29,27 @@ extension WBNetWorkManager {
         }
     }
 }
+
+// MARK: - OAuth相关方法
+
+extension WBNetWorkManager {
+
+    // 加载AccessToken
+    func loadAccessToken(code: String) {
+
+        // 设置url
+        let urlString = "https://api.weibo.com/oauth2/access_token"
+
+        // 设置参数
+        let params = ["client_id": WBAppKey,
+                      "client_secret": WBAppSecret,
+                      "grant_type": "authorization_code",
+                      "code": code,
+                      "redirect_uri": WBRedirectUri]
+        
+        // 发起网络请求
+        request(method: .POST, URLSting: urlString, parameters: params as [String : AnyObject]) { (json, isSuccess) in
+            print(json)
+        }
+    }
+}

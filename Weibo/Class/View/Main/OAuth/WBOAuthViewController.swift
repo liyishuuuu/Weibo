@@ -11,11 +11,22 @@ import UIKit
 /// 通过VewView来加载新浪微博授权页面控制器
 class WBOAuthViewController: UIViewController {
 
+    // MARK: - 变量
     private lazy var webView = UIWebView()
-    
+
+    // MARK: - override method
+
     override func loadView() {
         view = webView
+        
+        // webView 代理
+        webView.delegate = self
+
+        // 设置背景颜色
         view.backgroundColor = UIColor.white
+
+        //  取消滚动视图
+        webView.scrollView.isScrollEnabled = false
 
         // 设置导航栏
         title = "登录新浪微博"
@@ -29,9 +40,10 @@ class WBOAuthViewController: UIViewController {
                                                             target: self,
                                                             action: #selector(autoFill))
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // 加载授权页面
         let urlString = "https://api.weibo.com/oauth2/authorize?client_id=\(WBAppKey)&redirect_uri=\(WBRedirectUri)"
         
@@ -60,10 +72,43 @@ class WBOAuthViewController: UIViewController {
         
         // 准备js
         let js = "document.getElementById('userId').value = '18273791262';" +
-        "document.getElementById('passwd').value = 'lys735412408';"
+                 "document.getElementById('passwd').value = 'lys735412408';"
         
         // 让webView执行js
         webView.stringByEvaluatingJavaScript(from: js)
+    }
+}
+
+extension WBOAuthViewController: UIWebViewDelegate {
+
+    /// webView 将要加载
+    ///
+    /// - Parameters:
+    ///   - webView: webView
+    ///   - request: 将要加载的请求
+    ///   - navigationType: 导航类型
+    /// - Returns: 是否加载request
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
+        
+        // 如果请求地址包含 https://baidu.com不加载页面，否则加载页面
+        if request.url?.absoluteString.hasPrefix(WBRedirectUri) == false {
+            return true
+        }
+        print("加载请求----\(String(describing: request.url?.absoluteString))")
+        print("加载请求----\(String(describing: request.url?.query))")
+        
+        //从query中获取 授权码
+        let code = request.url?.query?.substring(from: "code=".endIndex)
+        print("获取授权码----\(String(describing: code))")
+        return false
+    }
+
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        
+    }
+
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        
     }
 }
 
