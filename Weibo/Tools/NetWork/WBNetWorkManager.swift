@@ -26,7 +26,7 @@ class WBNetWorkManager: AFHTTPSessionManager {
 
     /// 用户登录标记
     var userlogon: Bool {
-        return userAccount.access_Token != nil
+        return userAccount.access_token != nil
     }
 
     /// 专门负责token的拼接 网络请求方法
@@ -34,7 +34,7 @@ class WBNetWorkManager: AFHTTPSessionManager {
         
         // 处理token字典∫
         // 0.判断token是否为nil，如果是直接返回
-        guard let token = userAccount.access_Token else {
+        guard let token = userAccount.access_token else {
             print("没有token， 需要登录")
             // TODO: 发送通知，提醒用户登录
             completion(nil, false)
