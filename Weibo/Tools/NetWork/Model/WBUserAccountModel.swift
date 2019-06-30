@@ -35,7 +35,23 @@ class WBUserAccountModel: NSObject, Codable {
     override var description: String {
         return yy_modelDescription()
     }
-    
+
+    override init() {
+        super.init()
+        
+        // 从磁盘加载保存的文件
+        let docDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        guard let filePath = (docDir as? NSString)?.appendingPathComponent("userAccount.json"),
+            let data = NSData(contentsOfFile: filePath),
+            let dict = try? JSONSerialization.jsonObject(with: data as Data, options: []) as? [String: AnyObject]
+            else {
+                return
+        }
+        
+        // 使用字典设置属性值
+        self.yy_modelSet(with: dict)
+        print("使用字典从沙盒加载用户信息\(self)")
+    }
     @objc func saveAccount() {
 
         // 1.模型转字典
