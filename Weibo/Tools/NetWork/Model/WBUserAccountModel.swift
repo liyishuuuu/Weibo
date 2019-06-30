@@ -9,6 +9,9 @@
 import UIKit
 import YYModel
 
+/** 用户信息文件 */
+let accountFile = "userAccount.json"
+
 class WBUserAccountModel: NSObject, Codable {
 
     // 访问令牌
