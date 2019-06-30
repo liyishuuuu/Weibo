@@ -8,7 +8,6 @@
 
 import Foundation
 import YYModel
-import SwiftyJSON
 
 // MARK: - 封装新浪微博的网络请求
 extension WBNetWorkManager {

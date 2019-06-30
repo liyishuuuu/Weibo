@@ -51,6 +51,21 @@ class WBUserAccountModel: NSObject, Codable {
         // 使用字典设置属性值
         self.yy_modelSet(with: dict)
         print("使用字典从沙盒加载用户信息\(self)")
+        
+        // 判断token是否过期
+//        expiresDate = Date(timeIntervalSinceNow: -3600 * 24)
+        if expiresDate?.compare(Date()) != .orderedDescending {
+            print("账户过期")
+
+            // 清空token
+            access_token = nil
+            uid = nil
+
+            // 删除账户文件
+            print("文件路径: \(filePath)")
+           _ = try? FileManager.default.removeItem(atPath: filePath)
+        }
+        print("账户正常\(self)")
     }
     @objc func saveAccount() {
 
