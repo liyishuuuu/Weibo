@@ -108,6 +108,10 @@ extension WBOAuthViewController: UIWebViewDelegate {
                 SVProgressHUD.showInfo(withStatus: "网络请求失败")
             } else {
                 SVProgressHUD.showInfo(withStatus: "网络请求成功")
+                
+                // 发送通知
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBUserLoginSucceedNotification), object: nil)
+                self.close()
             }
         }
         return true
