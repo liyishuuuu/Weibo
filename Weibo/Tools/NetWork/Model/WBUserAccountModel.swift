@@ -16,10 +16,10 @@ class WBUserAccountModel: NSObject, Codable {
 
     // 访问令牌
     @objc var access_token: String?
-    
+
     // 用户代号
     @objc var uid: String?
-    
+
     // access_Token的生命周期 秒 递减
     @objc var expires_in: TimeInterval = 0 {
         didSet {
@@ -38,7 +38,7 @@ class WBUserAccountModel: NSObject, Codable {
 
     override init() {
         super.init()
-        
+
         // 从磁盘加载保存的文件
         let docDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         guard let filePath = (docDir as? NSString)?.appendingPathComponent("userAccount.json"),
@@ -47,13 +47,14 @@ class WBUserAccountModel: NSObject, Codable {
             else {
                 return
         }
-        
+
         // 使用字典设置属性值
         self.yy_modelSet(with: dict)
         print("使用字典从沙盒加载用户信息\(self)")
-        
+
         // 判断token是否过期
-//        expiresDate = Date(timeIntervalSinceNow: -3600 * 24)
+        /** 测试日期过期代码 */
+        /**** expiresDate = Date(timeIntervalSinceNow: -3600 * 24) */
         if expiresDate?.compare(Date()) != .orderedDescending {
             print("账户过期")
 
