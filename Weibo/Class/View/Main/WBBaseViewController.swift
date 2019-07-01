@@ -41,6 +41,16 @@ class WBBaseViewController: UIViewController {
         self.loadData()
         self.setUpUI()
         tableView?.tableFooterView =  UIView.init(frame: CGRect.zero)
+
+        // 注册通知
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(loginSuccess),
+                                               name: NSNotification.Name(rawValue: WBUserLoginSucceedNotification),
+                                               object: nil)
+    }
+    deinit {
+        // 注销通知
+        NotificationCenter.default.removeObserver(self)
     }
 
     /// 重写title的didset
@@ -162,8 +172,22 @@ extension WBBaseViewController {
     @objc private func login() {
         print(#function)
         print("登录")
+
         // 发送通知
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBUsershouldLoginNotification), object: nil)
+    }
+
+    // 登录成功处理
+    @objc private func loginSuccess(n: Notification) {
+        print("登录成功")
+
+        // 更新UI
+        // 需要重新设置View
+        // 在访问View的getter时，如果View == nil， 会调用loadView  - > viewDidLoad
+        view = nil
+
+        // 注销通知
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
