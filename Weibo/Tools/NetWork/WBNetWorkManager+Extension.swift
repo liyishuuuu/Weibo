@@ -35,8 +35,13 @@ extension WBNetWorkManager {
 
 extension WBNetWorkManager {
 
+    
     // 加载AccessToken
-    func loadAccessToken(code: String) {
+    ///
+    /// - Parameters:
+    ///   - code: 授权码
+    ///   - completion: 完成回调(是否成功)
+    func loadAccessToken(code: String, completion: @escaping (_ isSuccess: Bool) -> ()) {
 
         // 设置url
         let urlString = "https://api.weibo.com/oauth2/access_token"
@@ -51,12 +56,16 @@ extension WBNetWorkManager {
         // 发起网络请求
         request(method: .POST, URLSting: urlString, parameters: params as [String : AnyObject]) { (json, isSuccess) in
 
+            // 如果请求失败,对用户数据不会有任何影响
             // 直接用字典设置userAccount的属性
             self.userAccount.yy_modelSet(with: json as! [String: AnyObject])
             print("设置属性后\(self.userAccount)")
 
             // 保存模型
             self.userAccount.saveAccount()
+
+            // 完成回调
+            completion(isSuccess)
         }
     }
 }
