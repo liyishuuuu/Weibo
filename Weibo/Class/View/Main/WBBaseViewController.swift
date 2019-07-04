@@ -82,6 +82,9 @@ extension WBBaseViewController {
         
         // 设置内容缩进
         tableView.contentInset = UIEdgeInsets(top: 40, left: 0, bottom: 0, right: 0)
+        
+        //  修改指示器的缩进
+        tableView.scrollIndicatorInsets = tableView.contentInset
 
         // 设置刷新控件
         /// 1.实例化控件
@@ -189,7 +192,7 @@ extension WBBaseViewController {
         // 注销通知
         NotificationCenter.default.removeObserver(self)
     }
-}
+}   
 
 /// 解决NavigationBar高度问题
 class SecondNavigationBar: UINavigationBar {
