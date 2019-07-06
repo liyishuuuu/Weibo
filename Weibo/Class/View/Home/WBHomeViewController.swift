@@ -95,16 +95,14 @@ extension WBHomeViewController {
         
         /// 设置导航栏标题
         self.setupNavTitle()
-
+        
     }
 
     /// 设置导航栏标题
     private func setupNavTitle() {
-        let button = UIButton()
-        button.setTitle("_亦舒__", for: .normal)
-        button.setTitleColor(UIColor.darkGray, for: .normal)
-        button.setImage(UIImage(named: "navigationbar_arrow_up"), for: [])
-        button.setImage(UIImage(named: "navigationbar_arrow_down"), for: .selected)
+        
+        let title = WBNetWorkManager.shared.userAccount.screen_name
+        let button = WBTitleButton(title: title)
         navItem.titleView = button
         button.addTarget(self, action: #selector(clickTitleButton), for: .touchUpInside)
     }
