@@ -93,6 +93,24 @@ extension WBHomeViewController {
         /// 1.添加监听方法
         refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
         
+        /// 设置导航栏标题
+        self.setupNavTitle()
+
+    }
+
+    /// 设置导航栏标题
+    private func setupNavTitle() {
+        let button = UIButton()
+        button.setTitle("_亦舒__", for: .normal)
+        button.setTitleColor(UIColor.darkGray, for: .normal)
+        button.setImage(UIImage(named: "navigationbar_arrow_up"), for: [])
+        button.setImage(UIImage(named: "navigationbar_arrow_down"), for: .selected)
+        navItem.titleView = button
+        button.addTarget(self, action: #selector(clickTitleButton), for: .touchUpInside)
+    }
+
+    @objc private func clickTitleButton(btn: UIButton) {
+        btn.isSelected = !btn.isSelected
     }
 
     @objc private func showBlog() {

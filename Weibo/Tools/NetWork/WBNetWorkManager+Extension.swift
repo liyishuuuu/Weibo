@@ -90,7 +90,6 @@ extension WBNetWorkManager {
 
         // 发起网络请求
         tokenRequest(URLSting: urlString, parameters: params as [String : AnyObject]) { (json, isSuccess) in
-//            print(json ?? " ")
 
             // 完成回调
             completion((json as? [String: AnyObject]) ?? [:])
