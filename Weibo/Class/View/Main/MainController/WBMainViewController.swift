@@ -15,11 +15,16 @@ import SVProgressHUD
  */
 class WBMainViewController: UITabBarController {
 
+    // 定时器
+    private var timer: Timer?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpChildControllers()
         setUpComposeButton()
         
+        // 设置新特性视图
+        setupNewFeatureViews()
         // 注册通知
         NotificationCenter.default.addObserver(self, selector: #selector(userLogin), name: NSNotification.Name(rawValue: WBUsershouldLoginNotification), object: nil)
     }
@@ -130,5 +135,31 @@ extension WBMainViewController {
         ///实例化导航控制器的时候回调用push方法，将rootViewController压栈
         let nav = WBNavigationController(rootViewController: vc)
         return nav
+    }
+}
+
+// MARK: - 新特性视图处理
+extension WBMainViewController {
+
+    // 设置新特性视图
+    func setupNewFeatureViews() {
+
+        // 0. 判断是否登录
+        if !WBNetWorkManager.shared.userlogon {
+            return
+        }
+
+        // 1.如果更新，显示新特性, 否则显示欢迎
+        let v = isNewFeature ? WBNewFeatureView() : WBWelcomeView()
+
+        // 2.添加视图
+        v.frame = view.bounds
+        view.addSubview(v)
+    }
+
+    /// extention 可以有计算型属性，不会占存储空间
+    /// 构造函数，给属性分配空间
+    private var isNewFeature: Bool {
+        return true
     }
 }
