@@ -36,7 +36,10 @@ class WBNetWorkManager: AFHTTPSessionManager {
         // 0.判断token是否为nil，如果是直接返回
         guard let token = userAccount.access_token else {
             print("没有token， 需要登录")
-            // TODO: 发送通知，提醒用户登录
+
+            // 发送通知，提醒用户登录
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBUsershouldLoginNotification),
+                                            object: nil)
             completion(nil, false)
             return
         }
@@ -75,6 +78,8 @@ class WBNetWorkManager: AFHTTPSessionManager {
                 print("token过期")
                 
                 // TODO:发送通知，提醒用户再次登录
+                NotificationCenter.default.post(name: Notification.Name.init(WBUsershouldLoginNotification),
+                                                object: "bad token")
             }
             print("网络请求错误\(Error)")
             completion(nil, false)
