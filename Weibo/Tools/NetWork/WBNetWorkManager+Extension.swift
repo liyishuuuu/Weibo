@@ -61,11 +61,40 @@ extension WBNetWorkManager {
             self.userAccount.yy_modelSet(with: json as! [String: AnyObject])
             print("设置属性后\(self.userAccount)")
 
-            // 保存模型
-            self.userAccount.saveAccount()
+            //加载当前用户信息
+            self.loadUserInfo(completion: { (dict) in
+
+                // 使用用户信息字典设置用户账户信息(昵称，头像)
+                self.userAccount.yy_modelSet(with: dict)
+                
+                // 保存模型
+                self.userAccount.saveAccount()
+
+                // 用户信息加载完成后，完成回调
+                completion(isSuccess)
+            })
+        }
+    }
+}
+
+// 用户信息
+extension WBNetWorkManager {
+
+    /// 加载用户信息
+    func loadUserInfo(completion: @escaping (_ dict: [String: AnyObject])->()) {
+        guard let uid = userAccount.uid else {
+            return
+        }
+        let urlString = "https://api.weibo.com/2/users/show.json"
+        let params = ["uid": uid]
+
+        // 发起网络请求
+        tokenRequest(URLSting: urlString, parameters: params as [String : AnyObject]) { (json, isSuccess) in
+//            print(json ?? " ")
 
             // 完成回调
-            completion(isSuccess)
+            completion((json as? [String: AnyObject]) ?? [:])
+            
         }
     }
 }
