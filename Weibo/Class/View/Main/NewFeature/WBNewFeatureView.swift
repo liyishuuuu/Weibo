@@ -19,7 +19,7 @@ class WBNewFeatureView: UIView {
     @IBOutlet weak var pageControl: UIPageControl!
     
     @IBAction func enterstatus(_ sender: UIButton) {
-        
+        removeFromSuperview()
     }
 
     // MARK: - class method
@@ -50,5 +50,36 @@ class WBNewFeatureView: UIView {
         // 指定scrollView的属性
         scrollView.contentSize = CGSize(width: CGFloat(count + 1) * rect.width, height: rect.height)
         enterButton.isHidden = true
+        
+        // 设置scrollView的代理
+        scrollView.delegate = self
+    }
+}
+
+extension WBNewFeatureView: UIScrollViewDelegate {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+
+        // 滚动到最后一屏，让视图删除
+        let page = scrollView.contentOffset.x / scrollView.bounds.width
+
+        // 判断是最后一页，删除视图
+        if page == CGFloat(scrollView.subviews.count) {
+            removeFromSuperview()
+        }
+
+        // 判断是倒数第二页，显示按钮
+        enterButton.isHidden = (page != CGFloat(scrollView.subviews.count - 1))
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
+        // 0.一旦滚动，隐藏按钮
+        enterButton.isHidden = true
+
+        // 1.计算当前偏移量
+        let page = scrollView.contentOffset.x / scrollView.bounds.width + 0.5
+
+        // 设置分页控件
+        pageControl.currentPage = Int(page)
     }
 }
