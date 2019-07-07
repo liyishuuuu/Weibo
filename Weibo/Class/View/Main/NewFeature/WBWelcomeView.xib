@@ -26,7 +26,7 @@
                         <constraint firstAttribute="width" constant="85" id="Jru-ti-u0o"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎归来" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGY-QZ-K1P">
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎归来" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGY-QZ-K1P">
                     <rect key="frame" x="172" y="598" width="70" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
@@ -45,6 +45,11 @@
                 <constraint firstItem="Rs0-K8-DiY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="zgh-Wo-KgR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="BottunCons" destination="l5n-5K-ASD" id="xt1-FH-G4C"/>
+                <outlet property="iconView" destination="VrJ-Z0-otg" id="Lm2-EB-05n"/>
+                <outlet property="tipLabel" destination="XGY-QZ-K1P" id="JN9-gb-1Fe"/>
+            </connections>
         </view>
     </objects>
     <resources>
