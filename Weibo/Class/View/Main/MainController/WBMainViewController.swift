@@ -161,7 +161,7 @@ extension WBMainViewController {
         }
 
         // 1.如果更新，显示新特性, 否则显示欢迎
-        let v = isNewFeature ? WBNewFeatureView() : WBWelcomeView.welcomeView()
+        let v = isNewFeature ? WBNewFeatureView.newFeatureView() : WBWelcomeView.welcomeView()
 
         // 2.添加视图
         view.addSubview(v)
