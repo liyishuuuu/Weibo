@@ -15,6 +15,7 @@
 		4469A50122D098AB00B5EED4 /* WBWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4469A50022D098AB00B5EED4 /* WBWelcomeView.swift */; };
 		4469A50322D0995800B5EED4 /* WBNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4469A50222D0995800B5EED4 /* WBNewFeatureView.swift */; };
 		4469A50522D18ACC00B5EED4 /* WBWelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4469A50422D18ACC00B5EED4 /* WBWelcomeView.xib */; };
+		4469A50722D1BDC400B5EED4 /* WBNewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4469A50622D1BDC400B5EED4 /* WBNewFeatureView.xib */; };
 		449855BC22AC88EF0077653C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449855BB22AC88EF0077653C /* AppDelegate.swift */; };
 		449855C122AC88EF0077653C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449855BF22AC88EF0077653C /* Main.storyboard */; };
 		449855C322AC88F00077653C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449855C222AC88F00077653C /* Assets.xcassets */; };
@@ -90,6 +91,7 @@
 		4469A50022D098AB00B5EED4 /* WBWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBWelcomeView.swift; sourceTree = "<group>"; };
 		4469A50222D0995800B5EED4 /* WBNewFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBNewFeatureView.swift; sourceTree = "<group>"; };
 		4469A50422D18ACC00B5EED4 /* WBWelcomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBWelcomeView.xib; sourceTree = "<group>"; };
+		4469A50622D1BDC400B5EED4 /* WBNewFeatureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBNewFeatureView.xib; sourceTree = "<group>"; };
 		449855B822AC88EF0077653C /* Weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449855BB22AC88EF0077653C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		449855C022AC88EF0077653C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				4469A50022D098AB00B5EED4 /* WBWelcomeView.swift */,
 				4469A50222D0995800B5EED4 /* WBNewFeatureView.swift */,
 				4469A50422D18ACC00B5EED4 /* WBWelcomeView.xib */,
+				4469A50622D1BDC400B5EED4 /* WBNewFeatureView.xib */,
 			);
 			path = NewFeature;
 			sourceTree = "<group>";
@@ -603,6 +606,7 @@
 			files = (
 				444BF35422B7C714000CCAB0 /* main.json in Resources */,
 				449855C322AC88F00077653C /* Assets.xcassets in Resources */,
+				4469A50722D1BDC400B5EED4 /* WBNewFeatureView.xib in Resources */,
 				4469A50522D18ACC00B5EED4 /* WBWelcomeView.xib in Resources */,
 				449855C122AC88EF0077653C /* Main.storyboard in Resources */,
 			);
