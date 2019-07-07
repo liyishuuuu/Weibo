@@ -20,6 +20,7 @@ class WBFriendsViewController: WBBaseViewController {
     }
 
 }
+
 extension WBFriendsViewController {
 
     /// 重写父类的方法
