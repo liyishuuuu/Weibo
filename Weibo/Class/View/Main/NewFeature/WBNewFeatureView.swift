@@ -17,7 +17,14 @@ class WBNewFeatureView: UIView {
     @IBOutlet weak var enterButton: UIButton!
     /** pageControl */
     @IBOutlet weak var pageControl: UIPageControl!
-    
+
+    // MARK: - IBAction
+
+    /**
+     * 进入微博按钮
+     *
+     * - Parameter sender: sender
+     */
     @IBAction func enterstatus(_ sender: UIButton) {
         removeFromSuperview()
     }
@@ -31,6 +38,8 @@ class WBNewFeatureView: UIView {
         return v
     }
 
+    // MARK: - override method
+    
     override func awakeFromNib() {
 
         // 添加4个图像视图
@@ -56,7 +65,15 @@ class WBNewFeatureView: UIView {
     }
 }
 
+// MARK: - UIScrollViewDelegate
+
 extension WBNewFeatureView: UIScrollViewDelegate {
+
+    /**
+     * 当scrollview停止时调用
+     *
+     * - Parameter scrollView: UIScrollView
+     */
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
 
         // 滚动到最后一屏，让视图删除
@@ -71,6 +88,11 @@ extension WBNewFeatureView: UIScrollViewDelegate {
         enterButton.isHidden = (page != CGFloat(scrollView.subviews.count - 1))
     }
 
+    /**
+     * 当scrollview滚动时调用
+     *
+     * - Parameter scrollView: UIScrollView
+     */
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
 
         // 0.一旦滚动，隐藏按钮
