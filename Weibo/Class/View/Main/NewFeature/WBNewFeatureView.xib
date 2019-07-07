@@ -27,7 +27,7 @@
                         <action selector="enterstatus:" destination="iN0-l3-epB" eventType="touchUpInside" id="iYT-ZC-EQJ"/>
                     </connections>
                 </button>
-                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="IU2-Uf-IsS">
+                <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="IU2-Uf-IsS">
                     <rect key="frame" x="160" y="521" width="55" height="37"/>
                     <color key="pageIndicatorTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="currentPageIndicatorTintColor" red="0.83897344559585496" green="0.27825943493482425" blue="0.1485546664399276" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
