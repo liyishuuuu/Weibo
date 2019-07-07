@@ -47,6 +47,10 @@ class WBWelcomeView: UIView {
         // 如果网络图像没有下载完成，线显示占位图像
         // 如果不指定占位图像，之前的图像会被清空
         iconView.setImageWith(url, placeholderImage: UIImage(named: "avatar_default_big"))
+        
+        // 设置圆角
+        iconView.layer.cornerRadius = iconView.bounds.width * 0.5
+        iconView.layer.masksToBounds = true
     }
 
     /**
