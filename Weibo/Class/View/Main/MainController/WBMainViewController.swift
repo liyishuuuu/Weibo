@@ -25,6 +25,7 @@ class WBMainViewController: UITabBarController {
         
         // 设置新特性视图
         setupNewFeatureViews()
+
         // 注册通知
         NotificationCenter.default.addObserver(self, selector: #selector(userLogin), name: NSNotification.Name(rawValue: WBUsershouldLoginNotification), object: nil)
     }
@@ -144,7 +145,7 @@ extension WBMainViewController {
     // 设置新特性视图
     func setupNewFeatureViews() {
 
-        // 0. 判断是否登录
+        // 0.判断是否登录
         if !WBNetWorkManager.shared.userlogon {
             return
         }
@@ -160,6 +161,18 @@ extension WBMainViewController {
     /// extention 可以有计算型属性，不会占存储空间
     /// 构造函数，给属性分配空间
     private var isNewFeature: Bool {
-        return true
+        // 1. 取当前版本号
+        print(Bundle.main.infoDictionary ?? "")
+        let currentVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+
+        let docDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        let path: String = (docDir as? NSString)?.appendingPathComponent("path.json") ?? ""
+        let sandBoxVersion = try? (String(contentsOfFile: path))
+        
+        // 2.将当前版本号保存在沙盒中
+        try? currentVersion.write(toFile: path, atomically: true, encoding: .utf8)
+
+        // 3. 返回两个版本号，是否一致
+        return currentVersion != sandBoxVersion
     }
 }

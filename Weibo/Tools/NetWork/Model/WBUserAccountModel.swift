@@ -47,7 +47,7 @@ class WBUserAccountModel: NSObject, Codable {
 
         // 从磁盘加载保存的文件
         let docDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-        guard let filePath = (docDir as? NSString)?.appendingPathComponent("userAccount.json"),
+        guard let filePath = (docDir as? NSString)?.appendingPathComponent(accountFile),
             let data = NSData(contentsOfFile: filePath),
             let dict = try? JSONSerialization.jsonObject(with: data as Data, options: []) as? [String: AnyObject]
             else {
@@ -86,7 +86,7 @@ class WBUserAccountModel: NSObject, Codable {
         // 2.字典序列化
         let docDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         guard let data = try? JSONSerialization.data(withJSONObject: dict, options: []),
-              let filePath = (docDir as? NSString)?.appendingPathComponent("userAccount.json") else {
+              let filePath = (docDir as? NSString)?.appendingPathComponent(accountFile) else {
             return
         }
 
