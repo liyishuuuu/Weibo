@@ -146,7 +146,7 @@ extension WBMainViewController {
     func setupNewFeatureViews() {
 
         // 0.判断是否登录
-        if WBNetWorkManager.shared.userlogon {
+        if !WBNetWorkManager.shared.userlogon {
             return
         }
 

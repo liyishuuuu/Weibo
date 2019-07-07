@@ -25,6 +25,23 @@ class WBWelcomeView: UIView {
         return v
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override func awakeFromNib() {
+        
+        // 1.url
+        guard let urlString = WBNetWorkManager.shared.userAccount.avatar_large,
+              let url = URL(string: urlString) else {
+            return
+        }
+        // 2.设置头像
+        // 如果网络图像没有下载完成，线显示占位图像
+        // 如果不指定占位图像，之前的图像会被清空
+        iconView.setImageWith(url, placeholderImage: UIImage(named: "avatar_default_big"))
+    }
+    
     /**
      * 视图被添加到window上
      */
@@ -47,6 +64,10 @@ class WBWelcomeView: UIView {
                         // 更新约束
                         self.layoutIfNeeded()
         }, completion: { (_) in
+            UIView.animate(withDuration: 1.0, animations: {
+                self.tipLabel.alpha = 1
+            }, completion: { (_) in
+            })
         })
     }
 }
