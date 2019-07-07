@@ -16,22 +16,24 @@ class WBBaseViewController: UIViewController {
 
     // MARK - 变量
 
-    /// 用户登录标记
-//    var userLogon = true
-    /// 上拉加载标记
+    /** 上拉加载标记 */
     var isPullup = false
-    /// 访客视图信息字典
+
+    /** 访客视图信息字典 */
     var visitorInfoDict = [String: String]()
-    /// 定义tableView, 如果用户没有登录就不创建
+
+    /** 定义tableView, 如果用户没有登录就不创建 */
     var tableView: UITableView?
-    /// 定义刷新控件
+
+    /** 定义刷新控件 */
     var refreshControl: UIRefreshControl?
-    /// 自定义导航条
+
+    /** 自定义导航条 */
     lazy var navigationBar = SecondNavigationBar(frame: CGRect(x: 0,
                                                                y: 0,
                                                                width: self.view.frame.size.width,
                                                                height: 64))
-    /// 自定义导航条目，以后设置导航栏按钮使用 navItem
+    /** 自定义导航条目，以后设置导航栏按钮使用 navItem */
     lazy var navItem = UINavigationItem()
 
     // MARK - override
@@ -119,9 +121,11 @@ extension WBBaseViewController {
 
     /// 设置导航条
     private func setupNavigation() {
+
         /// 添加导航条
         view.addSubview(navigationBar)
         navigationBar.items = [navItem]
+
         /// 设置navigationBar的字体颜色
         navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.darkGray,
                                              NSAttributedString.Key.font:UIFont.systemFont(ofSize:19)]
@@ -147,6 +151,7 @@ extension WBBaseViewController: UITableViewDelegate, UITableViewDataSource {
 
     // 在显示最后一行的时候调用，做上拉刷新
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+
         // 1.判断indexPath是否是最后一行
         let row = indexPath.row
         let section = tableView.numberOfSections - 1

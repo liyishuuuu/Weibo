@@ -14,26 +14,28 @@ let accountFile = "userAccount.json"
 
 class WBUserAccountModel: NSObject, Codable {
 
-    // 访问令牌
+    // MARK: - 变量
+
+    /** 访问令牌 */
     @objc var access_token: String?
 
-    // 用户代号
+    /** 用户代号 */
     @objc var uid: String?
 
-    // access_Token的生命周期 秒 递减
+    /** access_Token的生命周期 秒 递减 */
     @objc var expires_in: TimeInterval = 0 {
         didSet {
             expiresDate = Date(timeIntervalSinceNow: expires_in)
         }
     }
 
-    // access_Token过期日期
+    /** access_Token过期日期 */
     @objc var expiresDate: Date?
-    
-    // 用户昵称
+
+    /** 用户昵称 */
     @objc var screen_name: String?
-    
-    // 用户头像地址（大图），180×180像素
+
+    /** 用户头像地址（大图），180×180像素 */
     @objc var avatar_large: String?
 
     // MARK: - override method
@@ -75,6 +77,9 @@ class WBUserAccountModel: NSObject, Codable {
         }
         print("账户正常\(self)")
     }
+
+    // MARK: - method
+
     @objc func saveAccount() {
 
         // 1.模型转字典

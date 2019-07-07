@@ -15,6 +15,8 @@ class WBHomeViewController: WBBaseViewController {
     // 实例化ViewModel
     private lazy var listViewModel = WBStatusListViewModel()
 
+    // MARK: - override method
+
     /// 加载数据
     override func loadData() {
         listViewModel.loadStatus(isPullUp: isPullup) { (isSuccess, isMorePullUp) in
@@ -37,6 +39,7 @@ class WBHomeViewController: WBBaseViewController {
 }
 
 // MARK: - 具体的数据源方法实现，override 重写父类方法，不需要super，在基类中已经实现
+
 extension WBHomeViewController {
 
     /// 设置cell的个数
@@ -62,6 +65,7 @@ extension WBHomeViewController {
 }
 
 // MARK: - 设置界面
+
 extension WBHomeViewController {
 
     /// 重写父类的方法

@@ -16,21 +16,26 @@ import YYModel
  如果是OC, 一律继承自NSObject
  */
 
-// 上拉刷新最大次数
+/** 上拉刷新最大次数 */
 private let maxPullUpTimes = 3
+
 class WBStatusListViewModel: NSObject {
 
-    // 微博模型数组懒加载
+    // MARK: - 变量
+
+    /** 微博模型数组懒加载 */
     @objc lazy var statusList = [WBStatusModel]()
     
-    // 上拉刷新次数
+    /** 上拉刷新次数 */
     private var pullUpTimes = 0
+
+    // MARK: - internal method
 
     /// 加载微博列表
     ///
     /// - Parameter isPullUp: 是否上拉刷新标记
     /// - Parameter completion: 完成回调(网络请求是否成功)
-    func loadStatus(isPullUp: Bool, completion: @escaping (_ isSuccess: Bool, _ isMorePullUp: Bool) -> ()) {
+    internal func loadStatus(isPullUp: Bool, completion: @escaping (_ isSuccess: Bool, _ isMorePullUp: Bool) -> ()) {
         
         // 判断是否是上拉刷新，同时检查刷新次数
         if isPullUp && pullUpTimes > maxPullUpTimes {

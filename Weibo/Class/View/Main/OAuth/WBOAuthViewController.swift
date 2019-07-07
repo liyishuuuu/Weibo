@@ -13,6 +13,7 @@ import SVProgressHUD
 class WBOAuthViewController: UIViewController {
 
     // MARK: - 变量
+
     private lazy var webView = UIWebView()
 
     // MARK: - override method

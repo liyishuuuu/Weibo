@@ -15,16 +15,17 @@ enum WBHttpMethod {
     case GET
     case POST
 }
+
 // 网络管理工具
 class WBNetWorkManager: AFHTTPSessionManager {
     
-    /// 静态区，常量，闭包
+    /** 静态区，常量，闭包 */
     static let shared = WBNetWorkManager()
 
-    // 用户账号的懒加载属性
+    /** 用户账号的懒加载属性 */
     lazy var userAccount = WBUserAccountModel()
 
-    /// 用户登录标记
+    /** 用户登录标记 */
     var userlogon: Bool {
         return userAccount.access_token != nil
     }
@@ -43,12 +44,15 @@ class WBNetWorkManager: AFHTTPSessionManager {
             completion(nil, false)
             return
         }
+
         // 1.判断参数字典是否存在
         var parameters = parameters
         if parameters == nil {
+
             // 实例化字典
             parameters = [String: AnyObject]()
         }
+
         // 2. 设置参数字典，代码在此处字典一定有值
         parameters!["access_token"] = token as AnyObject
         

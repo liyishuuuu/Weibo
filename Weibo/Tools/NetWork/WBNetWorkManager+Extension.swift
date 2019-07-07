@@ -16,10 +16,10 @@ extension WBNetWorkManager {
     ///
     /// - Parameter completion: 完成回调
     func statusList(since_id: Int64 = 0, max_id: Int64 = 0, completion: @escaping (_ list: [[String: AnyObject]]?, _ isSuccess: Bool) -> ()) {
-        
+
         /// url地址
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
-        
+
         /// 参数
         let params = ["since_id": "\(since_id)", "max_id": "\(max_id > 0 ? max_id - 1 : 0)"]
         tokenRequest(URLSting: urlString, parameters: params as [String : AnyObject]) { (json, isSuccess) in
@@ -35,7 +35,6 @@ extension WBNetWorkManager {
 
 extension WBNetWorkManager {
 
-    
     // 加载AccessToken
     ///
     /// - Parameters:
@@ -52,7 +51,7 @@ extension WBNetWorkManager {
                       "grant_type": "authorization_code",
                       "code": code,
                       "redirect_uri": WBRedirectUri]
-        
+
         // 发起网络请求
         request(method: .POST, URLSting: urlString, parameters: params as [String : AnyObject]) { (json, isSuccess) in
 
@@ -66,7 +65,7 @@ extension WBNetWorkManager {
 
                 // 使用用户信息字典设置用户账户信息(昵称，头像)
                 self.userAccount.yy_modelSet(with: dict)
-                
+
                 // 保存模型
                 self.userAccount.saveAccount()
 

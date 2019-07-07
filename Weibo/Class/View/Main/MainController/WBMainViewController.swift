@@ -22,7 +22,7 @@ class WBMainViewController: UITabBarController {
         super.viewDidLoad()
         setUpChildControllers()
         setUpComposeButton()
-        
+
         // 设置新特性视图
         setupNewFeatureViews()
 
@@ -44,6 +44,7 @@ class WBMainViewController: UITabBarController {
             SVProgressHUD.showInfo(withStatus: "登录超时，请重新登录")
         }
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+
             // 展现登录控制器
             let vc = UINavigationController(rootViewController: WBOAuthViewController())
             self.present(vc, animated: true, completion: nil)
@@ -53,6 +54,7 @@ class WBMainViewController: UITabBarController {
         print("撰写微博")
         
     }
+
     //懒加载一个button
     lazy var composeButton: UIButton = {
         let btn = UIButton()
@@ -72,12 +74,15 @@ extension WBMainViewController {
         
         /// 加载button
         tabBar.addSubview(composeButton)
+
         /// 设置button位置
         let count = CGFloat(children.count)
+
         // 计算每一个tab 的宽度，解决容错点的问题
         let w = tabBar.bounds.width/count - 1
         composeButton.frame = tabBar.bounds.insetBy(dx: 2 * w, dy: 0)
-        /// 按钮监听方法
+
+        // 按钮监听方法
         composeButton.addTarget(self, action: #selector(componseStatus), for: .touchUpInside)
         
     }
@@ -124,15 +129,20 @@ extension WBMainViewController {
         guard let visitorDict = dict["visitorInfo"] as? [String: String] else {
             return UIViewController()
         }
+
         /// 创建视图控制器
         let vc = cls.init()
+
         /// 设置title
         vc.title = title
+
         ///设置控制器的访客信息字典
         vc.visitorInfoDict = visitorDict
+
         /// 设置 图片
         vc.tabBarItem.image = UIImage(named: "tabbar_" + imageName)
         vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + imageName + "_highlighted")
+
         ///实例化导航控制器的时候回调用push方法，将rootViewController压栈
         let nav = WBNavigationController(rootViewController: vc)
         return nav
@@ -160,6 +170,7 @@ extension WBMainViewController {
     /// extention 可以有计算型属性，不会占存储空间
     /// 构造函数，给属性分配空间
     private var isNewFeature: Bool {
+
         // 1. 取当前版本号
         print(Bundle.main.infoDictionary ?? "")
         let currentVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
