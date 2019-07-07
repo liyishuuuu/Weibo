@@ -10,13 +10,11 @@ import UIKit
 
 // 欢迎视图
 class WBWelcomeView: UIView {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        backgroundColor = UIColor.blue
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+
+    class func welcomeView() -> WBWelcomeView {
+        let nib = UINib(nibName: "WBWelcomeView", bundle: nil)
+        let v = nib.instantiate(withOwner: nil, options: nil)[0] as! WBWelcomeView
+        v.frame = UIScreen.main.bounds
+        return v
     }
 }
