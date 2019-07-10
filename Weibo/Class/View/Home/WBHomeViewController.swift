@@ -51,7 +51,7 @@ extension WBHomeViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         /// 注册原型cell
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(UINib(nibName: "WBStatusNormalCell", bundle: nil), forCellReuseIdentifier: cellId)
 
         /// 取cell
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)

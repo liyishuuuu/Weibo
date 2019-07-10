@@ -80,6 +80,7 @@ class WBWelcomeView: UIView {
             UIView.animate(withDuration: 1.0, animations: {
                 self.tipLabel.alpha = 1
             }, completion: { (_) in
+                self.removeFromSuperview()
             })
         })
     }
