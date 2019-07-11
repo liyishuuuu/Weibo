@@ -54,10 +54,10 @@ extension WBHomeViewController {
         tableView.register(UINib(nibName: "WBStatusNormalCell", bundle: nil), forCellReuseIdentifier: cellId)
 
         /// 取cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! WBStatusCell
 
         /// 设置cell
-        cell.textLabel?.text = self.listViewModel.statusList[indexPath.row].text
+        cell.statusLabel.text = self.listViewModel.statusList[indexPath.row].text
 
         /// 返回cell
         return cell
@@ -83,7 +83,13 @@ extension WBHomeViewController {
         view.insertSubview(tableView, belowSubview: navigationBar)
         tableView.dataSource = self
         tableView.delegate = self
-        
+
+        // tableView设置行高
+        tableView.estimatedRowHeight = 300
+
+        // 取消tableView的分割线
+        tableView.separatorStyle = .none
+
         // 设置内容缩进
         tableView.contentInset = UIEdgeInsets(top: 40, left: 0, bottom: 0, right: 0)
         
