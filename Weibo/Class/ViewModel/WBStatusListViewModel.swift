@@ -23,8 +23,8 @@ class WBStatusListViewModel: NSObject {
 
     // MARK: - 变量
 
-    /** 微博模型数组懒加载 */
-    @objc lazy var statusList = [WBStatusModel]()
+    /** 微博视图模型数组懒加载 */
+    lazy var statusList = [WBStatusViewModel]()
     
     /** 上拉刷新次数 */
     private var pullUpTimes = 0
@@ -43,18 +43,37 @@ class WBStatusListViewModel: NSObject {
             return
         }
         // since_id: 取出数组的第一条微博id
-        let since_id = isPullUp ? 0 : (statusList.first?.id ?? 0)
+        let since_id = isPullUp ? 0 : (statusList.first?.status.id ?? 0)
         
         // max_id: 取出数组的最后一条微博id
-        let max_id = !isPullUp ? 0 : (statusList.last?.id ?? 0)
+        let max_id = !isPullUp ? 0 : (statusList.last?.status.id ?? 0)
 
         WBNetWorkManager.shared.statusList(since_id: since_id, max_id: max_id) { (list, isSuccess) in
 
-            // 字典转模型
-            guard let array = NSArray.yy_modelArray(with: WBStatusModel.self, json: list ?? []) as? [WBStatusModel] else {
-                completion(true, false)
+            // 判断网络请求是否成功
+            if !isSuccess {
+
+                // 直接回调返回
+                completion(false, false)
                 return
             }
+
+            // 字典转模型
+            // 定义可变数组
+            var array = [WBStatusViewModel]()
+
+            // 遍历服务器返回的字典数组，字典转模型
+            for dict in list ?? [] {
+
+                // 创建视图模型，若创建失败，继续后续处理
+                guard let model = WBStatusModel.yy_model(with: dict) else {
+                    return
+                }
+
+                // 建视图模型添加到数组
+                array.append(WBStatusViewModel(model: model))
+            }
+
             print("刷新到\(array.count)条数据\(array)")
             
             if isPullUp {

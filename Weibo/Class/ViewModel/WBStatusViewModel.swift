@@ -10,7 +10,7 @@ import Foundation
 
 class WBStatusViewModel {
     
-    var status: WBStatusModel
+    @objc var status: WBStatusModel
     
     /// 构造函数
     ///
