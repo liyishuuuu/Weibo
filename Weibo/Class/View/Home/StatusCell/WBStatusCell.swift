@@ -28,7 +28,8 @@ class WBStatusCell: UITableViewCell {
             
             // 用户头像
             iconView.cz_setImage(urlString: viewModel?.status.user?.profile_image_url,
-                                 placeholderImage: UIImage(named: "avatar_default_big"))
+                                 placeholderImage: UIImage(named: "avatar_default_big"),
+                                 isAvadar: true)
         }
     }
 

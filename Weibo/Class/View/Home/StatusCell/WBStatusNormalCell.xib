@@ -55,7 +55,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_vip" translatesAutoresizingMaskIntoConstraints="NO" id="T9a-Ia-kwZ" userLabel="认证">
-                        <rect key="frame" x="36.5" y="53.5" width="17" height="17"/>
+                        <rect key="frame" x="32.5" y="49.5" width="17" height="17"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CY0-aL-OZ1" userLabel="内容">
                         <rect key="frame" x="11" y="73" width="42" height="20.5"/>
@@ -70,7 +70,7 @@
                     <constraint firstItem="nrh-19-rDi" firstAttribute="leading" secondItem="BLI-el-U6E" secondAttribute="leading" id="9XP-kD-LJ1"/>
                     <constraint firstItem="nrh-19-rDi" firstAttribute="top" secondItem="BLI-el-U6E" secondAttribute="top" id="Doy-LA-zu9"/>
                     <constraint firstItem="dTU-pX-rlH" firstAttribute="centerY" secondItem="mm0-Dr-CJU" secondAttribute="centerY" id="GZ5-sS-6FQ"/>
-                    <constraint firstItem="T9a-Ia-kwZ" firstAttribute="centerY" secondItem="dWa-bf-U7Y" secondAttribute="bottom" id="Gbr-Af-NrB"/>
+                    <constraint firstItem="T9a-Ia-kwZ" firstAttribute="centerY" secondItem="dWa-bf-U7Y" secondAttribute="bottom" constant="-4" id="Gbr-Af-NrB"/>
                     <constraint firstItem="aZj-k9-9d7" firstAttribute="centerY" secondItem="Fwf-uI-cCZ" secondAttribute="centerY" id="OEc-2r-sM8"/>
                     <constraint firstItem="CY0-aL-OZ1" firstAttribute="top" secondItem="dWa-bf-U7Y" secondAttribute="bottom" constant="11" id="Our-tZ-MGb"/>
                     <constraint firstItem="Fwf-uI-cCZ" firstAttribute="leading" secondItem="dWa-bf-U7Y" secondAttribute="trailing" constant="11" id="ZEj-r6-Por"/>
@@ -79,7 +79,7 @@
                     <constraint firstItem="dWa-bf-U7Y" firstAttribute="leading" secondItem="BLI-el-U6E" secondAttribute="leading" constant="11" id="bG9-Gj-kbb"/>
                     <constraint firstItem="dTU-pX-rlH" firstAttribute="leading" secondItem="mm0-Dr-CJU" secondAttribute="trailing" constant="8" id="eBL-Gw-J1p"/>
                     <constraint firstItem="mm0-Dr-CJU" firstAttribute="leading" secondItem="Fwf-uI-cCZ" secondAttribute="leading" id="iUe-Hh-iAj"/>
-                    <constraint firstItem="T9a-Ia-kwZ" firstAttribute="centerX" secondItem="dWa-bf-U7Y" secondAttribute="trailing" id="oAK-5a-Spp"/>
+                    <constraint firstItem="T9a-Ia-kwZ" firstAttribute="centerX" secondItem="dWa-bf-U7Y" secondAttribute="trailing" constant="-4" id="oAK-5a-Spp"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CY0-aL-OZ1" secondAttribute="trailing" constant="11" id="p5k-iS-DJQ"/>
                     <constraint firstItem="aZj-k9-9d7" firstAttribute="leading" secondItem="Fwf-uI-cCZ" secondAttribute="trailing" constant="4" id="qMR-Mx-ZuF"/>
                     <constraint firstItem="dWa-bf-U7Y" firstAttribute="top" secondItem="nrh-19-rDi" secondAttribute="bottom" constant="12" id="tH1-oo-7Di"/>
