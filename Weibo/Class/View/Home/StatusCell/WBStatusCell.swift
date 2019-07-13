@@ -22,6 +22,9 @@ class WBStatusCell: UITableViewCell {
 
             // 会员图标
             memberIconView.image = viewModel?.memberIcon
+            
+            // vip图标
+            vipIconView.image = viewModel?.vipIcon
         }
     }
 
