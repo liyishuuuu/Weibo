@@ -11,6 +11,7 @@
 		4401619322C102FF008D48E0 /* WBCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4401619222C102FF008D48E0 /* WBCommon.swift */; };
 		4401619622C10920008D48E0 /* WBOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4401619522C10920008D48E0 /* WBOAuthViewController.swift */; };
 		441AEADC22D974440054276A /* WBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441AEADB22D974440054276A /* WBUser.swift */; };
+		441AEADE22D97EA10054276A /* WBStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441AEADD22D97EA10054276A /* WBStatusViewModel.swift */; };
 		4440A7C522D61ABE00D159C0 /* WBStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4440A7C422D61ABE00D159C0 /* WBStatusCell.swift */; };
 		4440A7C722D61B1D00D159C0 /* WBStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4440A7C622D61B1D00D159C0 /* WBStatusNormalCell.xib */; };
 		444BF35422B7C714000CCAB0 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 444BF35322B7C714000CCAB0 /* main.json */; };
@@ -90,6 +91,7 @@
 		4401619222C102FF008D48E0 /* WBCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBCommon.swift; sourceTree = "<group>"; };
 		4401619522C10920008D48E0 /* WBOAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBOAuthViewController.swift; sourceTree = "<group>"; };
 		441AEADB22D974440054276A /* WBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBUser.swift; sourceTree = "<group>"; };
+		441AEADD22D97EA10054276A /* WBStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusViewModel.swift; sourceTree = "<group>"; };
 		4440A7C422D61ABE00D159C0 /* WBStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusCell.swift; sourceTree = "<group>"; };
 		4440A7C622D61B1D00D159C0 /* WBStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBStatusNormalCell.xib; sourceTree = "<group>"; };
 		444BF35322B7C714000CCAB0 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				44C2B3F822BC50A900B014F6 /* WBStatusListViewModel.swift */,
+				441AEADD22D97EA10054276A /* WBStatusViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -786,6 +789,7 @@
 				4498560522AD14DD0077653C /* WBFriendsViewController.swift in Sources */,
 				4498E28522B641B8007D8E64 /* ValueChange.swift in Sources */,
 				4469A50122D098AB00B5EED4 /* WBWelcomeView.swift in Sources */,
+				441AEADE22D97EA10054276A /* WBStatusViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
