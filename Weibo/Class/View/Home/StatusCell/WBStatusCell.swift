@@ -10,6 +10,21 @@ import UIKit
 
 class WBStatusCell: UITableViewCell {
 
+    // 微博视图模型
+    var viewModel: WBStatusViewModel? {
+        didSet {
+
+            // 微博文本
+            statusLabel.text = viewModel?.status.text
+
+            // 姓名
+            nameLabel.text = viewModel?.status.user?.screen_name
+
+            // 会员图标
+            memberIconView.image = viewModel?.memberIcon
+        }
+    }
+
     // MARK: - IBOutlet
     
     /** 头像 */
