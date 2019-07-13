@@ -48,6 +48,7 @@ class WBStatusListViewModel: NSObject {
         // max_id: 取出数组的最后一条微博id
         let max_id = !isPullUp ? 0 : (statusList.last?.status.id ?? 0)
 
+        // 发起网络请求，加载微博数据（字典数组）
         WBNetWorkManager.shared.statusList(since_id: since_id, max_id: max_id) { (list, isSuccess) in
 
             // 判断网络请求是否成功
@@ -65,13 +66,17 @@ class WBStatusListViewModel: NSObject {
             // 遍历服务器返回的字典数组，字典转模型
             for dict in list ?? [] {
 
-                // 创建视图模型，若创建失败，继续后续处理
-                guard let model = WBStatusModel.yy_model(with: dict) else {
-                    return
-                }
+                // 创建微博模型
+                let status = WBStatusModel()
 
-                // 建视图模型添加到数组
-                array.append(WBStatusViewModel(model: model))
+                // 使用字典设置模型数值
+                status.yy_modelSet(with: dict)
+
+                // 使用微博模型设置微博视图模型
+                let viewModel = WBStatusViewModel(model: status)
+
+                // 添加到数组
+                array.append(viewModel)
             }
 
             print("刷新到\(array.count)条数据\(array)")
