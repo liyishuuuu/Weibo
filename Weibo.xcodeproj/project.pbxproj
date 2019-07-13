@@ -12,6 +12,7 @@
 		4401619622C10920008D48E0 /* WBOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4401619522C10920008D48E0 /* WBOAuthViewController.swift */; };
 		441AEADC22D974440054276A /* WBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441AEADB22D974440054276A /* WBUser.swift */; };
 		441AEADE22D97EA10054276A /* WBStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441AEADD22D97EA10054276A /* WBStatusViewModel.swift */; };
+		441AEAE022DA06180054276A /* UIImageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441AEADF22DA06180054276A /* UIImageView+WebImage.swift */; };
 		4440A7C522D61ABE00D159C0 /* WBStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4440A7C422D61ABE00D159C0 /* WBStatusCell.swift */; };
 		4440A7C722D61B1D00D159C0 /* WBStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4440A7C622D61B1D00D159C0 /* WBStatusNormalCell.xib */; };
 		444BF35422B7C714000CCAB0 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 444BF35322B7C714000CCAB0 /* main.json */; };
@@ -92,6 +93,7 @@
 		4401619522C10920008D48E0 /* WBOAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBOAuthViewController.swift; sourceTree = "<group>"; };
 		441AEADB22D974440054276A /* WBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBUser.swift; sourceTree = "<group>"; };
 		441AEADD22D97EA10054276A /* WBStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusViewModel.swift; sourceTree = "<group>"; };
+		441AEADF22DA06180054276A /* UIImageView+WebImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+WebImage.swift"; sourceTree = "<group>"; };
 		4440A7C422D61ABE00D159C0 /* WBStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusCell.swift; sourceTree = "<group>"; };
 		4440A7C622D61B1D00D159C0 /* WBStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBStatusNormalCell.xib; sourceTree = "<group>"; };
 		444BF35322B7C714000CCAB0 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
@@ -487,6 +489,7 @@
 			isa = PBXGroup;
 			children = (
 				44F02EEA22AE8072004D25CD /* UIScreen+CZAddition.h */,
+				441AEADF22DA06180054276A /* UIImageView+WebImage.swift */,
 			);
 			name = Additions;
 			sourceTree = "<group>";
@@ -753,6 +756,7 @@
 				4498E29022B641B8007D8E64 /* UITextField+JHExtension.swift in Sources */,
 				4401619622C10920008D48E0 /* WBOAuthViewController.swift in Sources */,
 				449855FE22AC9DF50077653C /* WBMessageViewController.swift in Sources */,
+				441AEAE022DA06180054276A /* UIImageView+WebImage.swift in Sources */,
 				4498E29322B641B8007D8E64 /* JHPOPAlertView.swift in Sources */,
 				44F02EEC22AFFB40004D25CD /* WBLoginViewController.swift in Sources */,
 				44C2B3F922BC50A900B014F6 /* WBStatusListViewModel.swift in Sources */,
