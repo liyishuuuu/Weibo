@@ -55,7 +55,7 @@ class WBStatusListViewModel: NSObject {
                 completion(true, false)
                 return
             }
-            print("刷新到\(array.count)条数据")
+            print("刷新到\(array.count)条数据\(array)")
             
             if isPullUp {
 
