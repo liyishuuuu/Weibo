@@ -22,6 +22,15 @@ class WBStatusModel: NSObject {
     /** 用户 */
     @objc var user: WBUser?
     
+    /** 转发数 */
+    @objc var reposts_count: Int = 0
+    
+    /** 评论数 */
+    @objc var comments_count: Int = 0
+    
+    /** 表态数 */
+    @objc var attitudes_count: Int = 0
+
     /** 重写description的计算型属性 */
     override var description: String {
         return yy_modelDescription()
