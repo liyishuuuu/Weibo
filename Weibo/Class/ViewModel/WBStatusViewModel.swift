@@ -11,10 +11,11 @@ import UIKit
 
 class WBStatusViewModel: CustomStringConvertible {
 
+    /** 微博数据类型 */
     @objc var status: WBStatusModel
-
+    /**  会员图标 */
     @objc var memberIcon: UIImage?
-    
+    /**  vip等级 */
     @objc var vipIcon: UIImage?
 
     /// 构造函数
