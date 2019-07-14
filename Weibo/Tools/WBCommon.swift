@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK - 应用程序信息
 
@@ -23,3 +24,14 @@ let WBRedirectUri = "https://baidu.com"
 let WBUsershouldLoginNotification = "WBUsershouldLoginNotification"
 // 用户登录成功通知
 let WBUserLoginSucceedNotification = "WBUserLoginSucceedNotification"
+
+// MARK: - 微博配图视图常量
+
+// 配图视图外侧的间距
+let WBStatusPictureViewOutterMargin = CGFloat(12)
+// 配图视图内部图像视图的间距
+let WBStatusPictureViewInnerMargin = CGFloat(3)
+// 视图的宽度
+let WBStatusPictureViewWidth = UIScreen.main.bounds.size.width - 2*WBStatusPictureViewOutterMargin
+// 每个Item默认的宽度
+let WBStatusPictureItemWidth = (WBStatusPictureViewWidth - 2*WBStatusPictureViewInnerMargin) / 3

@@ -139,7 +139,7 @@
                             <constraint firstAttribute="height" constant="284" id="jg4-3f-E1w"/>
                         </constraints>
                         <connections>
-                            <outlet property="weakheightCons" destination="jg4-3f-E1w" id="7rF-tW-OtZ"/>
+                            <outlet property="heightCons" destination="jg4-3f-E1w" id="dVt-EU-0ki"/>
                         </connections>
                     </view>
                 </subviews>

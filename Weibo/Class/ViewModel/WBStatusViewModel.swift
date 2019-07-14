@@ -23,6 +23,8 @@ class WBStatusViewModel: CustomStringConvertible {
     @objc var commentStr: String?
     /** 赞文字 */
     @objc var likeStr: String?
+    /** 配图视图大小 */
+    @objc var pictureViewSize = CGSize()
 
     /// 构造函数
     ///
@@ -52,6 +54,9 @@ class WBStatusViewModel: CustomStringConvertible {
         retweetedStr = countString(count: status.reposts_count, defaultString: "转发")
         commentStr = countString(count: status.comments_count, defaultString: "评论")
         likeStr = countString(count: status.attitudes_count, defaultString: "赞")
+
+        // 计算配图视图 大小
+        pictureViewSize = calcPictureViewSize(count: status.pic_urls?.count)
     }
 
     var description: String {
@@ -73,5 +78,20 @@ class WBStatusViewModel: CustomStringConvertible {
         }
 
         return String(format: "%.02f 万", Double(count) / 10000)
+    }
+
+    private func calcPictureViewSize(count: Int?) -> CGSize {
+        if count == 0 {
+            return CGSize()
+        }
+        // 计算配图视图的宽度
+        // 计算高度
+        // 行数
+        let row = (count! - 1) / 3 + 1
+        // 根据行数计算高度
+        var height = WBStatusPictureViewOutterMargin
+            height += CGFloat(row - 1)*WBStatusPictureViewInnerMargin
+            height += CGFloat(row)*WBStatusPictureItemWidth
+        return CGSize(width: WBStatusPictureViewWidth, height: height)
     }
 }
