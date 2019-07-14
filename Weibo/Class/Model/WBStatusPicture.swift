@@ -11,7 +11,7 @@ import UIKit
 class WBStatusPicture: NSObject {
 
     // 缩略图地址
-    var thumbnail_pic: String?
+    @objc var thumbnail_pic: String?
 
     override var description: String {
         return yy_modelDescription()
