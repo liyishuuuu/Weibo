@@ -31,6 +31,12 @@ class WBStatusModel: NSObject {
     /** 表态数 */
     @objc var attitudes_count: Int = 0
 
+    /** 配图 */
+    @objc var pic_urls: [WBStatusPicture]?
+
+    class func modelContainerPropertyGenericClass() -> [String: AnyClass] {
+        return ["pic_urls": WBStatusPicture.self]
+    }
     /** 重写description的计算型属性 */
     override var description: String {
         return yy_modelDescription()
