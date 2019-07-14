@@ -11,9 +11,12 @@ import UIKit
 class WBStatusToolBar: UIView {
     var viewModel: WBStatusViewModel? {
         didSet {
-            retweetedButton.setTitle("\(String(describing: viewModel?.status.reposts_count))", for: [])
-            commentButton.setTitle("\(String(describing: viewModel?.status.comments_count))", for: [])
-            likeButton.setTitle("\(String(describing: viewModel?.status.attitudes_count))", for: [])
+//            retweetedButton.setTitle("\(String(describing: viewModel?.status.reposts_count))", for: [])
+//            commentButton.setTitle("\(String(describing: viewModel?.status.comments_count))", for: [])
+//            likeButton.setTitle("\(String(describing: viewModel?.status.attitudes_count))", for: [])
+            retweetedButton.setTitle(viewModel?.retweetedStr, for: [])
+            commentButton.setTitle(viewModel?.commentStr, for: [])
+            likeButton.setTitle(viewModel?.likeStr, for: [])
         }
     }
 

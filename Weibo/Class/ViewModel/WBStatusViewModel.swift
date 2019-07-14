@@ -17,6 +17,12 @@ class WBStatusViewModel: CustomStringConvertible {
     @objc var memberIcon: UIImage?
     /**  vip等级 */
     @objc var vipIcon: UIImage?
+    /** 转发文字 */
+    @objc var retweetedStr: String?
+    /** 评论文字 */
+    @objc var commentStr: String?
+    /** 赞文字 */
+    @objc var likeStr: String?
 
     /// 构造函数
     ///
@@ -41,9 +47,31 @@ class WBStatusViewModel: CustomStringConvertible {
         default:
             break
         }
+
+        // 设置底部计数字符串
+        retweetedStr = countString(count: status.reposts_count, defaultString: "转发")
+        commentStr = countString(count: status.comments_count, defaultString: "评论")
+        likeStr = countString(count: status.attitudes_count, defaultString: "赞")
     }
 
     var description: String {
         return status.description
+    }
+
+    /// 给一个数字，返回对应的描述结果
+    ///
+    /// - Parameters:
+    ///   - count: 数字
+    ///   - defaultString: 默认字符串
+    private func countString(count: Int, defaultString: String) -> String {
+        if count == 0 {
+            return defaultString
+        }
+
+        if count < 10000 {
+            return count.description
+        }
+
+        return String(format: "%.02f 万", Double(count) / 10000)
     }
 }
