@@ -62,6 +62,7 @@
 		4498E29422B641B8007D8E64 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E27C22B641B8007D8E64 /* ServiceManager.swift */; };
 		44A2074E22C75E7700CD5BE2 /* WBUserAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A2074D22C75E7700CD5BE2 /* WBUserAccountModel.swift */; };
 		44A5FBF722DA958C00408B68 /* WBStatusToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A5FBF622DA958C00408B68 /* WBStatusToolBar.swift */; };
+		44A5FBF922DABCC700408B68 /* WBStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A5FBF822DABCC700408B68 /* WBStatusPictureView.swift */; };
 		44C2B3F722BC4D0700B014F6 /* WBStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C2B3F622BC4D0700B014F6 /* WBStatusModel.swift */; };
 		44C2B3F922BC50A900B014F6 /* WBStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C2B3F822BC50A900B014F6 /* WBStatusListViewModel.swift */; };
 		44C2B40022BE7AD300B014F6 /* WBBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C2B3FF22BE7AD300B014F6 /* WBBlogViewController.swift */; };
@@ -151,6 +152,7 @@
 		4498E27C22B641B8007D8E64 /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		44A2074D22C75E7700CD5BE2 /* WBUserAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBUserAccountModel.swift; sourceTree = "<group>"; };
 		44A5FBF622DA958C00408B68 /* WBStatusToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusToolBar.swift; sourceTree = "<group>"; };
+		44A5FBF822DABCC700408B68 /* WBStatusPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusPictureView.swift; sourceTree = "<group>"; };
 		44C2B3F622BC4D0700B014F6 /* WBStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusModel.swift; sourceTree = "<group>"; };
 		44C2B3F822BC50A900B014F6 /* WBStatusListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusListViewModel.swift; sourceTree = "<group>"; };
 		44C2B3FE22BE70B000B014F6 /* Weibo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Weibo-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -211,8 +213,9 @@
 			isa = PBXGroup;
 			children = (
 				4440A7C422D61ABE00D159C0 /* WBStatusCell.swift */,
-				4440A7C622D61B1D00D159C0 /* WBStatusNormalCell.xib */,
 				44A5FBF622DA958C00408B68 /* WBStatusToolBar.swift */,
+				44A5FBF822DABCC700408B68 /* WBStatusPictureView.swift */,
+				4440A7C622D61B1D00D159C0 /* WBStatusNormalCell.xib */,
 			);
 			path = StatusCell;
 			sourceTree = "<group>";
@@ -755,6 +758,7 @@
 				4498E29122B641B8007D8E64 /* UIButton+JHExtension.swift in Sources */,
 				4498E28E22B641B8007D8E64 /* JHLabel.swift in Sources */,
 				4498E28422B641B8007D8E64 /* JHRegularHelp.swift in Sources */,
+				44A5FBF922DABCC700408B68 /* WBStatusPictureView.swift in Sources */,
 				4498E28722B641B8007D8E64 /* Color+JHExtension.swift in Sources */,
 				449855F822AC9D630077653C /* WBBaseViewController.swift in Sources */,
 				44DFE74822BA5D59004FD1E5 /* WBNetWorkManager.swift in Sources */,

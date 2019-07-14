@@ -53,6 +53,10 @@ class WBStatusCell: UITableViewCell {
     @IBOutlet weak var statusLabel: UILabel!
     /** 底部工具栏 */
     @IBOutlet weak var toolBar: WBStatusToolBar!
+    /** 配图视图 */
+    @IBOutlet weak var pictureView: WBStatusPictureView!
+    /** 配图视图与上部边距 */
+    @IBOutlet weak var pictureTopCons: NSLayoutConstraint!
     
     // MARK： - override method
     override func awakeFromNib() {
