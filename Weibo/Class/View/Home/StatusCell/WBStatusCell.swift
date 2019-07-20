@@ -39,6 +39,8 @@ class WBStatusCell: UITableViewCell {
             // 设置配图(被转发，和原创)
             pictureView.urls = viewModel?.picURLs
             
+            retweetedLabel?.text = viewModel?.retweetedText
+            
         }
     }
 
@@ -64,6 +66,8 @@ class WBStatusCell: UITableViewCell {
     @IBOutlet weak var pictureView: WBStatusPictureView!
     /** 配图视图与上部边距 */
     @IBOutlet weak var pictureTopCons: NSLayoutConstraint!
+    /** 被转发微博内容 */
+    @IBOutlet weak var retweetedLabel: UILabel?
     
     // MARK： - override method
     override func awakeFromNib() {
