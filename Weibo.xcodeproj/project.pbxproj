@@ -68,6 +68,7 @@
 		44C2B3F922BC50A900B014F6 /* WBStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C2B3F822BC50A900B014F6 /* WBStatusListViewModel.swift */; };
 		44C2B40022BE7AD300B014F6 /* WBBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C2B3FF22BE7AD300B014F6 /* WBBlogViewController.swift */; };
 		44D2945F22BAFCA70077A968 /* WBNetWorkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D2945E22BAFCA70077A968 /* WBNetWorkManager+Extension.swift */; };
+		44D2F7E022E2C35E000DEFC3 /* WBStatusRetweetedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44D2F7DF22E2C35E000DEFC3 /* WBStatusRetweetedCell.xib */; };
 		44DFE74822BA5D59004FD1E5 /* WBNetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DFE74722BA5D59004FD1E5 /* WBNetWorkManager.swift */; };
 		44F02EEC22AFFB40004D25CD /* WBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F02EEB22AFFB40004D25CD /* WBLoginViewController.swift */; };
 		44F02EEE22AFFB58004D25CD /* WBRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F02EED22AFFB58004D25CD /* WBRegisterViewController.swift */; };
@@ -160,6 +161,7 @@
 		44C2B3FE22BE70B000B014F6 /* Weibo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Weibo-Bridging-Header.h"; sourceTree = "<group>"; };
 		44C2B3FF22BE7AD300B014F6 /* WBBlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBBlogViewController.swift; sourceTree = "<group>"; };
 		44D2945E22BAFCA70077A968 /* WBNetWorkManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WBNetWorkManager+Extension.swift"; sourceTree = "<group>"; };
+		44D2F7DF22E2C35E000DEFC3 /* WBStatusRetweetedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBStatusRetweetedCell.xib; sourceTree = "<group>"; };
 		44DFE74722BA5D59004FD1E5 /* WBNetWorkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBNetWorkManager.swift; sourceTree = "<group>"; };
 		44F02EEA22AE8072004D25CD /* UIScreen+CZAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScreen+CZAddition.h"; sourceTree = "<group>"; };
 		44F02EEB22AFFB40004D25CD /* WBLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBLoginViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				4440A7C422D61ABE00D159C0 /* WBStatusCell.swift */,
 				44A5FBF622DA958C00408B68 /* WBStatusToolBar.swift */,
 				44A5FBF822DABCC700408B68 /* WBStatusPictureView.swift */,
+				44D2F7DF22E2C35E000DEFC3 /* WBStatusRetweetedCell.xib */,
 				4440A7C622D61B1D00D159C0 /* WBStatusNormalCell.xib */,
 			);
 			path = StatusCell;
@@ -644,6 +647,7 @@
 				449855C322AC88F00077653C /* Assets.xcassets in Resources */,
 				4469A50722D1BDC400B5EED4 /* WBNewFeatureView.xib in Resources */,
 				4469A50522D18ACC00B5EED4 /* WBWelcomeView.xib in Resources */,
+				44D2F7E022E2C35E000DEFC3 /* WBStatusRetweetedCell.xib in Resources */,
 				449855C122AC88EF0077653C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
