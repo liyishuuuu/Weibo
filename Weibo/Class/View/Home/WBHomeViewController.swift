@@ -57,15 +57,18 @@ extension WBHomeViewController {
         tableView.register(UINib(nibName: "WBStatusNormalCell", bundle: nil), forCellReuseIdentifier: originalCellId)
         tableView.register(UINib(nibName: "WBStatusRetweetedCell", bundle: nil), forCellReuseIdentifier: retweetedCellId)
 
-        /// 取cell
-        // TODO: - 修改ID
-        let cell = tableView.dequeueReusableCell(withIdentifier: retweetedCellId, for: indexPath) as! WBStatusCell
-
-        /// 设置cell
+        // 1.取出视图模型
         let viewModel = listViewModel.statusList[indexPath.row]
+        let cellId = (viewModel.status.retweeted_status != nil) ? retweetedCellId : originalCellId
+
+        /// 2.取cell
+        // TODO: - 修改ID
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! WBStatusCell
+
+        /// 3.设置cell
         cell.viewModel = viewModel
 
-        /// 返回cell
+        /// 4.返回cell
         return cell
     }
 }
