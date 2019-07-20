@@ -8,8 +8,11 @@
 
 import UIKit
 
-/// 定义全局常量，使用private修饰
-private let cellId = "cellId"
+/** 原创微博 cellId */
+private let originalCellId = "originalCellId"
+/** 被转发微博的cellId */
+private let retweetedCellId = "retweetedCellId"
+
 class WBHomeViewController: WBBaseViewController {
 
     // 实例化ViewModel
@@ -51,10 +54,12 @@ extension WBHomeViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         /// 注册原型cell
-        tableView.register(UINib(nibName: "WBStatusNormalCell", bundle: nil), forCellReuseIdentifier: cellId)
+        tableView.register(UINib(nibName: "WBStatusNormalCell", bundle: nil), forCellReuseIdentifier: originalCellId)
+        tableView.register(UINib(nibName: "WBStatusRetweetedCell", bundle: nil), forCellReuseIdentifier: retweetedCellId)
 
         /// 取cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! WBStatusCell
+        // TODO: - 修改ID
+        let cell = tableView.dequeueReusableCell(withIdentifier: retweetedCellId, for: indexPath) as! WBStatusCell
 
         /// 设置cell
         let viewModel = listViewModel.statusList[indexPath.row]

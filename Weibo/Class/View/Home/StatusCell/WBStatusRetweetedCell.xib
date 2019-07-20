@@ -66,7 +66,6 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sob-cM-EIq" userLabel="被转发微博背景按钮">
                         <rect key="frame" x="0.0" y="106.5" width="357" height="348"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <state key="normal" title="Button"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZw-1v-TAs">
                         <rect key="frame" x="12" y="118.5" width="42" height="21"/>
@@ -145,7 +144,6 @@
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A5H-NB-G6p" customClass="WBStatusPictureView" customModule="Weibo" customModuleProvider="target">
                         <rect key="frame" x="11" y="139.5" width="334" height="284"/>
-                        <color key="backgroundColor" red="1" green="0.42352941179999998" blue="0.0" alpha="0.55210167249999997" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="284" id="jg4-3f-E1w"/>
                         </constraints>
