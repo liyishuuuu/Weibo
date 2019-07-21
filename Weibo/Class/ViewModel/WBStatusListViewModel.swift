@@ -107,6 +107,21 @@ class WBStatusListViewModel: NSObject {
     ///
     /// - Parameter list: 本次下载的视图模型数组
     private func cacheSinglePicture(list:[WBStatusViewModel]) {
-        
+
+        // 遍历list
+        for vm in list {
+
+            // 1.判断图像数量
+            if vm.picURLs?.count != 1 {
+                continue
+            }
+
+            // 数组中有且只有一张图片
+            guard let pic = vm.picURLs?[0].thumbnail_pic,
+                let url = URL(string: pic) else {
+                    continue
+            }
+            print("要缓存的url: 是\(url)")
+        }
     }
 }
