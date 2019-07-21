@@ -8,6 +8,7 @@
 
 import Foundation
 import YYModel
+import SDWebImage
 
 /// 微博数据列表视图模型
 /*
@@ -122,6 +123,14 @@ class WBStatusListViewModel: NSObject {
                     continue
             }
             print("要缓存的url: 是\(url)")
+
+            // 下载图像
+            // 图像下载完成后，自动保存在沙盒中，文件路径是url的MD5
+            // 如果沙盒中存在，会先加载本地沙盒图像，不会发网络请求，回调方法同样会调用
+            SDWebImageManager.shared.loadImage(with: url, options: [], progress: nil) { (image, _, _, _, _, _) in
+                print("缓存的图像是：\(image)")
+            }
+            
         }
     }
 }
