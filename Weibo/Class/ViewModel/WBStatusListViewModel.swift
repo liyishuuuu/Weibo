@@ -96,10 +96,17 @@ class WBStatusListViewModel: NSObject {
                 self.pullUpTimes += 1
                 completion(true, false)
             } else {
-
+                self.cacheSinglePicture(list: array)
                 // 完成回调
                 completion(true, true)
             }
         }
+    }
+
+    /// 缓存本次下载微博数据数组中的单张图像
+    ///
+    /// - Parameter list: 本次下载的视图模型数组
+    private func cacheSinglePicture(list:[WBStatusViewModel]) {
+        
     }
 }
