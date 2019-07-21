@@ -109,6 +109,9 @@ class WBStatusListViewModel: NSObject {
     /// - Parameter list: 本次下载的视图模型数组
     private func cacheSinglePicture(list:[WBStatusViewModel]) {
 
+        // 调度组
+        let group = DispatchGroup()
+
         // 遍历list
         for vm in list {
 
@@ -127,10 +130,20 @@ class WBStatusListViewModel: NSObject {
             // 下载图像
             // 图像下载完成后，自动保存在沙盒中，文件路径是url的MD5
             // 如果沙盒中存在，会先加载本地沙盒图像，不会发网络请求，回调方法同样会调用
+
+            // A> 入组
+            group.enter()
             SDWebImageManager.shared.loadImage(with: url, options: [], progress: nil) { (image, _, _, _, _, _) in
                 print("缓存的图像是：\(image)")
+
+                // B> 出组 放在回调的最后一句
+                group.leave()
             }
-            
+        }
+        
+        // 监听调度组情况
+        group.notify(queue: DispatchQueue.main) {
+            print("图像缓存完成")
         }
     }
 }
