@@ -134,6 +134,10 @@ class WBStatusListViewModel: NSObject {
             SDWebImageManager.shared.loadImage(with: url, options: [], progress: nil) { (image, _, _, _, _, _) in
                 print("缓存的图像是：\(image)")
 
+                if let image = image {
+                    vm.updateSingleImageSize(image: image)
+                }
+
                 // B> 出组 放在回调的最后一句
                 group.leave()
             }
