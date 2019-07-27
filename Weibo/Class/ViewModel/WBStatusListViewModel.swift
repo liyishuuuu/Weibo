@@ -97,9 +97,7 @@ class WBStatusListViewModel: NSObject {
                 self.pullUpTimes += 1
                 completion(true, false)
             } else {
-                self.cacheSinglePicture(list: array)
-                // 完成回调
-                completion(true, true)
+                self.cacheSinglePicture(list: array, completion: completion)
             }
         }
     }
@@ -107,7 +105,8 @@ class WBStatusListViewModel: NSObject {
     /// 缓存本次下载微博数据数组中的单张图像
     ///
     /// - Parameter list: 本次下载的视图模型数组
-    private func cacheSinglePicture(list:[WBStatusViewModel]) {
+    private func cacheSinglePicture(list:[WBStatusViewModel],
+                                    completion: @escaping (_ isSuccess: Bool, _ isMorePullUp: Bool) -> ()) {
 
         // 调度组
         let group = DispatchGroup()
@@ -130,7 +129,6 @@ class WBStatusListViewModel: NSObject {
             // 下载图像
             // 图像下载完成后，自动保存在沙盒中，文件路径是url的MD5
             // 如果沙盒中存在，会先加载本地沙盒图像，不会发网络请求，回调方法同样会调用
-
             // A> 入组
             group.enter()
             SDWebImageManager.shared.loadImage(with: url, options: [], progress: nil) { (image, _, _, _, _, _) in
@@ -144,6 +142,9 @@ class WBStatusListViewModel: NSObject {
         // 监听调度组情况
         group.notify(queue: DispatchQueue.main) {
             print("图像缓存完成")
+
+            // 执行闭包回调
+            completion(true, true)
         }
     }
 }
