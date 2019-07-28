@@ -77,8 +77,19 @@ class WBStatusCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        
+        // 加载完调用
+        // 离屏渲染 - 异步绘制
+        self.layer.drawsAsynchronously = true
 
-        // Configure the view for the selected state
+        // 栅格化 - 异步绘制之后会生成一张独立的图像，cell在屏幕上滚动的时候，本质上滚动的是这张图片
+        // cell 优化，x减少图层数量
+        // 停止滚动后可以接受监听
+        self.layer.shouldRasterize = true
+
+        // 指定分辨率
+        self.layer.rasterizationScale = UIScreen.main.scale
+
     }
 
 }
