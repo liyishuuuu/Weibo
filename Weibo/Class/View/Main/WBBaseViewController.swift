@@ -149,6 +149,11 @@ extension WBBaseViewController: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
 
+    // 行高
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 0
+    }
+
     // 在显示最后一行的时候调用，做上拉刷新
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
 

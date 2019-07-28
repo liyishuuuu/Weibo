@@ -72,6 +72,14 @@ extension WBHomeViewController {
         /// 4.返回cell
         return cell
     }
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        // 根据indexpath 获取视图模型
+        let vm = listViewModel.statusList[indexPath.row]
+    
+        // 返回计算好的行高
+        return vm.rowHeight
+    }
 }
 
 // MARK: - 设置界面
@@ -97,6 +105,9 @@ extension WBHomeViewController {
         // tableView设置行高
         tableView.estimatedRowHeight = 300
 
+        // tableView 设置自动行高
+        tableView.rowHeight = UITableView.automaticDimension
+
         // 取消tableView的分割线
         tableView.separatorStyle = .none
 
@@ -107,10 +118,10 @@ extension WBHomeViewController {
         /// 1.实例化控件
         self.refreshControl = CZRefreshControl()
         
-        /// 1.添加到表格视图
+        /// 2.添加到表格视图
         tableView.addSubview(refreshControl!)
         
-        /// 1.添加监听方法
+        /// 3.添加监听方法
         refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
         
         /// 设置导航栏标题

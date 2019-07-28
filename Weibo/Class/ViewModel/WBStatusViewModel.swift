@@ -143,7 +143,12 @@ class WBStatusViewModel: CustomStringConvertible {
     func updateSingleImageSize(image: UIImage) {
         var size = image.size
         size.height += WBStatusPictureViewOutterMargin
+
+        // 重新设置配图视图大小
         pictureViewSize = size
+
+        // 更新行高
+        self.updateRowHeight()
     }
 
     /// 给一个数字，返回对应的描述结果
