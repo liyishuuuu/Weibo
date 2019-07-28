@@ -35,6 +35,8 @@ class WBStatusViewModel: CustomStringConvertible {
     }
     /** 被转发微博的文字 */
     @objc var retweetedText: String?
+    /** 行高 */
+    @objc var rowHeight: CGFloat = 0
 
     /// 构造函数
     ///
@@ -71,10 +73,68 @@ class WBStatusViewModel: CustomStringConvertible {
         // 设置被转发微博文字
         let retweetedTextTemp: String = "@" + (status.retweeted_status?.user?.screen_name ?? "") + ":"
         retweetedText = retweetedTextTemp + (status.retweeted_status?.text ?? "")
+        // 计算行高
+        self.updateRowHeight()
     }
 
     var description: String {
         return status.description
+    }
+
+    /**
+     * 根据当前视图模型内容计算行高
+     */
+    func updateRowHeight() {
+        // 原创微博：顶部分割视图12 + 间距12 + 图像的高度34 + 正文高度（需要计算）+ 配图视图高度（计算）+ 间距12 + 底部视图高度 + 35
+        let margin: CGFloat = 12
+        let iconHeight: CGFloat = 34
+        let toolBarHeight: CGFloat = 35
+
+        var height: CGFloat = 0
+        let viewSize = CGSize(width: UIScreen.main.bounds.width,
+                              height: CGFloat(MAXFLOAT))
+        let originalFont = UIFont.systemFont(ofSize: 15)
+        let retweetedFont = UIFont.systemFont(ofSize: 14)
+
+        // 1.计算顶部位置
+        height = 2*margin + iconHeight + margin
+        
+        // 2.正文高度
+        if let text = status.text {
+            /**
+             * 1, 预期尺寸: 宽度固定，高度尽量大
+             * 2, 选项，换行文本，同意使用usesLineFragmentOrigin
+             * 3, attributes: 指定字体字典
+             */
+            height += (text as NSString).boundingRect(with: viewSize,
+                                            options: [.usesLineFragmentOrigin],
+                                            attributes:[NSAttributedString.Key.font: originalFont],
+                                            context: nil).height
+        }
+
+        if status.retweeted_status != nil {
+            height += 2*margin
+
+            // 转发文本的高度 retweetedText,拼接了@用户名：微博文字
+            if let text = retweetedText {
+                height += (text as NSString).boundingRect(with: viewSize,
+                                                          options: [.usesLineFragmentOrigin],
+                                                          attributes: [NSAttributedString.Key.font: retweetedFont],
+                                                          context: nil).height
+            }
+        }
+
+        // 配图视图
+        height += pictureViewSize.height
+
+        // 间距
+        height += margin
+
+        // 底部工具栏
+        height += toolBarHeight
+        
+        // 使用属性记录
+        rowHeight = height
     }
 
     /// 使用单个图像，更新配图视图大小
