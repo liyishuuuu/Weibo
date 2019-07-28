@@ -72,6 +72,7 @@
 		44DFE74822BA5D59004FD1E5 /* WBNetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DFE74722BA5D59004FD1E5 /* WBNetWorkManager.swift */; };
 		44F02EEC22AFFB40004D25CD /* WBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F02EEB22AFFB40004D25CD /* WBLoginViewController.swift */; };
 		44F02EEE22AFFB58004D25CD /* WBRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F02EED22AFFB58004D25CD /* WBRegisterViewController.swift */; };
+		44F5A79222ED461E0002531A /* CZRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F5A79122ED461E0002531A /* CZRefreshControl.swift */; };
 		DA5C5BBDDD27A274A0891910 /* Pods_WeiboTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6E6F4380AE8F83E07F4D7AA /* Pods_WeiboTests.framework */; };
 		FF9FD2F8795FC631B58604C7 /* Pods_WeiboUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C48D72EFFB81A572467BDC /* Pods_WeiboUITests.framework */; };
 /* End PBXBuildFile section */
@@ -166,6 +167,7 @@
 		44F02EEA22AE8072004D25CD /* UIScreen+CZAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScreen+CZAddition.h"; sourceTree = "<group>"; };
 		44F02EEB22AFFB40004D25CD /* WBLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBLoginViewController.swift; sourceTree = "<group>"; };
 		44F02EED22AFFB58004D25CD /* WBRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBRegisterViewController.swift; sourceTree = "<group>"; };
+		44F5A79122ED461E0002531A /* CZRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CZRefreshControl.swift; sourceTree = "<group>"; };
 		4CAFC313A3AF71596AB4C85C /* Pods_Weibo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weibo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76D5C59275F9B1EE70B1E8E2 /* Pods-Weibo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weibo.release.xcconfig"; path = "Target Support Files/Pods-Weibo/Pods-Weibo.release.xcconfig"; sourceTree = "<group>"; };
 		7736BBD4BCCFFF4895049D16 /* Pods-Weibo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weibo.debug.xcconfig"; path = "Target Support Files/Pods-Weibo/Pods-Weibo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 		449855EB22AC9BD40077653C /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				44F5A79022ED45F60002531A /* CZRefreshControl */,
 				44DFE74622BA5CC5004FD1E5 /* NetWork */,
 				4498E26922B641B8007D8E64 /* Foundation */,
 				4498E27B22B641B8007D8E64 /* Hardware */,
@@ -507,6 +510,14 @@
 				441AEAE122DA0BD20054276A /* UIImage+extensions.swift */,
 			);
 			name = Additions;
+			sourceTree = "<group>";
+		};
+		44F5A79022ED45F60002531A /* CZRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				44F5A79122ED461E0002531A /* CZRefreshControl.swift */,
+			);
+			path = CZRefreshControl;
 			sourceTree = "<group>";
 		};
 		4F00770B08F89B711E05E310 /* Frameworks */ = {
@@ -805,6 +816,7 @@
 				449855BC22AC88EF0077653C /* AppDelegate.swift in Sources */,
 				449855F622AC9D1B0077653C /* WBNavigationController.swift in Sources */,
 				44C2B3F722BC4D0700B014F6 /* WBStatusModel.swift in Sources */,
+				44F5A79222ED461E0002531A /* CZRefreshControl.swift in Sources */,
 				4498E27E22B641B8007D8E64 /* EntryView.swift in Sources */,
 				4498E28822B641B8007D8E64 /* Date+JHExtension.swift in Sources */,
 				441AEADC22D974440054276A /* WBUser.swift in Sources */,

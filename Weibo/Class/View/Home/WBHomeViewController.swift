@@ -105,7 +105,7 @@ extension WBHomeViewController {
         
         // 设置刷新控件
         /// 1.实例化控件
-        self.refreshControl = UIRefreshControl()
+        self.refreshControl = CZRefreshControl()
         
         /// 1.添加到表格视图
         tableView.addSubview(refreshControl!)

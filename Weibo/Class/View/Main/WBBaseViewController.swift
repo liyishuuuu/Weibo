@@ -26,7 +26,7 @@ class WBBaseViewController: UIViewController {
     var tableView: UITableView?
 
     /** 定义刷新控件 */
-    var refreshControl: UIRefreshControl?
+    var refreshControl: CZRefreshControl?
 
     /** 自定义导航条 */
     lazy var navigationBar = SecondNavigationBar(frame: CGRect(x: 0,
@@ -90,7 +90,7 @@ extension WBBaseViewController {
 
         // 设置刷新控件
         /// 1.实例化控件
-        self.refreshControl = UIRefreshControl()
+        self.refreshControl = CZRefreshControl()
 
         /// 1.添加到表格视图
         tableView.addSubview(refreshControl!)
