@@ -144,7 +144,7 @@ class WBStatusViewModel: CustomStringConvertible {
         var size = image.size
 
         // 图片过宽处理
-        let maxWidth: CGFloat = 100
+        let maxWidth: CGFloat = 200
         // 图片过窄处理
         let minWidth: CGFloat = 40
 

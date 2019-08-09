@@ -17,6 +17,9 @@
 		4440A7C522D61ABE00D159C0 /* WBStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4440A7C422D61ABE00D159C0 /* WBStatusCell.swift */; };
 		4440A7C722D61B1D00D159C0 /* WBStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4440A7C622D61B1D00D159C0 /* WBStatusNormalCell.xib */; };
 		444BF35422B7C714000CCAB0 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 444BF35322B7C714000CCAB0 /* main.json */; };
+		4468600C22FCE7C500F1C94F /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4468600B22FCE7C500F1C94F /* TestViewController.swift */; };
+		4468600E22FCE7F500F1C94F /* MessageDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4468600D22FCE7F500F1C94F /* MessageDialog.swift */; };
+		4468601022FD922200F1C94F /* String_StringHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4468600F22FD922200F1C94F /* String_StringHeight.swift */; };
 		4469A4FE22D08ABF00B5EED4 /* WBTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4469A4FD22D08ABF00B5EED4 /* WBTitleButton.swift */; };
 		4469A50122D098AB00B5EED4 /* WBWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4469A50022D098AB00B5EED4 /* WBWelcomeView.swift */; };
 		4469A50322D0995800B5EED4 /* WBNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4469A50222D0995800B5EED4 /* WBNewFeatureView.swift */; };
@@ -104,6 +107,9 @@
 		4440A7C422D61ABE00D159C0 /* WBStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusCell.swift; sourceTree = "<group>"; };
 		4440A7C622D61B1D00D159C0 /* WBStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBStatusNormalCell.xib; sourceTree = "<group>"; };
 		444BF35322B7C714000CCAB0 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
+		4468600B22FCE7C500F1C94F /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		4468600D22FCE7F500F1C94F /* MessageDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDialog.swift; sourceTree = "<group>"; };
+		4468600F22FD922200F1C94F /* String_StringHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String_StringHeight.swift; sourceTree = "<group>"; };
 		4469A4FD22D08ABF00B5EED4 /* WBTitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBTitleButton.swift; sourceTree = "<group>"; };
 		4469A50022D098AB00B5EED4 /* WBWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBWelcomeView.swift; sourceTree = "<group>"; };
 		4469A50222D0995800B5EED4 /* WBNewFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBNewFeatureView.swift; sourceTree = "<group>"; };
@@ -246,6 +252,16 @@
 			path = NewFeature;
 			sourceTree = "<group>";
 		};
+		4494015E22FC61D400F6B023 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				4468600D22FCE7F500F1C94F /* MessageDialog.swift */,
+				4468600B22FCE7C500F1C94F /* TestViewController.swift */,
+				4468600F22FD922200F1C94F /* String_StringHeight.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
 		449855AF22AC88EF0077653C = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +337,7 @@
 		449855EB22AC9BD40077653C /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				4494015E22FC61D400F6B023 /* Custom */,
 				44F5A79022ED45F60002531A /* CZRefreshControl */,
 				44DFE74622BA5CC5004FD1E5 /* NetWork */,
 				4498E26922B641B8007D8E64 /* Foundation */,
@@ -770,6 +787,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4468600E22FCE7F500F1C94F /* MessageDialog.swift in Sources */,
 				4498E28922B641B8007D8E64 /* String+JHExtension.swift in Sources */,
 				4469A4FE22D08ABF00B5EED4 /* WBTitleButton.swift in Sources */,
 				44A2074E22C75E7700CD5BE2 /* WBUserAccountModel.swift in Sources */,
@@ -809,6 +827,7 @@
 				4498E25922B60134007D8E64 /* WBVisitorView.swift in Sources */,
 				4498E28C22B641B8007D8E64 /* UIImage+JHExtension.swift in Sources */,
 				4498E28B22B641B8007D8E64 /* UIView+JHExtension.swift in Sources */,
+				4468600C22FCE7C500F1C94F /* TestViewController.swift in Sources */,
 				449855FA22AC9DA50077653C /* WBHomeViewController.swift in Sources */,
 				4498E29222B641B8007D8E64 /* UITapGestureRecognizer+JHExtension.swift in Sources */,
 				44F02EEE22AFFB58004D25CD /* WBRegisterViewController.swift in Sources */,
@@ -817,6 +836,7 @@
 				449855F622AC9D1B0077653C /* WBNavigationController.swift in Sources */,
 				44C2B3F722BC4D0700B014F6 /* WBStatusModel.swift in Sources */,
 				44F5A79222ED461E0002531A /* CZRefreshControl.swift in Sources */,
+				4468601022FD922200F1C94F /* String_StringHeight.swift in Sources */,
 				4498E27E22B641B8007D8E64 /* EntryView.swift in Sources */,
 				4498E28822B641B8007D8E64 /* Date+JHExtension.swift in Sources */,
 				441AEADC22D974440054276A /* WBUser.swift in Sources */,

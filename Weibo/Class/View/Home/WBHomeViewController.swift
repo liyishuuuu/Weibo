@@ -144,7 +144,7 @@ extension WBHomeViewController {
 
     @objc private func showBlog() {
         print(#function)
-        let vc = WBBlogViewController()
+        let vc = TestViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 }
