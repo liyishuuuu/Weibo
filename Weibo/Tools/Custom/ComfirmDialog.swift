@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class ComfirmDialog: UIView {
-    
+
     // 声明闭包，点击按钮传值
     typealias clickAlertClosure = (_ index: Int) -> Void
     // 把申明的闭包设置成属性
@@ -20,9 +20,9 @@ class ComfirmDialog: UIView {
         // 将函数指针赋值给myClosure闭包
         clickClosure = closure
     }
-    
+
     // MARK: - 变量
-    
+
     /** 左右外边距 */
     private var dialogMarginLeft: CGFloat = 20.0
     /** 左右内边距 */
@@ -44,14 +44,14 @@ class ComfirmDialog: UIView {
     /** 按钮高度 */
     private var buttonHeight: CGFloat = 44.0
     /** View圆角 */
-    private var dialogViewCorner: CGFloat = 9.0
+    private var dialogViewCorner: CGFloat = 5.0
     /** 按钮圆角 */
     private var buttonCorner: CGFloat = 3.0
     /** 背景透明度 */
     private var backgroundAlpha: CGFloat = 0.2
-    
+
     // MARK: - 弹框控件
-    
+
     /** 背景 */
     private var dialogView = UIView()
     /** 标题 */
@@ -62,23 +62,23 @@ class ComfirmDialog: UIView {
     private var scrollView = UIScrollView()
     /** 确定按钮 */
     private let confirmButton = UIButton()
-    
+
     init(title: String?, message: String?, confirmButtonTitle: String?) {
         super.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
-        self.createDialog(message: message!)
         self.titleLable.text = title
         self.contentLabel?.text = message
         self.confirmButton.setTitle(confirmButtonTitle, for: UIControl.State())
+        self.createDialog(message: message!)
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
-    
+
     /*
      - 创建MessageDialog
      
@@ -87,6 +87,10 @@ class ComfirmDialog: UIView {
     func createDialog(message: String) {
         self.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT)
         self.backgroundColor = UIColor.black.withAlphaComponent(backgroundAlpha)
+        if titleLable.text == nil {
+            self.dialogDefaultHeight = dialogDefaultHeight - titleHeight
+            self.titleHeight = 0
+        }
         let sizeHeight = (message.getHeightForComment(
             fontSize: fontSize,
             width: SCREEN_WIDTH - 2*dialogMarginLeft - 2*dialogPaddingLeft) + 130) > dialogDefaultHeight ?
@@ -105,14 +109,16 @@ class ComfirmDialog: UIView {
         self.addSubview(dialogView)
         let dialogWidth = dialogView.frame.size.width
         let dialogHeight = dialogView.frame.size.height
-        
+
         // 标题
-        titleLable.frame = CGRect(x: 0, y: titleMargin, width: dialogWidth, height: titleHeight)
-        titleLable.textColor = UIColor.black
-        titleLable.font = UIFont.systemFont(ofSize: titleFontSize)
-        titleLable.textAlignment = .center
-        dialogView.addSubview(titleLable)
-        
+        if titleLable.text != nil {
+            titleLable.frame = CGRect(x: 0, y: titleMargin, width: dialogWidth, height: titleHeight)
+            titleLable.textColor = UIColor.black
+            titleLable.font = UIFont.systemFont(ofSize: titleFontSize)
+            titleLable.textAlignment = .center
+            dialogView.addSubview(titleLable)
+        }
+
         // 滑动scroll
         let contentHeight = message.getHeightForComment(fontSize: fontSize,
                                                         width: SCREEN_WIDTH - 2*dialogMarginLeft - 2*dialogPaddingLeft)
@@ -124,7 +130,7 @@ class ComfirmDialog: UIView {
         scrollView.contentSize = CGSize.init(width: 0,
                                              height: contentHeight)
         dialogView.addSubview(scrollView)
-        
+
         // 内容
         contentLabel?.frame = CGRect(x: 0,
                                      y: 0,
@@ -135,10 +141,10 @@ class ComfirmDialog: UIView {
         contentLabel?.textColor = UIColor.black
         contentLabel?.font = UIFont.systemFont(ofSize: fontSize)
         scrollView.addSubview(contentLabel!)
-        
+
         // 取消按钮
         let buttonWidth = dialogWidth - 2*buttonMargin
-        
+
         // 确认按钮
         confirmButton.frame = CGRect(x: buttonMargin,
                                      y: dialogHeight - buttonMargin - buttonHeight,
@@ -152,7 +158,7 @@ class ComfirmDialog: UIView {
         confirmButton.addTarget(self, action: #selector(clickBtnAction(_:)), for: .touchUpInside)
         dialogView.addSubview(confirmButton)
     }
-    
+
     // MARK: 按键的对应的方法
     @objc func clickBtnAction(_ sender: UIButton) {
         if (clickClosure != nil) {
@@ -160,7 +166,7 @@ class ComfirmDialog: UIView {
         }
         dismiss()
     }
-    
+
     // MARK: 消失
     func dismiss() {
         UIView.animate(withDuration: 0.25, animations: { () -> Void in
@@ -172,7 +178,7 @@ class ComfirmDialog: UIView {
             }
         })
     }
-    
+
     /** 指定视图实现方法 */
     func show() {
         let wind = UIApplication.shared.keyWindow

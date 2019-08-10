@@ -64,11 +64,11 @@ extension TestViewController: UITableViewDelegate,UITableViewDataSource {
         // 这里直接retrun cell的话会报错 因为我们返回的数据类型应该是UITableViewCell类型 这里的cell是可选类型 所以要对cell进行强制解包 这里的cell一定会有值，所以可以进行强制解包
         return cell!
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("点击了\(indexPath.row)")
-        
-        let messageDialog = ComfirmDialog(title: "提示", message: "登录成功", confirmButtonTitle: "确 定")
+
+        let messageDialog = ComfirmDialog(title: nil, message: "登录成功", confirmButtonTitle: "确 定")
         messageDialog.show()
         //获取点击事件
         messageDialog.clickIndexClosure { (index) in

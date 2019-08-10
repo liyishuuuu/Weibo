@@ -46,7 +46,7 @@ class MessageDialog: UIView {
     /** 按钮高度 */
     private var buttonHeight: CGFloat = 44.0
     /** View圆角 */
-    private var dialogViewCorner: CGFloat = 9.0
+    private var dialogViewCorner: CGFloat = 5.0
     /** 按钮圆角 */
     private var buttonCorner: CGFloat = 3.0
     /** 背景透明度 */
@@ -92,6 +92,10 @@ class MessageDialog: UIView {
     func createDialog(message: String) {
         self.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT)
         self.backgroundColor = UIColor.black.withAlphaComponent(backgroundAlpha)
+        if titleLable.text == nil {
+            self.dialogDefaultHeight = dialogDefaultHeight - titleHeight
+            self.titleHeight = 0
+        }
         let sizeHeight = (message.getHeightForComment(
             fontSize: fontSize,
             width: SCREEN_WIDTH - 2*dialogMarginLeft - 2*dialogPaddingLeft) + 130) > dialogDefaultHeight ?
@@ -112,11 +116,13 @@ class MessageDialog: UIView {
         let dialogHeight = dialogView.frame.size.height
 
         // 标题
-        titleLable.frame = CGRect(x: 0, y: titleMargin, width: dialogWidth, height: titleHeight)
-        titleLable.textColor = UIColor.black
-        titleLable.font = UIFont.systemFont(ofSize: titleFontSize)
-        titleLable.textAlignment = .center
-        dialogView.addSubview(titleLable)
+        if titleLable.text != nil {
+            titleLable.frame = CGRect(x: 0, y: titleMargin, width: dialogWidth, height: titleHeight)
+            titleLable.textColor = UIColor.black
+            titleLable.font = UIFont.systemFont(ofSize: titleFontSize)
+            titleLable.textAlignment = .center
+            dialogView.addSubview(titleLable)
+        }
 
         // 滑动scroll
         let contentHeight = message.getHeightForComment(fontSize: fontSize,
