@@ -18,6 +18,7 @@
 		4440A7C722D61B1D00D159C0 /* WBStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4440A7C622D61B1D00D159C0 /* WBStatusNormalCell.xib */; };
 		444BF35422B7C714000CCAB0 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 444BF35322B7C714000CCAB0 /* main.json */; };
 		4455324022FE6C3700D032FC /* customize_color.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4455323F22FE6C3700D032FC /* customize_color.xml */; };
+		4455324222FEF61100D032FC /* ComfirmDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4455324122FEF61100D032FC /* ComfirmDialog.swift */; };
 		4468600C22FCE7C500F1C94F /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4468600B22FCE7C500F1C94F /* TestViewController.swift */; };
 		4468600E22FCE7F500F1C94F /* MessageDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4468600D22FCE7F500F1C94F /* MessageDialog.swift */; };
 		4468601022FD922200F1C94F /* String_StringHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4468600F22FD922200F1C94F /* String_StringHeight.swift */; };
@@ -109,6 +110,7 @@
 		4440A7C622D61B1D00D159C0 /* WBStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBStatusNormalCell.xib; sourceTree = "<group>"; };
 		444BF35322B7C714000CCAB0 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		4455323F22FE6C3700D032FC /* customize_color.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = customize_color.xml; sourceTree = "<group>"; };
+		4455324122FEF61100D032FC /* ComfirmDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComfirmDialog.swift; sourceTree = "<group>"; };
 		4468600B22FCE7C500F1C94F /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		4468600D22FCE7F500F1C94F /* MessageDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDialog.swift; sourceTree = "<group>"; };
 		4468600F22FD922200F1C94F /* String_StringHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String_StringHeight.swift; sourceTree = "<group>"; };
@@ -265,8 +267,9 @@
 		4494015E22FC61D400F6B023 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				4468600D22FCE7F500F1C94F /* MessageDialog.swift */,
 				4468600B22FCE7C500F1C94F /* TestViewController.swift */,
+				4468600D22FCE7F500F1C94F /* MessageDialog.swift */,
+				4455324122FEF61100D032FC /* ComfirmDialog.swift */,
 				4468600F22FD922200F1C94F /* String_StringHeight.swift */,
 			);
 			path = Custom;
@@ -810,6 +813,7 @@
 				4498E28722B641B8007D8E64 /* Color+JHExtension.swift in Sources */,
 				449855F822AC9D630077653C /* WBBaseViewController.swift in Sources */,
 				44DFE74822BA5D59004FD1E5 /* WBNetWorkManager.swift in Sources */,
+				4455324222FEF61100D032FC /* ComfirmDialog.swift in Sources */,
 				4498560022AC9E000077653C /* WBProfileViewController.swift in Sources */,
 				4498E29022B641B8007D8E64 /* UITextField+JHExtension.swift in Sources */,
 				4401619622C10920008D48E0 /* WBOAuthViewController.swift in Sources */,

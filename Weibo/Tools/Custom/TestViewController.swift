@@ -68,7 +68,7 @@ extension TestViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("点击了\(indexPath.row)")
         
-        let messageDialog = MessageDialog(title: "提示", message: "登录成功", cancelButtonTitle: "取 消", confirmButtonTitle: "确 定")
+        let messageDialog = ComfirmDialog(title: "提示", message: "登录成功", confirmButtonTitle: "确 定")
         messageDialog.show()
         //获取点击事件
         messageDialog.clickIndexClosure { (index) in

@@ -1,18 +1,16 @@
 //
-//  SwiftView.swift
-//  MessageDialog
+//  ComfirmDialog.swift
+//  Weibo
 //
 //  Created by liyishu on 2019/8/10.
-//  Copyright © 2019年 Apple. All rights reserved.
+//  Copyright © 2019 Apple. All rights reserved.
 //
-import UIKit
+
 import Foundation
+import UIKit
 
-let SCREEN_WIDTH = UIScreen.main.bounds.size.width
-let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
-
-class MessageDialog: UIView {
-
+class ComfirmDialog: UIView {
+    
     // 声明闭包，点击按钮传值
     typealias clickAlertClosure = (_ index: Int) -> Void
     // 把申明的闭包设置成属性
@@ -22,9 +20,9 @@ class MessageDialog: UIView {
         // 将函数指针赋值给myClosure闭包
         clickClosure = closure
     }
-
+    
     // MARK: - 变量
-
+    
     /** 左右外边距 */
     private var dialogMarginLeft: CGFloat = 20.0
     /** 左右内边距 */
@@ -51,9 +49,9 @@ class MessageDialog: UIView {
     private var buttonCorner: CGFloat = 3.0
     /** 背景透明度 */
     private var backgroundAlpha: CGFloat = 0.2
-
+    
     // MARK: - 弹框控件
-
+    
     /** 背景 */
     private var dialogView = UIView()
     /** 标题 */
@@ -62,31 +60,28 @@ class MessageDialog: UIView {
     private var contentLabel: UILabel? = UILabel()
     /** 滑动 */
     private var scrollView = UIScrollView()
-    /** 取消按钮 */
-    private let cancelButton = UIButton()
     /** 确定按钮 */
     private let confirmButton = UIButton()
     
-    init(title: String?, message: String?, cancelButtonTitle: String?, confirmButtonTitle: String?) {
+    init(title: String?, message: String?, confirmButtonTitle: String?) {
         super.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
         self.createDialog(message: message!)
         self.titleLable.text = title
         self.contentLabel?.text = message
-        self.cancelButton.setTitle(cancelButtonTitle, for: UIControl.State())
         self.confirmButton.setTitle(confirmButtonTitle, for: UIControl.State())
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
-
+    
     /*
      - 创建MessageDialog
-
+     
      - para message: 消息文言
      */
     func createDialog(message: String) {
@@ -95,9 +90,9 @@ class MessageDialog: UIView {
         let sizeHeight = (message.getHeightForComment(
             fontSize: fontSize,
             width: SCREEN_WIDTH - 2*dialogMarginLeft - 2*dialogPaddingLeft) + 130) > dialogDefaultHeight ?
-            message.getHeightForComment(fontSize: fontSize,
-                                        width: SCREEN_WIDTH - 2*dialogMarginLeft - 2*dialogPaddingLeft) + 130 :
-                                        dialogDefaultHeight
+                message.getHeightForComment(fontSize: fontSize,
+                                            width: SCREEN_WIDTH - 2*dialogMarginLeft - 2*dialogPaddingLeft) + 130 :
+        dialogDefaultHeight
         // 白底
         dialogView.frame = CGRect(x: dialogMarginLeft,
                                   y: SCREEN_HEIGHT/2 - dialogDefaultHeight/2,
@@ -110,14 +105,14 @@ class MessageDialog: UIView {
         self.addSubview(dialogView)
         let dialogWidth = dialogView.frame.size.width
         let dialogHeight = dialogView.frame.size.height
-
+        
         // 标题
         titleLable.frame = CGRect(x: 0, y: titleMargin, width: dialogWidth, height: titleHeight)
         titleLable.textColor = UIColor.black
         titleLable.font = UIFont.systemFont(ofSize: titleFontSize)
         titleLable.textAlignment = .center
         dialogView.addSubview(titleLable)
-
+        
         // 滑动scroll
         let contentHeight = message.getHeightForComment(fontSize: fontSize,
                                                         width: SCREEN_WIDTH - 2*dialogMarginLeft - 2*dialogPaddingLeft)
@@ -129,7 +124,7 @@ class MessageDialog: UIView {
         scrollView.contentSize = CGSize.init(width: 0,
                                              height: contentHeight)
         dialogView.addSubview(scrollView)
-
+        
         // 内容
         contentLabel?.frame = CGRect(x: 0,
                                      y: 0,
@@ -140,24 +135,12 @@ class MessageDialog: UIView {
         contentLabel?.textColor = UIColor.black
         contentLabel?.font = UIFont.systemFont(ofSize: fontSize)
         scrollView.addSubview(contentLabel!)
-
+        
         // 取消按钮
-        let buttonWidth = (dialogWidth - 3*buttonMargin) / 2
-        cancelButton.frame = CGRect(x: buttonMargin,
-                                    y: dialogHeight - buttonMargin - buttonHeight,
-                                    width: buttonWidth,
-                                    height: buttonHeight)
-        cancelButton.backgroundColor = UIColor.gray
-        cancelButton.setTitleColor(UIColor.white, for: .normal)
-        cancelButton.titleLabel?.font = UIFont.systemFont(ofSize: buttonFontSize)
-        cancelButton.layer.cornerRadius = buttonCorner
-        cancelButton.clipsToBounds = true
-        cancelButton.tag = 1
-        cancelButton.addTarget(self, action: #selector(clickBtnAction(_:)), for: .touchUpInside)
-        dialogView.addSubview(cancelButton)
-
+        let buttonWidth = dialogWidth - 2*buttonMargin
+        
         // 确认按钮
-        confirmButton.frame = CGRect(x: buttonWidth + 2*buttonMargin,
+        confirmButton.frame = CGRect(x: buttonMargin,
                                      y: dialogHeight - buttonMargin - buttonHeight,
                                      width: buttonWidth,
                                      height: buttonHeight)
@@ -166,7 +149,6 @@ class MessageDialog: UIView {
         confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: buttonFontSize)
         confirmButton.layer.cornerRadius = buttonCorner
         confirmButton.clipsToBounds = true
-        confirmButton.tag = 2
         confirmButton.addTarget(self, action: #selector(clickBtnAction(_:)), for: .touchUpInside)
         dialogView.addSubview(confirmButton)
     }
@@ -178,7 +160,7 @@ class MessageDialog: UIView {
         }
         dismiss()
     }
-
+    
     // MARK: 消失
     func dismiss() {
         UIView.animate(withDuration: 0.25, animations: { () -> Void in
@@ -190,7 +172,7 @@ class MessageDialog: UIView {
             }
         })
     }
-
+    
     /** 指定视图实现方法 */
     func show() {
         let wind = UIApplication.shared.keyWindow
@@ -201,4 +183,3 @@ class MessageDialog: UIView {
         })
     }
 }
-
