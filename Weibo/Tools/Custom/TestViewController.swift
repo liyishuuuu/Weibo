@@ -68,7 +68,7 @@ extension TestViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("点击了\(indexPath.row)")
         
-        let messageDialog = MessageDialog(title: "SwiftAlert", message: "我点击了另外，三目条件运算符不限于简单的算术表达式，甚至可以是函数的调用例如：y>x?print(“OK”):print(“NO”); //如果y>x,输出“OK”，否则输出“NO”条件运算符的结合性是“右结合”，它的优先级别低于算术运算符，关系运算符和逻辑运算符。例如：a>b?a:c>d?c:d 等价于 a>b?a:(c>d?c:d)//三目条件运算符和表达式的应用这是一个计算行高的例子，如果有表头，那么行高比内容高度要高出50像素，如果没有表头" + "\(indexPath.row)" + "个按钮", cancelButtonTitle: "取 消", sureButtonTitle: "确 定")
+        let messageDialog = MessageDialog(title: "提示", message: "登录成功", cancelButtonTitle: "取 消", confirmButtonTitle: "确 定")
         messageDialog.show()
         //获取点击事件
         messageDialog.clickIndexClosure { (index) in
