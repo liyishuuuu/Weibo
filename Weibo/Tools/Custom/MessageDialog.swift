@@ -27,29 +27,47 @@ class MessageDialog: UIView {
 
     /** 上边距 */
     private var dialogMarginTop: CGFloat = 50.0
-    /** 左边距 */
+    /** 左右外边距 */
     private var dialogMarginLeft: CGFloat = 30.0
+    /** 左右内边距 */
+    private var dialogPaddingLeft: CGFloat = 24.0
+    /** 按钮外边距 */
+    private var buttonMargin: CGFloat = 10
     /** 字体大小 */
     private var fontSize: CGFloat = 17.0
+    /** 标题字体大小 */
+    private var titleFontSize: CGFloat = 19.0
+    /** 标题上下边距 */
+    private var titleMargin: CGFloat = 15.0
+    /** 按钮字体大小 */
+    private var buttonFontSize: CGFloat = 18.0
+    /** 弹框默认高度 */
+    private var dialogDefaultHeight: CGFloat = 200.0
     /** 标题高度 */
     private var titleHeight: CGFloat = 25.0
     /** 按钮高度 */
     private var buttonHeight: CGFloat = 44.0
+    /** View圆角 */
+    private var dialogViewCorner: CGFloat = 9.0
+    /** 按钮圆角 */
+    private var buttonCorner: CGFloat = 3.0
+    /** 背景透明度 */
+    private var backgroundAlpha: CGFloat = 0.2
 
     // MARK: - 弹框控件
 
     /** 背景 */
-    var dialogView = UIView()
+    private var dialogView = UIView()
     /** 标题 */
-    var titleLable = UILabel()
+    private var titleLable = UILabel()
     /** 内容 */
-    var contentLabel: UILabel? = UILabel()
+    private var contentLabel: UILabel? = UILabel()
     /** 滑动 */
-    var scrollView = UIScrollView()
+    private var scrollView = UIScrollView()
     /** 取消按钮 */
-    let cancelButton = UIButton()
+    private let cancelButton = UIButton()
     /** 确定按钮 */
-    let confirmButton = UIButton()
+    private let confirmButton = UIButton()
     
     init(title: String?, message: String?, cancelButtonTitle: String?, confirmButtonTitle: String?) {
         super.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
@@ -60,6 +78,14 @@ class MessageDialog: UIView {
         self.confirmButton.setTitle(confirmButtonTitle, for: UIControl.State())
     }
 
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+
     /*
      - 创建MessageDialog
 
@@ -67,68 +93,80 @@ class MessageDialog: UIView {
      */
     func createDialog(message: String) {
         self.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT)
-        self.backgroundColor = UIColor.black.withAlphaComponent(0.2)
-        let sizeHeigth = (message.getHeightForComment(fontSize: fontSize, width: SCREEN_WIDTH - 60 - 48) + 130) > 200 ?
-            message.getHeightForComment(fontSize: fontSize, width: SCREEN_WIDTH - 60 - 48) + 130 : 200
-        //白底
-        dialogView.frame = CGRect(x: 30,
-                              y: SCREEN_HEIGHT/2 - 2*dialogMarginTop,
-                              width: SCREEN_WIDTH - 2*dialogMarginLeft,
-                              height: SCREEN_HEIGHT - sizeHeigth < 40 ? SCREEN_HEIGHT - 40 : sizeHeigth)
+        self.backgroundColor = UIColor.black.withAlphaComponent(backgroundAlpha)
+        let sizeHeight = (message.getHeightForComment(
+            fontSize: fontSize,
+            width: SCREEN_WIDTH - 2*dialogMarginLeft - 2*dialogPaddingLeft) + 130) > dialogDefaultHeight ?
+            message.getHeightForComment(fontSize: fontSize,
+                                        width: SCREEN_WIDTH - 2*dialogMarginLeft - 2*dialogPaddingLeft) + 130 :
+                                        dialogDefaultHeight
+        // 白底
+        dialogView.frame = CGRect(x: dialogMarginLeft,
+                                  y: SCREEN_HEIGHT/2 - 2*dialogMarginTop,
+                                  width: SCREEN_WIDTH - 2*dialogMarginLeft,
+                                  height: SCREEN_HEIGHT - sizeHeight < 40 ? SCREEN_HEIGHT - 40 : sizeHeight)
         dialogView.backgroundColor = UIColor.white
-        dialogView.layer.cornerRadius = 9
+        dialogView.layer.cornerRadius = dialogViewCorner
         dialogView.clipsToBounds = true
         dialogView.center = self.center
-
         self.addSubview(dialogView)
         let dialogWidth = dialogView.frame.size.width
         let dialogHeight = dialogView.frame.size.height
-    
-        //标题
-        titleLable.frame = CGRect(x: 0, y: 15, width: dialogWidth, height: titleHeight)
+
+        // 标题
+        titleLable.frame = CGRect(x: 0, y: titleMargin, width: dialogWidth, height: titleHeight)
         titleLable.textColor = UIColor.black
-        titleLable.font = UIFont.systemFont(ofSize: 19)
+        titleLable.font = UIFont.systemFont(ofSize: titleFontSize)
         titleLable.textAlignment = .center
         dialogView.addSubview(titleLable)
 
-        //滑动scroll
-        scrollView.frame = CGRect(x: 24, y: 55, width: dialogWidth - 48, height: dialogHeight - 130)
-        scrollView.isScrollEnabled = SCREEN_HEIGHT-dialogView.frame.size.height == 40 ? true: false
-        scrollView.contentSize = CGSize .init(width: 0,
-                                              height: message.getHeightForComment(fontSize: fontSize,
-                                                                                  width: SCREEN_WIDTH - 60-48))
+        // 滑动scroll
+        let contentHeight = message.getHeightForComment(fontSize: fontSize,
+                                                        width: SCREEN_WIDTH - 2*dialogMarginLeft - 2*dialogPaddingLeft)
+        scrollView.frame = CGRect(x: dialogPaddingLeft,
+                                  y: titleHeight + 2*titleMargin,
+                                  width: dialogWidth - 2*dialogPaddingLeft,
+                                  height: dialogHeight - 130)
+        scrollView.isScrollEnabled = SCREEN_HEIGHT - dialogView.frame.size.height == 40 ? true: false
+        scrollView.contentSize = CGSize.init(width: 0,
+                                             height: contentHeight)
         dialogView.addSubview(scrollView)
 
-        //内容
+        // 内容
         contentLabel?.frame = CGRect(x: 0,
                                      y: 0,
-                                     width: dialogWidth - 48,
-                                     height:message.getHeightForComment(fontSize: fontSize, width: SCREEN_WIDTH - 60 - 48))
+                                     width: dialogWidth - 2*dialogPaddingLeft,
+                                     height: contentHeight)
         contentLabel?.numberOfLines = 0
         contentLabel?.textAlignment = .center
         contentLabel?.textColor = UIColor.black
         contentLabel?.font = UIFont.systemFont(ofSize: fontSize)
         scrollView.addSubview(contentLabel!)
 
-        //取消按钮
-        let buttonWidth = (dialogWidth - 30) / 2
-        cancelButton.frame = CGRect(x: 10, y: dialogHeight-10-45, width: buttonWidth, height: buttonHeight)
+        // 取消按钮
+        let buttonWidth = (dialogWidth - 3*buttonMargin) / 2
+        cancelButton.frame = CGRect(x: buttonMargin,
+                                    y: dialogHeight - buttonMargin - buttonHeight,
+                                    width: buttonWidth,
+                                    height: buttonHeight)
         cancelButton.backgroundColor = UIColor.gray
         cancelButton.setTitleColor(UIColor.white, for: .normal)
-        cancelButton.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-        cancelButton.layer.cornerRadius = 3
+        cancelButton.titleLabel?.font = UIFont.systemFont(ofSize: buttonFontSize)
+        cancelButton.layer.cornerRadius = buttonCorner
         cancelButton.clipsToBounds = true
         cancelButton.tag = 1
         cancelButton.addTarget(self, action: #selector(clickBtnAction(_:)), for: .touchUpInside)
         dialogView.addSubview(cancelButton)
 
-        //确认按钮
-        confirmButton.frame = CGRect(x: buttonWidth + 20 , y: dialogHeight-10-45,
-                                     width: buttonWidth, height: buttonHeight)
+        // 确认按钮
+        confirmButton.frame = CGRect(x: buttonWidth + 2*buttonMargin,
+                                     y: dialogHeight - buttonMargin - buttonHeight,
+                                     width: buttonWidth,
+                                     height: buttonHeight)
         confirmButton.backgroundColor = UIColor.blue
         confirmButton.setTitleColor(UIColor.white, for: UIControl.State())
-        confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-        confirmButton.layer.cornerRadius = 3
+        confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: buttonFontSize)
+        confirmButton.layer.cornerRadius = buttonCorner
         confirmButton.clipsToBounds = true
         confirmButton.tag = 2
         confirmButton.addTarget(self, action: #selector(clickBtnAction(_:)), for: .touchUpInside)
@@ -164,10 +202,6 @@ class MessageDialog: UIView {
         UIView.animate(withDuration: 0.25, animations: { () -> Void in
             self.alpha = 1
         })
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
 
