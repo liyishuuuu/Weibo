@@ -48,7 +48,7 @@ class ComfirmDialog: UIView {
     /** 按钮圆角 */
     private var buttonCorner: CGFloat = 3.0
     /** 背景透明度 */
-    private var backgroundAlpha: CGFloat = 0.2
+    private var backgroundAlpha: CGFloat = 0.3
 
     // MARK: - 弹框控件
 
@@ -60,6 +60,8 @@ class ComfirmDialog: UIView {
     private var contentLabel: UILabel? = UILabel()
     /** 滑动 */
     private var scrollView = UIScrollView()
+    /** 线 */
+    private var lineView = UIView()
     /** 确定按钮 */
     private let confirmButton = UIButton()
 
@@ -141,6 +143,14 @@ class ComfirmDialog: UIView {
         contentLabel?.textColor = UIColor.black
         contentLabel?.font = UIFont.systemFont(ofSize: fontSize)
         scrollView.addSubview(contentLabel!)
+
+        // 线View
+        lineView.frame = CGRect(x: 0,
+                                y: dialogHeight - 2*buttonMargin - buttonHeight,
+                                width: SCREEN_WIDTH,
+                                height: 1)
+        lineView.backgroundColor = UIColor.init(hexString: "#F5F5F5")
+        dialogView.addSubview(lineView)
 
         // 取消按钮
         let buttonWidth = dialogWidth - 2*buttonMargin

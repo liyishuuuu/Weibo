@@ -50,7 +50,7 @@ class MessageDialog: UIView {
     /** 按钮圆角 */
     private var buttonCorner: CGFloat = 3.0
     /** 背景透明度 */
-    private var backgroundAlpha: CGFloat = 0.2
+    private var backgroundAlpha: CGFloat = 0.3
 
     // MARK: - 弹框控件
 
@@ -62,6 +62,8 @@ class MessageDialog: UIView {
     private var contentLabel: UILabel? = UILabel()
     /** 滑动 */
     private var scrollView = UIScrollView()
+    /** 线 */
+    private var lineView = UIView()
     /** 取消按钮 */
     private let cancelButton = UIButton()
     /** 确定按钮 */
@@ -69,11 +71,11 @@ class MessageDialog: UIView {
     
     init(title: String?, message: String?, cancelButtonTitle: String?, confirmButtonTitle: String?) {
         super.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
-        self.createDialog(message: message!)
         self.titleLable.text = title
         self.contentLabel?.text = message
         self.cancelButton.setTitle(cancelButtonTitle, for: UIControl.State())
         self.confirmButton.setTitle(confirmButtonTitle, for: UIControl.State())
+        self.createDialog(message: message!)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -147,14 +149,22 @@ class MessageDialog: UIView {
         contentLabel?.font = UIFont.systemFont(ofSize: fontSize)
         scrollView.addSubview(contentLabel!)
 
+        // 线View
+        lineView.frame = CGRect(x: 0,
+                                y: dialogHeight - 2*buttonMargin - buttonHeight,
+                                width: SCREEN_WIDTH,
+                                height: 1)
+        lineView.backgroundColor = UIColor.init(hexString: "#F5F5F5")
+        dialogView.addSubview(lineView)
+
         // 取消按钮
         let buttonWidth = (dialogWidth - 3*buttonMargin) / 2
         cancelButton.frame = CGRect(x: buttonMargin,
                                     y: dialogHeight - buttonMargin - buttonHeight,
                                     width: buttonWidth,
                                     height: buttonHeight)
-        cancelButton.backgroundColor = UIColor.gray
-        cancelButton.setTitleColor(UIColor.white, for: .normal)
+//        cancelButton.backgroundColor = UIColor.gray
+        cancelButton.setTitleColor(UIColor.darkGray, for: .normal)
         cancelButton.titleLabel?.font = UIFont.systemFont(ofSize: buttonFontSize)
         cancelButton.layer.cornerRadius = buttonCorner
         cancelButton.clipsToBounds = true
@@ -167,8 +177,8 @@ class MessageDialog: UIView {
                                      y: dialogHeight - buttonMargin - buttonHeight,
                                      width: buttonWidth,
                                      height: buttonHeight)
-        confirmButton.backgroundColor = UIColor.init(hexString: "#1E90FF")
-        confirmButton.setTitleColor(UIColor.white, for: UIControl.State())
+//        confirmButton.backgroundColor = UIColor.init(hexString: "#1E90FF")
+        confirmButton.setTitleColor(UIColor.darkGray, for: UIControl.State())
         confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: buttonFontSize)
         confirmButton.layer.cornerRadius = buttonCorner
         confirmButton.clipsToBounds = true

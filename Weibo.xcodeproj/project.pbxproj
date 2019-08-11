@@ -27,6 +27,7 @@
 		4469A50322D0995800B5EED4 /* WBNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4469A50222D0995800B5EED4 /* WBNewFeatureView.swift */; };
 		4469A50522D18ACC00B5EED4 /* WBWelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4469A50422D18ACC00B5EED4 /* WBWelcomeView.xib */; };
 		4469A50722D1BDC400B5EED4 /* WBNewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4469A50622D1BDC400B5EED4 /* WBNewFeatureView.xib */; };
+		448005FD23004B1900312C6C /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448005FC23004B1900312C6C /* DatePickerView.swift */; };
 		449855BC22AC88EF0077653C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449855BB22AC88EF0077653C /* AppDelegate.swift */; };
 		449855C122AC88EF0077653C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449855BF22AC88EF0077653C /* Main.storyboard */; };
 		449855C322AC88F00077653C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449855C222AC88F00077653C /* Assets.xcassets */; };
@@ -65,6 +66,7 @@
 		4498E29222B641B8007D8E64 /* UITapGestureRecognizer+JHExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E27922B641B8007D8E64 /* UITapGestureRecognizer+JHExtension.swift */; };
 		4498E29322B641B8007D8E64 /* JHPOPAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E27A22B641B8007D8E64 /* JHPOPAlertView.swift */; };
 		4498E29422B641B8007D8E64 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498E27C22B641B8007D8E64 /* ServiceManager.swift */; };
+		449C16CB22FF862E008628C7 /* WBTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449C16CA22FF862E008628C7 /* WBTestViewController.swift */; };
 		44A2074E22C75E7700CD5BE2 /* WBUserAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A2074D22C75E7700CD5BE2 /* WBUserAccountModel.swift */; };
 		44A5FBF722DA958C00408B68 /* WBStatusToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A5FBF622DA958C00408B68 /* WBStatusToolBar.swift */; };
 		44A5FBF922DABCC700408B68 /* WBStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A5FBF822DABCC700408B68 /* WBStatusPictureView.swift */; };
@@ -119,6 +121,7 @@
 		4469A50222D0995800B5EED4 /* WBNewFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBNewFeatureView.swift; sourceTree = "<group>"; };
 		4469A50422D18ACC00B5EED4 /* WBWelcomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBWelcomeView.xib; sourceTree = "<group>"; };
 		4469A50622D1BDC400B5EED4 /* WBNewFeatureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBNewFeatureView.xib; sourceTree = "<group>"; };
+		448005FC23004B1900312C6C /* DatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		449855B822AC88EF0077653C /* Weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449855BB22AC88EF0077653C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		449855C022AC88EF0077653C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -163,6 +166,7 @@
 		4498E27922B641B8007D8E64 /* UITapGestureRecognizer+JHExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer+JHExtension.swift"; sourceTree = "<group>"; };
 		4498E27A22B641B8007D8E64 /* JHPOPAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHPOPAlertView.swift; sourceTree = "<group>"; };
 		4498E27C22B641B8007D8E64 /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		449C16CA22FF862E008628C7 /* WBTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBTestViewController.swift; sourceTree = "<group>"; };
 		44A2074D22C75E7700CD5BE2 /* WBUserAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBUserAccountModel.swift; sourceTree = "<group>"; };
 		44A5FBF622DA958C00408B68 /* WBStatusToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusToolBar.swift; sourceTree = "<group>"; };
 		44A5FBF822DABCC700408B68 /* WBStatusPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusPictureView.swift; sourceTree = "<group>"; };
@@ -270,7 +274,9 @@
 				4468600B22FCE7C500F1C94F /* TestViewController.swift */,
 				4468600D22FCE7F500F1C94F /* MessageDialog.swift */,
 				4455324122FEF61100D032FC /* ComfirmDialog.swift */,
+				448005FC23004B1900312C6C /* DatePickerView.swift */,
 				4468600F22FD922200F1C94F /* String_StringHeight.swift */,
+				449C16CA22FF862E008628C7 /* WBTestViewController.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -836,6 +842,7 @@
 				4440A7C522D61ABE00D159C0 /* WBStatusCell.swift in Sources */,
 				4498E27D22B641B8007D8E64 /* TimerButton.swift in Sources */,
 				4498E28022B641B8007D8E64 /* LocationTool.swift in Sources */,
+				448005FD23004B1900312C6C /* DatePickerView.swift in Sources */,
 				4498E28A22B641B8007D8E64 /* Dictionary+JHExtension.swift in Sources */,
 				44A5FBFB22DAD6B100408B68 /* WBStatusPicture.swift in Sources */,
 				44D2945F22BAFCA70077A968 /* WBNetWorkManager+Extension.swift in Sources */,
@@ -855,6 +862,7 @@
 				4468601022FD922200F1C94F /* String_StringHeight.swift in Sources */,
 				4498E27E22B641B8007D8E64 /* EntryView.swift in Sources */,
 				4498E28822B641B8007D8E64 /* Date+JHExtension.swift in Sources */,
+				449C16CB22FF862E008628C7 /* WBTestViewController.swift in Sources */,
 				441AEADC22D974440054276A /* WBUser.swift in Sources */,
 				4498E27F22B641B8007D8E64 /* SwiftPopMenu.swift in Sources */,
 				44C2B40022BE7AD300B014F6 /* WBBlogViewController.swift in Sources */,
