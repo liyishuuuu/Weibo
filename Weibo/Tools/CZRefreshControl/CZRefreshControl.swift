@@ -8,6 +8,20 @@
 
 import UIKit
 
+/// 刷新控件状态
+///
+/// - Normal: 普通状态，什么也不做
+/// - Pulling: 超过临界点，如果放手，开始刷新
+/// - WillRefresh: 用户超过临界点并且放手
+enum CZRefreshState {
+    case Normal
+    case Pulling
+    case WillRefresh
+}
+
+/** 刷新控件的临界点 */
+private let CZRefreshOffset: CGFloat = 60
+
 // 刷新控件
 class CZRefreshControl: UIControl {
 
@@ -43,6 +57,28 @@ class CZRefreshControl: UIControl {
             return
         }
 
+        // 初始高度为0
+        let height = -(sv.contentInset.top + sv.contentOffset.y)
+
+        if height < 0 {
+            return
+        }
+
+        //可以根据高度计算刷新控件的frame
+        self.frame = CGRect(x: 0,
+                            y: -height,
+                            width: sv.bounds.width,
+                            height: height)
+
+        if sv.isDragging {
+            if height > CZRefreshOffset {
+                print("放手刷新")
+            } else {
+                print("再使劲")
+            }
+        } else {
+            print("放手刷新")
+        }
         // 记录父视图
         scrollView = sv
 

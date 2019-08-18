@@ -10,6 +10,13 @@ import UIKit
 
 // 刷新视图
 class CZRefreshView: UIView {
+
+    // MARK: - 定义刷新状态
+
+    var refreshState: CZRefreshState = .Normal
+
+    // MARK: - IBOutlet
+
     /** 提示图标 */
     @IBOutlet weak var tipIcon: UIImageView!
     /** 提示标签*/
