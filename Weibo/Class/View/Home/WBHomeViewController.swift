@@ -22,20 +22,26 @@ class WBHomeViewController: WBBaseViewController {
 
     /// 加载数据
     override func loadData() {
-        listViewModel.loadStatus(isPullUp: isPullup) { (isSuccess, isMorePullUp) in
- 
-            /// 结束下拉刷新
-            self.refreshControl?.endRefreshing()
 
-            /// 恢复上拉加载标记
-            self.isPullup = false
+        print("准备刷新")
+        refreshControl?.beginRefreshing()
 
-            /// 设置tableView
-            self.setupTableView()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+            self.listViewModel.loadStatus(isPullUp: self.isPullup) { (isSuccess, isMorePullUp) in
+     
+                /// 结束下拉刷新
+                self.refreshControl?.endRefreshing()
 
-            /// 加载数据
-            if isMorePullUp {
-                self.tableView?.reloadData()
+                /// 恢复上拉加载标记
+                self.isPullup = false
+
+                /// 设置tableView
+                self.setupTableView()
+
+                /// 加载数据
+                if isMorePullUp {
+                    self.tableView?.reloadData()
+                }
             }
         }
     }
@@ -91,6 +97,7 @@ extension WBHomeViewController {
         super.setUpUI()
         view.addSubview(navigationBar)
         navItem.leftBarButtonItem = UIBarButtonItem(title: "微博", target: self, action: #selector(showBlog))
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "设置", target: self, action: #selector(set))
     }
 
     /// 设置tableView
@@ -145,6 +152,10 @@ extension WBHomeViewController {
     @objc private func showBlog() {
         print(#function)
         let vc = TestViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    @objc private func set() {
+        let vc = TestViewController()
+        self.present(vc, animated:true, completion:nil)
     }
 }

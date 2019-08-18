@@ -16,7 +16,7 @@ class ComfirmDialog: UIView {
     // 把申明的闭包设置成属性
     var clickClosure: clickAlertClosure?
     // 为闭包设置调用函数
-    func clickIndexClosure(_ closure: clickAlertClosure?){
+    func clickIndexClosure(_ closure: clickAlertClosure?) {
         // 将函数指针赋值给myClosure闭包
         clickClosure = closure
     }
@@ -86,7 +86,7 @@ class ComfirmDialog: UIView {
      
      - para message: 消息文言
      */
-    func createDialog(message: String) {
+    private func createDialog(message: String) {
         self.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT)
         self.backgroundColor = UIColor.black.withAlphaComponent(backgroundAlpha)
         if titleLable.text == nil {
