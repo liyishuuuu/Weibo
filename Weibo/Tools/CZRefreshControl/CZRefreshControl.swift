@@ -75,8 +75,6 @@ class CZRefreshControl: UIControl {
         superview?.removeObserver(self, forKeyPath: "contentOffset")
         super.removeFromSuperview()
         // superView不存在
-        
-        
     }
 
     // 所有
@@ -107,9 +105,13 @@ class CZRefreshControl: UIControl {
             }
         } else {
             if refreshView.refreshState == .Pulling {
-                print("放手刷新")
+                print("准备开始刷新")
                 //刷新结束之后，将状态改为.Normal 才能继续响应刷新
                 refreshView.refreshState = .WillRefresh
+
+                var inset = sv.contentInset
+                inset.top += CZRefreshOffset
+                sv.contentInset = inset
             }
         }
     }
@@ -130,7 +132,7 @@ extension CZRefreshControl {
         backgroundColor = UIColor.white
 
         // 设置超出边界不显示
-        clipsToBounds = true
+//        clipsToBounds = true
         // 添加刷新视图
         addSubview(refreshView)
         // 自动布局
