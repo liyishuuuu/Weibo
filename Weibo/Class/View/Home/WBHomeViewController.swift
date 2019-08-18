@@ -26,7 +26,7 @@ class WBHomeViewController: WBBaseViewController {
         print("准备刷新")
         refreshControl?.beginRefreshing()
 
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
             self.listViewModel.loadStatus(isPullUp: self.isPullup) { (isSuccess, isMorePullUp) in
      
                 /// 结束下拉刷新
