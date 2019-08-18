@@ -57,39 +57,9 @@ class CZRefreshControl: UIControl {
             return
         }
 
-        // 初始高度为0
-        let height = -(sv.contentInset.top + sv.contentOffset.y)
-
-        if height < 0 {
-            return
-        }
-
-        //可以根据高度计算刷新控件的frame
-        self.frame = CGRect(x: 0,
-                            y: -height,
-                            width: sv.bounds.width,
-                            height: height)
-
-        print(height)
-
-        if sv.isDragging {
-            if height > CZRefreshOffset && (refreshView.refreshState == .Normal) {
-                print("放手刷新")
-                refreshView.refreshState = .Pulling
-            } else if height <= CZRefreshOffset && (refreshView.refreshState == .Pulling){
-                print("再使劲")
-                refreshView.refreshState = .Normal
-            }
-        } else {
-            if refreshView.refreshState == .Pulling {
-                print("放手刷新")
-                //刷新结束之后，将状态改为.Normal 才能继续响应刷新
-                refreshView.refreshState = .WillRefresh
-            }
-        }
         // 记录父视图
         scrollView = sv
-
+        
         // KVO 监听 父视图的 contentOffset
         scrollView?.addObserver(self, forKeyPath: "contentOffset", options: [], context: nil)
     }
@@ -108,24 +78,48 @@ class CZRefreshControl: UIControl {
         
         
     }
+
     // 所有
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         guard let sv = scrollView else {
             return
         }
-        let height = -(sv.contentInset.top + sv.contentOffset.y)
+        let height = -(sv.contentInset.top + sv.contentOffset.y) - 20
+        
+        if height < 0 {
+            return
+        }
+
         self.frame = CGRect(x: 0,
                             y: -height,
                             width: sv.bounds.width,
                             height: height)
+
+        print(height)
+        
+        if sv.isDragging {
+            if height > CZRefreshOffset && (refreshView.refreshState == .Normal) {
+                print("放手刷新")
+                refreshView.refreshState = .Pulling
+            } else if height <= CZRefreshOffset && (refreshView.refreshState == .Pulling){
+                print("再使劲")
+                refreshView.refreshState = .Normal
+            }
+        } else {
+            if refreshView.refreshState == .Pulling {
+                print("放手刷新")
+                //刷新结束之后，将状态改为.Normal 才能继续响应刷新
+                refreshView.refreshState = .WillRefresh
+            }
+        }
     }
 
-    // May be used to indicate to the refreshControl that an external event has initiated the refresh action
+    // 开始刷新
     func beginRefreshing() {
         
     }
 
-    // Must be explicitly called when the refreshing has completed
+    // 结束刷新
     func endRefreshing() {
         
     }

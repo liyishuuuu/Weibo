@@ -18,8 +18,14 @@ class CZRefreshView: UIView {
             switch refreshState {
             case .Normal:
                 tipLabel.text = "继续使劲。。。"
+                UIView.animate(withDuration: 0.25) {
+                    self.tipIcon.transform = CGAffineTransform.identity
+                }
             case .Pulling:
                 tipLabel.text = "放手就刷新。。。"
+                UIView.animate(withDuration: 0.25) {
+                    self.tipIcon.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI - 0.0001))
+                }
             case .WillRefresh:
                 tipLabel.text = "正在刷新中。。。"
             }
