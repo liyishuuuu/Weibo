@@ -70,14 +70,22 @@ class CZRefreshControl: UIControl {
                             width: sv.bounds.width,
                             height: height)
 
+        print(height)
+
         if sv.isDragging {
-            if height > CZRefreshOffset {
+            if height > CZRefreshOffset && (refreshView.refreshState == .Normal) {
                 print("放手刷新")
-            } else {
+                refreshView.refreshState = .Pulling
+            } else if height <= CZRefreshOffset && (refreshView.refreshState == .Pulling){
                 print("再使劲")
+                refreshView.refreshState = .Normal
             }
         } else {
-            print("放手刷新")
+            if refreshView.refreshState == .Pulling {
+                print("放手刷新")
+                //刷新结束之后，将状态改为.Normal 才能继续响应刷新
+                refreshView.refreshState = .WillRefresh
+            }
         }
         // 记录父视图
         scrollView = sv
