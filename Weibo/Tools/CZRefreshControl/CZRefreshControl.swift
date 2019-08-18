@@ -107,18 +107,29 @@ class CZRefreshControl: UIControl {
             if refreshView.refreshState == .Pulling {
                 print("准备开始刷新")
                 //刷新结束之后，将状态改为.Normal 才能继续响应刷新
-                refreshView.refreshState = .WillRefresh
-
-                var inset = sv.contentInset
-                inset.top += CZRefreshOffset
-                sv.contentInset = inset
+                beginRefreshing()
             }
         }
     }
 
     // 开始刷新
     func beginRefreshing() {
-        
+        print("开始刷新")
+        guard let sv = scrollView else {
+            return
+        }
+
+        // 判断是否正在刷新，如果正在刷新，直接返回
+        if refreshView.refreshState == .WillRefresh {
+            return
+        }
+        // 设置刷新视图的状态
+        refreshView.refreshState = .WillRefresh
+
+        // 调整表格的间距
+        var inset = sv.contentInset
+        inset.top += CZRefreshOffset
+        sv.contentInset = inset
     }
 
     // 结束刷新
