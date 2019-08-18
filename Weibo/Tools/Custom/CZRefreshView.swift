@@ -13,7 +13,18 @@ class CZRefreshView: UIView {
 
     // MARK: - 定义刷新状态
 
-    var refreshState: CZRefreshState = .Normal
+    var refreshState: CZRefreshState = .Normal {
+        didSet {
+            switch refreshState {
+            case .Normal:
+                tipLabel.text = "继续使劲。。。"
+            case .Pulling:
+                tipLabel.text = "放手就刷新。。。"
+            case .WillRefresh:
+                tipLabel.text = "正在刷新中。。。"
+            }
+        }
+    }
 
     // MARK: - IBOutlet
 

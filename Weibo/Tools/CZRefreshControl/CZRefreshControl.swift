@@ -133,7 +133,7 @@ class CZRefreshControl: UIControl {
 
 extension CZRefreshControl {
     private func setupUI() {
-        backgroundColor = UIColor.orange
+        backgroundColor = UIColor.white
 
         // 设置超出边界不显示
         clipsToBounds = true
