@@ -16,4 +16,9 @@ class CZRefreshView: UIView {
     @IBOutlet weak var tipLabel: UILabel!
     /** 指示器 */
     @IBOutlet weak var indicate: UIActivityIndicatorView!
+
+    class func redreshView() -> CZRefreshView {
+        let nib = UINib(nibName: "CZRefreshView", bundle: nil)
+        return nib.instantiate(withOwner: nil, options: nil)[0] as! CZRefreshView
+    }
 }

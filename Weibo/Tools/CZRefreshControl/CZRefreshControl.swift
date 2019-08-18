@@ -15,6 +15,9 @@ class CZRefreshControl: UIControl {
 
     // 刷新视图的父视图，下拉刷新控件应该适用于UItableView UICollectionView
     private weak var scrollView: UIScrollView?
+    
+    // refreshView
+    private lazy var refreshView: CZRefreshView = CZRefreshView.redreshView()
 
     // 构造函数
     override init(frame: CGRect) {
@@ -87,5 +90,40 @@ class CZRefreshControl: UIControl {
 extension CZRefreshControl {
     private func setupUI() {
         backgroundColor = UIColor.orange
+
+        // 设置超出边界不显示
+        clipsToBounds = true
+        // 添加刷新视图
+        addSubview(refreshView)
+        // 自动布局
+        refreshView.translatesAutoresizingMaskIntoConstraints = false
+        addConstraint(NSLayoutConstraint(item: refreshView,
+                                         attribute: .centerX,
+                                         relatedBy: .equal,
+                                         toItem: self,
+                                         attribute: .centerX,
+                                         multiplier: 1.0,
+                                         constant: 0))
+        addConstraint(NSLayoutConstraint(item: refreshView,
+                                         attribute: .bottom,
+                                         relatedBy: .equal,
+                                         toItem: self,
+                                         attribute: .bottom,
+                                         multiplier: 1.0,
+                                         constant: 0))
+        addConstraint(NSLayoutConstraint(item: refreshView,
+                                         attribute: .width,
+                                         relatedBy: .equal,
+                                         toItem: nil,
+                                         attribute: .notAnAttribute,
+                                         multiplier: 1.0,
+                                         constant: refreshView.bounds.width))
+        addConstraint(NSLayoutConstraint(item: refreshView,
+                                         attribute: .height,
+                                         relatedBy: .equal,
+                                         toItem: nil,
+                                         attribute: .notAnAttribute,
+                                         multiplier: 1.0,
+                                         constant: refreshView.bounds.height))
     }
 }
