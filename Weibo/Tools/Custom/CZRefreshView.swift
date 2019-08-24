@@ -22,17 +22,17 @@ class CZRefreshView: UIView {
                 tipIcon.isHidden = false
                 indicate.stopAnimating()
         
-                tipLabel.text = "继续使劲。。。"
+                tipLabel.text = "下拉刷新"
                 UIView.animate(withDuration: 0.25) {
                     self.tipIcon.transform = CGAffineTransform.identity
                 }
             case .Pulling:
-                tipLabel.text = "放手就刷新。。。"
+                tipLabel.text = "松手刷新"
                 UIView.animate(withDuration: 0.25) {
                     self.tipIcon.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI - 0.0001))
                 }
             case .WillRefresh:
-                tipLabel.text = "正在刷新中。。。"
+                tipLabel.text = "正在刷新"
                 // 隐藏提示图标
                 tipIcon.isHidden = true
                 // 显示Indicate
@@ -50,7 +50,7 @@ class CZRefreshView: UIView {
     /** 指示器 */
     @IBOutlet weak var indicate: UIActivityIndicatorView!
 
-    class func redreshView() -> CZRefreshView {
+    class func refreshView() -> CZRefreshView {
         let nib = UINib(nibName: "CZRefreshView", bundle: nil)
         return nib.instantiate(withOwner: nil, options: nil)[0] as! CZRefreshView
     }

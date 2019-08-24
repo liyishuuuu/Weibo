@@ -28,7 +28,7 @@ class WBHomeViewController: WBBaseViewController {
 
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
             self.listViewModel.loadStatus(isPullUp: self.isPullup) { (isSuccess, isMorePullUp) in
-     
+
                 /// 结束下拉刷新
                 self.refreshControl?.endRefreshing()
 

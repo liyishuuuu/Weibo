@@ -31,7 +31,7 @@ class CZRefreshControl: UIControl {
     private weak var scrollView: UIScrollView?
     
     // refreshView
-    private lazy var refreshView: CZRefreshView = CZRefreshView.redreshView()
+    private lazy var refreshView: CZRefreshView = CZRefreshView.refreshView()
 
     // 构造函数
     override init(frame: CGRect) {
@@ -108,6 +108,9 @@ class CZRefreshControl: UIControl {
                 print("准备开始刷新")
                 //刷新结束之后，将状态改为.Normal 才能继续响应刷新
                 beginRefreshing()
+
+                // 发送刷新数据事件
+                sendActions(for: .valueChanged)
             }
         }
     }
