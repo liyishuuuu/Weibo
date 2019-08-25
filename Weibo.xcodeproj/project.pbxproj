@@ -14,6 +14,7 @@
 		441AEADE22D97EA10054276A /* WBStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441AEADD22D97EA10054276A /* WBStatusViewModel.swift */; };
 		441AEAE022DA06180054276A /* UIImageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441AEADF22DA06180054276A /* UIImageView+WebImage.swift */; };
 		441AEAE222DA0BD20054276A /* UIImage+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441AEAE122DA0BD20054276A /* UIImage+extensions.swift */; };
+		4420E7632312B7CA0061124C /* WBComposeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4420E7622312B7CA0061124C /* WBComposeTypeView.swift */; };
 		442169712308D2D5009BB476 /* CZRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442169702308D2D5009BB476 /* CZRefreshView.swift */; };
 		4440A7C522D61ABE00D159C0 /* WBStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4440A7C422D61ABE00D159C0 /* WBStatusCell.swift */; };
 		4440A7C722D61B1D00D159C0 /* WBStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4440A7C622D61B1D00D159C0 /* WBStatusNormalCell.xib */; };
@@ -114,6 +115,7 @@
 		441AEADD22D97EA10054276A /* WBStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusViewModel.swift; sourceTree = "<group>"; };
 		441AEADF22DA06180054276A /* UIImageView+WebImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+WebImage.swift"; sourceTree = "<group>"; };
 		441AEAE122DA0BD20054276A /* UIImage+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+extensions.swift"; sourceTree = "<group>"; };
+		4420E7622312B7CA0061124C /* WBComposeTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBComposeTypeView.swift; sourceTree = "<group>"; };
 		442169702308D2D5009BB476 /* CZRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CZRefreshView.swift; sourceTree = "<group>"; };
 		4440A7C422D61ABE00D159C0 /* WBStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusCell.swift; sourceTree = "<group>"; };
 		4440A7C622D61B1D00D159C0 /* WBStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBStatusNormalCell.xib; sourceTree = "<group>"; };
@@ -241,6 +243,22 @@
 			path = OAuth;
 			sourceTree = "<group>";
 		};
+		4420E7602312B6190061124C /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				4420E7612312B66A0061124C /* ComposeType */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		4420E7612312B66A0061124C /* ComposeType */ = {
+			isa = PBXGroup;
+			children = (
+				4420E7622312B7CA0061124C /* WBComposeTypeView.swift */,
+			);
+			path = ComposeType;
+			sourceTree = "<group>";
+		};
 		4440A7C322D61A7900D159C0 /* StatusCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,7 +375,6 @@
 			children = (
 				449855ED22AC9BD40077653C /* View */,
 				449855EA22AC9BD40077653C /* ViewModel */,
-				449855EC22AC9BD40077653C /* Model */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -399,7 +416,8 @@
 				441AEADB22D974440054276A /* WBUser.swift */,
 				44A5FBFA22DAD6B100408B68 /* WBStatusPicture.swift */,
 			);
-			path = Model;
+			name = Model;
+			path = ../Model;
 			sourceTree = "<group>";
 		};
 		449855ED22AC9BD40077653C /* View */ = {
@@ -410,6 +428,8 @@
 				449855EF22AC9BD40077653C /* Discovery */,
 				449855F022AC9BD40077653C /* Message */,
 				449855F122AC9BD40077653C /* Profile */,
+				449855EC22AC9BD40077653C /* Model */,
+				4420E7602312B6190061124C /* Compose */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -893,6 +913,7 @@
 				4498560522AD14DD0077653C /* WBFriendsViewController.swift in Sources */,
 				4498E28522B641B8007D8E64 /* ValueChange.swift in Sources */,
 				4469A50122D098AB00B5EED4 /* WBWelcomeView.swift in Sources */,
+				4420E7632312B7CA0061124C /* WBComposeTypeView.swift in Sources */,
 				441AEADE22D97EA10054276A /* WBStatusViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

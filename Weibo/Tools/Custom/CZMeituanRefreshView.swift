@@ -13,6 +13,6 @@ class CZMeituanRefreshView: CZRefreshView {
     override func awakeFromNib() {
          let image1 = "wm_common_img_loading_list4"
          let image2 = "wm_common_img_loading_list1"
-        humanImageView.image = UIImage.animatedImage(with: [UIImage(named: image1)!, UIImage(named: image2)!], duration: 0.5)
+        humanImageView.image = UIImage.animatedImage(with: [UIImage(named: image1)!, UIImage(named: image2)!], duration: 0.2)
   }
 }

@@ -52,7 +52,14 @@ class WBMainViewController: UITabBarController {
     }
     @objc private func componseStatus() {
         print("撰写微博")
-        
+
+        // 判断是否登录
+
+        // 实例化视图
+        let v = WBComposeTypeView()
+
+        // 显示视图
+        v.show()
     }
 
     //懒加载一个button
@@ -68,10 +75,10 @@ class WBMainViewController: UITabBarController {
 
 // MARK: - 设置界面
 extension WBMainViewController {
-    
+
     /// 设置撰写button
     private func setUpComposeButton() {
-        
+
         /// 加载button
         tabBar.addSubview(composeButton)
 
@@ -84,12 +91,11 @@ extension WBMainViewController {
 
         // 按钮监听方法
         composeButton.addTarget(self, action: #selector(componseStatus), for: .touchUpInside)
-        
-    }
-    
+}
+
     /// 设置5个tab键
     private func setUpChildControllers() {
-        
+
         // 从bundle加载配置的json
         /// 1,路径 2.加载NSData 3.反序列化转换成数组
         guard let path = Bundle.main.path(forResource: "main.json", ofType: nil),
@@ -106,7 +112,7 @@ extension WBMainViewController {
         }
         viewControllers = arrayM
     }
-    
+
     //// 使用字典创建一个子控制器
     ///
     /// - Parameter dict: 信息字典[clsName,title,imageName,visitorInfo] 
