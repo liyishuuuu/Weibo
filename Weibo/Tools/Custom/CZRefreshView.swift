@@ -19,23 +19,23 @@ class CZRefreshView: UIView {
             case .Normal:
 
                 // 恢复状态
-                tipIcon.isHidden = false
-                indicate.stopAnimating()
-                tipLabel.text = "下拉刷新"
+                tipIcon?.isHidden = false
+                indicate?.stopAnimating()
+                tipLabel?.text = "下拉刷新"
                 UIView.animate(withDuration: 0.25) {
-                    self.tipIcon.transform = CGAffineTransform.identity
+                    self.tipIcon?.transform = CGAffineTransform.identity
                 }
             case .Pulling:
-                tipLabel.text = "松手刷新"
+                tipLabel?.text = "松手刷新"
                 UIView.animate(withDuration: 0.25) {
-                    self.tipIcon.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI - 0.0001))
+                    self.tipIcon?.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI - 0.0001))
                 }
             case .WillRefresh:
-                tipLabel.text = "正在刷新"
+                tipLabel?.text = "正在刷新"
                 // 隐藏提示图标
-                tipIcon.isHidden = true
+                tipIcon?.isHidden = true
                 // 显示Indicate
-                indicate.startAnimating()
+                indicate?.startAnimating()
             }
         }
     }
@@ -43,14 +43,14 @@ class CZRefreshView: UIView {
     // MARK: - IBOutlet
 
     /** 提示图标 */
-    @IBOutlet weak var tipIcon: UIImageView!
+    @IBOutlet weak var tipIcon: UIImageView?
     /** 提示标签*/
-    @IBOutlet weak var tipLabel: UILabel!
+    @IBOutlet weak var tipLabel: UILabel?
     /** 指示器 */
-    @IBOutlet weak var indicate: UIActivityIndicatorView!
+    @IBOutlet weak var indicate: UIActivityIndicatorView?
 
     class func refreshView() -> CZRefreshView {
-        let nib = UINib(nibName: "CZRefreshView", bundle: nil)
+        let nib = UINib(nibName: "CZMeituanRefreshView", bundle: nil)
         return nib.instantiate(withOwner: nil, options: nil)[0] as! CZRefreshView
     }
 }

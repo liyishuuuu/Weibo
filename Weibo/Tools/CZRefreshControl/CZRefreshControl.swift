@@ -20,7 +20,7 @@ enum CZRefreshState {
 }
 
 /** 刷新控件的临界点 */
-private let CZRefreshOffset: CGFloat = 60
+private let CZRefreshOffset: CGFloat = 96
 
 // 刷新控件
 class CZRefreshControl: UIControl {
@@ -31,7 +31,7 @@ class CZRefreshControl: UIControl {
     private weak var scrollView: UIScrollView?
     
     // refreshView
-    private lazy var refreshView: CZRefreshView = CZRefreshView.refreshView()
+    private lazy var refreshView: CZMeituanRefreshView = CZRefreshView.refreshView() as! CZMeituanRefreshView
 
     // 构造函数
     override init(frame: CGRect) {

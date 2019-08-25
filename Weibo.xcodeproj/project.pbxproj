@@ -17,6 +17,9 @@
 		442169712308D2D5009BB476 /* CZRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442169702308D2D5009BB476 /* CZRefreshView.swift */; };
 		4440A7C522D61ABE00D159C0 /* WBStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4440A7C422D61ABE00D159C0 /* WBStatusCell.swift */; };
 		4440A7C722D61B1D00D159C0 /* WBStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4440A7C622D61B1D00D159C0 /* WBStatusNormalCell.xib */; };
+		4446888E231243D6002722CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4446888D231243D6002722CD /* Assets.xcassets */; };
+		4446889423124692002722CD /* CZMeituanRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4446889323124692002722CD /* CZMeituanRefreshView.swift */; };
+		4446889623124E77002722CD /* CZMeituanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4446889523124E77002722CD /* CZMeituanRefreshView.xib */; };
 		444BF35422B7C714000CCAB0 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 444BF35322B7C714000CCAB0 /* main.json */; };
 		4455324022FE6C3700D032FC /* customize_color.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4455323F22FE6C3700D032FC /* customize_color.xml */; };
 		4455324222FEF61100D032FC /* ComfirmDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4455324122FEF61100D032FC /* ComfirmDialog.swift */; };
@@ -31,7 +34,6 @@
 		448005FD23004B1900312C6C /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448005FC23004B1900312C6C /* DatePickerView.swift */; };
 		449855BC22AC88EF0077653C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449855BB22AC88EF0077653C /* AppDelegate.swift */; };
 		449855C122AC88EF0077653C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449855BF22AC88EF0077653C /* Main.storyboard */; };
-		449855C322AC88F00077653C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449855C222AC88F00077653C /* Assets.xcassets */; };
 		449855D122AC88F00077653C /* WeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449855D022AC88F00077653C /* WeiboTests.swift */; };
 		449855DC22AC88F00077653C /* WeiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449855DB22AC88F00077653C /* WeiboUITests.swift */; };
 		449855F422AC9C5B0077653C /* WBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449855F322AC9C5B0077653C /* WBMainViewController.swift */; };
@@ -115,6 +117,9 @@
 		442169702308D2D5009BB476 /* CZRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CZRefreshView.swift; sourceTree = "<group>"; };
 		4440A7C422D61ABE00D159C0 /* WBStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusCell.swift; sourceTree = "<group>"; };
 		4440A7C622D61B1D00D159C0 /* WBStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBStatusNormalCell.xib; sourceTree = "<group>"; };
+		4446888D231243D6002722CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4446889323124692002722CD /* CZMeituanRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CZMeituanRefreshView.swift; sourceTree = "<group>"; };
+		4446889523124E77002722CD /* CZMeituanRefreshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CZMeituanRefreshView.xib; sourceTree = "<group>"; };
 		444BF35322B7C714000CCAB0 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		4455323F22FE6C3700D032FC /* customize_color.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = customize_color.xml; sourceTree = "<group>"; };
 		4455324122FEF61100D032FC /* ComfirmDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComfirmDialog.swift; sourceTree = "<group>"; };
@@ -130,7 +135,6 @@
 		449855B822AC88EF0077653C /* Weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449855BB22AC88EF0077653C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		449855C022AC88EF0077653C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		449855C222AC88F00077653C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		449855C722AC88F00077653C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		449855CC22AC88F00077653C /* WeiboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeiboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		449855D022AC88F00077653C /* WeiboTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiboTests.swift; sourceTree = "<group>"; };
@@ -288,7 +292,9 @@
 				44E7C9BB2305940D00C62D6A /* WBButton.swift */,
 				449AD35A2307ECE900672193 /* WBSwiftUIViewController.swift */,
 				449AD35C230842F900672193 /* CZRefreshView.xib */,
+				4446889523124E77002722CD /* CZMeituanRefreshView.xib */,
 				442169702308D2D5009BB476 /* CZRefreshView.swift */,
+				4446889323124692002722CD /* CZMeituanRefreshView.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -318,11 +324,11 @@
 		449855BA22AC88EF0077653C /* Weibo */ = {
 			isa = PBXGroup;
 			children = (
+				4446888D231243D6002722CD /* Assets.xcassets */,
 				449855E922AC9BD40077653C /* Class */,
 				449855EB22AC9BD40077653C /* Tools */,
 				449855BB22AC88EF0077653C /* AppDelegate.swift */,
 				449855BF22AC88EF0077653C /* Main.storyboard */,
-				449855C222AC88F00077653C /* Assets.xcassets */,
 				449855C722AC88F00077653C /* Info.plist */,
 			);
 			path = Weibo;
@@ -705,11 +711,12 @@
 				444BF35422B7C714000CCAB0 /* main.json in Resources */,
 				4440A7C722D61B1D00D159C0 /* WBStatusNormalCell.xib in Resources */,
 				449AD35D230842F900672193 /* CZRefreshView.xib in Resources */,
-				449855C322AC88F00077653C /* Assets.xcassets in Resources */,
 				4455324022FE6C3700D032FC /* customize_color.xml in Resources */,
 				4469A50722D1BDC400B5EED4 /* WBNewFeatureView.xib in Resources */,
 				4469A50522D18ACC00B5EED4 /* WBWelcomeView.xib in Resources */,
 				44D2F7E022E2C35E000DEFC3 /* WBStatusRetweetedCell.xib in Resources */,
+				4446889623124E77002722CD /* CZMeituanRefreshView.xib in Resources */,
+				4446888E231243D6002722CD /* Assets.xcassets in Resources */,
 				449855C122AC88EF0077653C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -826,6 +833,7 @@
 				4469A4FE22D08ABF00B5EED4 /* WBTitleButton.swift in Sources */,
 				44A2074E22C75E7700CD5BE2 /* WBUserAccountModel.swift in Sources */,
 				4498E29122B641B8007D8E64 /* UIButton+JHExtension.swift in Sources */,
+				4446889423124692002722CD /* CZMeituanRefreshView.swift in Sources */,
 				4498E28E22B641B8007D8E64 /* JHLabel.swift in Sources */,
 				4498E28422B641B8007D8E64 /* JHRegularHelp.swift in Sources */,
 				44A5FBF922DABCC700408B68 /* WBStatusPictureView.swift in Sources */,
