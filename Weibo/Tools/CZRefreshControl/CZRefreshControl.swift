@@ -141,7 +141,12 @@ class CZRefreshControl: UIControl {
         guard let sv = scrollView else {
             return
         }
-        
+
+        // 判断是否正在刷新，如果正在刷新，直接返回
+        if refreshView.refreshState == .WillRefresh {
+            return
+        }
+
         // 恢复刷新视图的状态
         refreshView.refreshState = .Normal
 

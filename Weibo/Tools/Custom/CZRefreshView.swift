@@ -21,7 +21,6 @@ class CZRefreshView: UIView {
                 // 恢复状态
                 tipIcon.isHidden = false
                 indicate.stopAnimating()
-        
                 tipLabel.text = "下拉刷新"
                 UIView.animate(withDuration: 0.25) {
                     self.tipIcon.transform = CGAffineTransform.identity
