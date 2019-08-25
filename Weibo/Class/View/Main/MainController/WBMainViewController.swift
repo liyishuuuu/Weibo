@@ -56,7 +56,7 @@ class WBMainViewController: UITabBarController {
         // 判断是否登录
 
         // 实例化视图
-        let v = WBComposeTypeView()
+        let v = WBComposeTypeView.composeTypeView()
 
         // 显示视图
         v.show()

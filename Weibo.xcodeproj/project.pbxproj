@@ -24,6 +24,7 @@
 		444BF35422B7C714000CCAB0 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 444BF35322B7C714000CCAB0 /* main.json */; };
 		4455324022FE6C3700D032FC /* customize_color.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4455323F22FE6C3700D032FC /* customize_color.xml */; };
 		4455324222FEF61100D032FC /* ComfirmDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4455324122FEF61100D032FC /* ComfirmDialog.swift */; };
+		4458BE512312CB7C0011B31A /* WBComposeTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4458BE502312CB7C0011B31A /* WBComposeTypeView.xib */; };
 		4468600C22FCE7C500F1C94F /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4468600B22FCE7C500F1C94F /* TestViewController.swift */; };
 		4468600E22FCE7F500F1C94F /* MessageDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4468600D22FCE7F500F1C94F /* MessageDialog.swift */; };
 		4468601022FD922200F1C94F /* String_StringHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4468600F22FD922200F1C94F /* String_StringHeight.swift */; };
@@ -125,6 +126,7 @@
 		444BF35322B7C714000CCAB0 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		4455323F22FE6C3700D032FC /* customize_color.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = customize_color.xml; sourceTree = "<group>"; };
 		4455324122FEF61100D032FC /* ComfirmDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComfirmDialog.swift; sourceTree = "<group>"; };
+		4458BE502312CB7C0011B31A /* WBComposeTypeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBComposeTypeView.xib; sourceTree = "<group>"; };
 		4468600B22FCE7C500F1C94F /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		4468600D22FCE7F500F1C94F /* MessageDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDialog.swift; sourceTree = "<group>"; };
 		4468600F22FD922200F1C94F /* String_StringHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String_StringHeight.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				4420E7622312B7CA0061124C /* WBComposeTypeView.swift */,
+				4458BE502312CB7C0011B31A /* WBComposeTypeView.xib */,
 			);
 			path = ComposeType;
 			sourceTree = "<group>";
@@ -735,6 +738,7 @@
 				4469A50722D1BDC400B5EED4 /* WBNewFeatureView.xib in Resources */,
 				4469A50522D18ACC00B5EED4 /* WBWelcomeView.xib in Resources */,
 				44D2F7E022E2C35E000DEFC3 /* WBStatusRetweetedCell.xib in Resources */,
+				4458BE512312CB7C0011B31A /* WBComposeTypeView.xib in Resources */,
 				4446889623124E77002722CD /* CZMeituanRefreshView.xib in Resources */,
 				4446888E231243D6002722CD /* Assets.xcassets in Resources */,
 				449855C122AC88EF0077653C /* Main.storyboard in Resources */,
