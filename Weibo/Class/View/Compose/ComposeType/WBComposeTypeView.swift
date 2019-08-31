@@ -18,11 +18,11 @@ class WBComposeTypeView: UIView {
                                ["imageName": "tabbar_compose_weibo", "title": "长微博"],
                                ["imageName": "tabbar_compose_lbs", "title": "签到"],
                                ["imageName": "tabbar_compose_review", "title": "点评"],
-                               ["imageName": "tabbar_compose_idea", "title": "文字"],
-                               ["imageName": "tabbar_compose_idea", "title": "文字"],
-                               ["imageName": "tabbar_compose_idea", "title": "文字"],
-                               ["imageName": "tabbar_compose_idea", "title": "文字"],
-                               ["imageName": "tabbar_compose_idea", "title": "文字"],
+                               ["imageName": "tabbar_compose_more", "title": "更多"],
+                               ["imageName": "tabbar_compose_music", "title": "音乐"],
+                               ["imageName": "tabbar_compose_shooting", "title": "录像"],
+                               ["imageName": "tabbar_compose_transfer", "title": "转账"],
+                               ["imageName": "tabbar_compose_video", "title": "视频"],
                                ]
     class func composeTypeView() -> WBComposeTypeView {
         let nib = UINib(nibName: "WBComposeTypeView", bundle: nil)
@@ -63,15 +63,27 @@ private extension WBComposeTypeView {
         layoutIfNeeded()
 
         // 向scrollView中添加视图
-         let rect = scrollView.bounds
+        let rect = scrollView.bounds
+        let width = scrollView.bounds.width
+        for i in 0..<2 {
+            let v = UIView(frame: rect.offsetBy(dx: CGFloat(i) * width, dy: 0))
+            
+            // 向视图中添加按钮
+            addButton(v: v, idx: i*6)
 
-        let v = UIView()
+            // 将视图添加到scrollView中
+            scrollView.addSubview(v)
+        }
 
-        // 向视图中添加按钮
-        addButton(v: v, idx: 0)
+        // 设置scrollView
+        scrollView.contentSize = CGSize(width: 2 * width, height: 0)
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.bounces = false
 
-        // 将视图添加到scrollView中
-        scrollView.addSubview(v)
+        // 禁用滚动
+        scrollView.isScrollEnabled = false
+        
     }
 
     // 向v中添加按钮, 数组的索引从 idx 开始
@@ -81,7 +93,7 @@ private extension WBComposeTypeView {
         // 从idx开始添加六个按钮
         for i in idx..<(idx + count) {
 
-            if idx >= buttonsInfo.count {
+            if i >= buttonsInfo.count {
                 break
             }
 
@@ -99,6 +111,15 @@ private extension WBComposeTypeView {
             v.addSubview(btn)
             
         }
+        // 遍历视图的子视图，布局按钮
+        let btnSize = CGSize(width: 100, height: 100)
+        let margin = (v.bounds.width - 3 * btnSize.width) / 4
         
+        for(i, btn) in v.subviews.enumerated() {
+            let y: CGFloat = (i > 2) ? (v.bounds.height - btnSize.height - 20) : 0
+            let col = i % 3
+            let x = CGFloat(col + 1) * margin + CGFloat(col) * btnSize.width
+            btn.frame = CGRect(x: x, y: y, width: btnSize.width, height: btnSize.height)
+        }
     }
 }
