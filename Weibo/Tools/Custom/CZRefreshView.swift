@@ -54,3 +54,4 @@ class CZRefreshView: UIView {
         return nib.instantiate(withOwner: nil, options: nil)[0] as! CZRefreshView
     }
 }
+
