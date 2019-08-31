@@ -30,6 +30,8 @@ class WBComposeTypeView: UIView {
 
         // Xib 加载默认600*600
         v.frame = UIScreen.main.bounds
+
+        v.setupUI()
         return v
     }
 
@@ -40,11 +42,6 @@ class WBComposeTypeView: UIView {
             return
         }
         vc.view.addSubview(self)
-    }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        self.setupUI()
     }
 
     // MARK: - 监听方法
@@ -61,15 +58,47 @@ class WBComposeTypeView: UIView {
 
 private extension WBComposeTypeView {
     func setupUI() {
+        
+        // 强制更新布局
+        layoutIfNeeded()
 
-        // 创键类型按钮
-        let btn = WBComposeTypeButton.composeTypeButton(imageName: "tabbar_compose_camera", title: "拍摄视频")
-        btn.center = center
+        // 向scrollView中添加视图
+         let rect = scrollView.bounds
 
-        // 添加视图
-        addSubview(btn)
+        let v = UIView()
 
-        // 添加监听方法
-        btn.addTarget(self, action: #selector(buttonClick), for: .touchUpInside)
+        // 向视图中添加按钮
+        addButton(v: v, idx: 0)
+
+        // 将视图添加到scrollView中
+        scrollView.addSubview(v)
+    }
+
+    // 向v中添加按钮, 数组的索引从 idx 开始
+    func addButton(v: UIView, idx: Int) {
+        let count = 6
+
+        // 从idx开始添加六个按钮
+        for i in idx..<(idx + count) {
+
+            if idx >= buttonsInfo.count {
+                break
+            }
+
+            // 从数组字典中获取图像名称和title
+            let dict = buttonsInfo[i]
+            guard let imageName = dict["imageName"],
+                    let title = dict["title"] else {
+                    continue
+            }
+
+            // 创建按钮
+            let btn = WBComposeTypeButton.composeTypeButton(imageName: imageName, title: title)
+
+            // 将btn 添加到视图
+            v.addSubview(btn)
+            
+        }
+        
     }
 }
