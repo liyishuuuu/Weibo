@@ -18,7 +18,7 @@ class WBComposeTypeView: UIView {
                                ["imageName": "tabbar_compose_weibo", "title": "长微博"],
                                ["imageName": "tabbar_compose_lbs", "title": "签到"],
                                ["imageName": "tabbar_compose_review", "title": "点评"],
-                               ["imageName": "tabbar_compose_more", "title": "更多"],
+                               ["imageName": "tabbar_compose_more", "title": "更多", "actionName": "clickMore"],
                                ["imageName": "tabbar_compose_music", "title": "音乐"],
                                ["imageName": "tabbar_compose_shooting", "title": "录像"],
                                ["imageName": "tabbar_compose_transfer", "title": "转账"],
@@ -48,6 +48,11 @@ class WBComposeTypeView: UIView {
     
     @objc private func buttonClick() {
      print("clicked")
+    }
+
+    // 点击更多按钮
+    @objc private func clickMore() {
+        print("点击更多")
     }
 
     // 关闭视图
@@ -109,7 +114,11 @@ private extension WBComposeTypeView {
 
             // 将btn 添加到视图
             v.addSubview(btn)
-            
+
+            // 添加监听方法
+            if let actionName = dict["actionName"] {
+                btn.addTarget(self, action: Selector(actionName), for: .touchUpInside)
+            }
         }
         // 遍历视图的子视图，布局按钮
         let btnSize = CGSize(width: 100, height: 100)
