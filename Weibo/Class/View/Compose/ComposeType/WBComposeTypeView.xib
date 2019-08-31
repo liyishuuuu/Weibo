@@ -39,7 +39,7 @@
                                         <rect key="frame" x="194.5" y="9.5" width="25" height="25"/>
                                         <state key="normal" image="tabbar_compose_background_icon_return"/>
                                         <connections>
-                                            <action selector="backButtonAction" destination="iN0-l3-epB" eventType="touchUpInside" id="f45-QJ-amj"/>
+                                            <action selector="backButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="XmC-Bv-fAO"/>
                                         </connections>
                                     </button>
                                 </subviews>

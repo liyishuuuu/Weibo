@@ -11,7 +11,9 @@ import UIKit
 // 撰写微博类型视图
 class WBComposeTypeView: UIView {
 
+    // 滚动视图
     @IBOutlet weak var scrollView: UIScrollView!
+    // 返回按钮
     @IBOutlet weak var backButton: UIButton!
     // 返回按钮约束
     @IBOutlet weak var backButtonCenterXCons: NSLayoutConstraint!
@@ -72,17 +74,20 @@ class WBComposeTypeView: UIView {
         }
     }
 
-    @IBAction func backButtonAction() {
+    @IBAction func backButtonAction(_ sender: UIButton) {
 
         // 将滚动视图滚动到第一页
         scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+
+        // 让两个按钮合并
         closeButtonCenterXCons.constant = 0
         backButtonCenterXCons.constant = 0
         UIView.animate(withDuration: 0.25, animations: {
+            self.layoutIfNeeded()
+            self.backButton.alpha = 0
         }) { (_) in
-
-            // 让两个按钮合并
             self.backButton.isHidden = true
+            self.backButton.alpha = 1
         }
     }
     // 关闭视图
