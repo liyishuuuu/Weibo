@@ -28,11 +28,18 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQ0-fn-GIk">
                                 <rect key="frame" x="0.0" y="774" width="414" height="44"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Exp-Zz-5Vd">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Exp-Zz-5Vd" userLabel="close_Button">
                                         <rect key="frame" x="194.5" y="9.5" width="25" height="25"/>
                                         <state key="normal" backgroundImage="tabbar_compose_background_icon_close"/>
                                         <connections>
                                             <action selector="closeAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="eHQ-ma-GgP"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqh-5o-cd5" userLabel="back_Button">
+                                        <rect key="frame" x="194.5" y="9.5" width="25" height="25"/>
+                                        <state key="normal" image="tabbar_compose_background_icon_return"/>
+                                        <connections>
+                                            <action selector="backButtonAction" destination="iN0-l3-epB" eventType="touchUpInside" id="f45-QJ-amj"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -40,6 +47,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="IdP-ZG-N7u"/>
                                     <constraint firstItem="Exp-Zz-5Vd" firstAttribute="centerY" secondItem="xQ0-fn-GIk" secondAttribute="centerY" id="Qz2-Eq-gYI"/>
+                                    <constraint firstItem="dqh-5o-cd5" firstAttribute="centerX" secondItem="xQ0-fn-GIk" secondAttribute="centerX" id="Vfo-3Q-urh"/>
+                                    <constraint firstItem="dqh-5o-cd5" firstAttribute="centerY" secondItem="xQ0-fn-GIk" secondAttribute="centerY" id="fVI-a8-qvE"/>
                                     <constraint firstItem="Exp-Zz-5Vd" firstAttribute="centerX" secondItem="xQ0-fn-GIk" secondAttribute="centerX" id="lE3-LX-dPe"/>
                                 </constraints>
                             </view>
@@ -72,6 +81,9 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="backButton" destination="dqh-5o-cd5" id="oOm-7a-meM"/>
+                <outlet property="backButtonCenterXCons" destination="Vfo-3Q-urh" id="bvm-MM-gos"/>
+                <outlet property="closeButtonCenterXCons" destination="lE3-LX-dPe" id="rFA-Yp-pPd"/>
                 <outlet property="scrollView" destination="riv-Pg-ESq" id="Aih-Ec-Xhh"/>
             </connections>
             <point key="canvasLocation" x="47.826086956521742" y="41.517857142857139"/>
@@ -80,5 +92,6 @@
     <resources>
         <image name="logo_icon" width="100" height="40"/>
         <image name="tabbar_compose_background_icon_close" width="25" height="25"/>
+        <image name="tabbar_compose_background_icon_return" width="25" height="25"/>
     </resources>
 </document>

@@ -12,6 +12,11 @@ import UIKit
 class WBComposeTypeView: UIView {
 
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var backButton: UIButton!
+    // 返回按钮约束
+    @IBOutlet weak var backButtonCenterXCons: NSLayoutConstraint!
+    // 关闭按钮约束
+    @IBOutlet weak var closeButtonCenterXCons: NSLayoutConstraint!
 
     private let buttonsInfo = [["imageName": "tabbar_compose_idea", "title": "文字"],
                                ["imageName": "tabbar_compose_photo", "title": "照片"],
@@ -52,9 +57,34 @@ class WBComposeTypeView: UIView {
 
     // 点击更多按钮
     @objc private func clickMore() {
-        print("点击更多")
+
+        // 滚动到第二页
+        scrollView.setContentOffset(CGPoint(x: scrollView.bounds.width, y: 0), animated: true)
+
+        // 处理底部按钮，让两个按钮分开
+        backButton.isHidden = false
+
+        let margin = scrollView.bounds.width / 6
+        closeButtonCenterXCons.constant += margin
+        backButtonCenterXCons.constant -= margin
+        UIView.animate(withDuration: 0.25) {
+            self.layoutIfNeeded()
+        }
     }
 
+    @IBAction func backButtonAction() {
+
+        // 将滚动视图滚动到第一页
+        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+        closeButtonCenterXCons.constant = 0
+        backButtonCenterXCons.constant = 0
+        UIView.animate(withDuration: 0.25, animations: {
+        }) { (_) in
+
+            // 让两个按钮合并
+            self.backButton.isHidden = true
+        }
+    }
     // 关闭视图
     @IBAction func closeAction(_ sender: UIButton) {
         removeFromSuperview()
