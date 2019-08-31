@@ -11,6 +11,19 @@ import UIKit
 // 撰写微博类型视图
 class WBComposeTypeView: UIView {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+
+    private let buttonsInfo = [["imageName": "tabbar_compose_idea", "title": "文字"],
+                               ["imageName": "tabbar_compose_photo", "title": "照片"],
+                               ["imageName": "tabbar_compose_weibo", "title": "长微博"],
+                               ["imageName": "tabbar_compose_lbs", "title": "签到"],
+                               ["imageName": "tabbar_compose_review", "title": "点评"],
+                               ["imageName": "tabbar_compose_idea", "title": "文字"],
+                               ["imageName": "tabbar_compose_idea", "title": "文字"],
+                               ["imageName": "tabbar_compose_idea", "title": "文字"],
+                               ["imageName": "tabbar_compose_idea", "title": "文字"],
+                               ["imageName": "tabbar_compose_idea", "title": "文字"],
+                               ]
     class func composeTypeView() -> WBComposeTypeView {
         let nib = UINib(nibName: "WBComposeTypeView", bundle: nil)
         let v = nib.instantiate(withOwner: nil, options: nil)[0] as! WBComposeTypeView
@@ -38,6 +51,11 @@ class WBComposeTypeView: UIView {
     
     @objc private func buttonClick() {
      print("clicked")
+    }
+
+    // 关闭视图
+    @IBAction func closeAction(_ sender: UIButton) {
+        removeFromSuperview()
     }
 }
 
