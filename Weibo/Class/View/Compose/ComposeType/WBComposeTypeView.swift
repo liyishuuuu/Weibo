@@ -28,4 +28,30 @@ class WBComposeTypeView: UIView {
         }
         vc.view.addSubview(self)
     }
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.setupUI()
+    }
+
+    // MARK: - 监听方法
+    
+    @objc private func buttonClick() {
+     print("clicked")
+    }
+}
+
+private extension WBComposeTypeView {
+    func setupUI() {
+
+        // 创键类型按钮
+        let btn = WBComposeTypeButton.composeTypeButton(imageName: "tabbar_compose_camera", title: "拍摄视频")
+        btn.center = center
+
+        // 添加视图
+        addSubview(btn)
+
+        // 添加监听方法
+        btn.addTarget(self, action: #selector(buttonClick), for: .touchUpInside)
+    }
 }

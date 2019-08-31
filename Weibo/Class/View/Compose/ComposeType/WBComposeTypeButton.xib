@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WBComposeTypeButton" customModule="Weibo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tabbar_compose_book" translatesAutoresizingMaskIntoConstraints="NO" id="W9Z-o7-lqn">
+                    <rect key="frame" x="14.5" y="0.0" width="71" height="71"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmo-If-EbQ">
+                    <rect key="frame" x="32" y="83" width="36" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="W9Z-o7-lqn" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="5az-KH-MzP"/>
+                <constraint firstItem="W9Z-o7-lqn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7DL-Jw-K1g"/>
+                <constraint firstItem="qmo-If-EbQ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="eSc-pA-CVR"/>
+                <constraint firstAttribute="bottom" secondItem="qmo-If-EbQ" secondAttribute="bottom" id="ggk-z8-JOO"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="imageView" destination="W9Z-o7-lqn" id="Ocn-NX-AjX"/>
+                <outlet property="titleLabel" destination="qmo-If-EbQ" id="h9q-r7-VzK"/>
+            </connections>
+            <point key="canvasLocation" x="130.43478260869566" y="-109.82142857142857"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="tabbar_compose_book" width="71" height="71"/>
+    </resources>
+</document>

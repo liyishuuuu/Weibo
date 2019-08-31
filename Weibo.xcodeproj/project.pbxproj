@@ -18,6 +18,8 @@
 		442169712308D2D5009BB476 /* CZRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442169702308D2D5009BB476 /* CZRefreshView.swift */; };
 		4440A7C522D61ABE00D159C0 /* WBStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4440A7C422D61ABE00D159C0 /* WBStatusCell.swift */; };
 		4440A7C722D61B1D00D159C0 /* WBStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4440A7C622D61B1D00D159C0 /* WBStatusNormalCell.xib */; };
+		44443B76231A0E6200F0A169 /* WBComposeTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44443B75231A0E6200F0A169 /* WBComposeTypeButton.xib */; };
+		44443B78231A0E8D00F0A169 /* WBComposeTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44443B77231A0E8D00F0A169 /* WBComposeTypeButton.swift */; };
 		4446888E231243D6002722CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4446888D231243D6002722CD /* Assets.xcassets */; };
 		4446889423124692002722CD /* CZMeituanRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4446889323124692002722CD /* CZMeituanRefreshView.swift */; };
 		4446889623124E77002722CD /* CZMeituanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4446889523124E77002722CD /* CZMeituanRefreshView.xib */; };
@@ -120,6 +122,8 @@
 		442169702308D2D5009BB476 /* CZRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CZRefreshView.swift; sourceTree = "<group>"; };
 		4440A7C422D61ABE00D159C0 /* WBStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusCell.swift; sourceTree = "<group>"; };
 		4440A7C622D61B1D00D159C0 /* WBStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBStatusNormalCell.xib; sourceTree = "<group>"; };
+		44443B75231A0E6200F0A169 /* WBComposeTypeButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBComposeTypeButton.xib; sourceTree = "<group>"; };
+		44443B77231A0E8D00F0A169 /* WBComposeTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBComposeTypeButton.swift; sourceTree = "<group>"; };
 		4446888D231243D6002722CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4446889323124692002722CD /* CZMeituanRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CZMeituanRefreshView.swift; sourceTree = "<group>"; };
 		4446889523124E77002722CD /* CZMeituanRefreshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CZMeituanRefreshView.xib; sourceTree = "<group>"; };
@@ -256,8 +260,10 @@
 		4420E7612312B66A0061124C /* ComposeType */ = {
 			isa = PBXGroup;
 			children = (
-				4420E7622312B7CA0061124C /* WBComposeTypeView.swift */,
 				4458BE502312CB7C0011B31A /* WBComposeTypeView.xib */,
+				4420E7622312B7CA0061124C /* WBComposeTypeView.swift */,
+				44443B75231A0E6200F0A169 /* WBComposeTypeButton.xib */,
+				44443B77231A0E8D00F0A169 /* WBComposeTypeButton.swift */,
 			);
 			path = ComposeType;
 			sourceTree = "<group>";
@@ -736,6 +742,7 @@
 				449AD35D230842F900672193 /* CZRefreshView.xib in Resources */,
 				4455324022FE6C3700D032FC /* customize_color.xml in Resources */,
 				4469A50722D1BDC400B5EED4 /* WBNewFeatureView.xib in Resources */,
+				44443B76231A0E6200F0A169 /* WBComposeTypeButton.xib in Resources */,
 				4469A50522D18ACC00B5EED4 /* WBWelcomeView.xib in Resources */,
 				44D2F7E022E2C35E000DEFC3 /* WBStatusRetweetedCell.xib in Resources */,
 				4458BE512312CB7C0011B31A /* WBComposeTypeView.xib in Resources */,
@@ -889,6 +896,7 @@
 				4498E27D22B641B8007D8E64 /* TimerButton.swift in Sources */,
 				4498E28022B641B8007D8E64 /* LocationTool.swift in Sources */,
 				448005FD23004B1900312C6C /* DatePickerView.swift in Sources */,
+				44443B78231A0E8D00F0A169 /* WBComposeTypeButton.swift in Sources */,
 				4498E28A22B641B8007D8E64 /* Dictionary+JHExtension.swift in Sources */,
 				44A5FBFB22DAD6B100408B68 /* WBStatusPicture.swift in Sources */,
 				442169712308D2D5009BB476 /* CZRefreshView.swift in Sources */,
