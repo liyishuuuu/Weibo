@@ -23,20 +23,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_icon" translatesAutoresizingMaskIntoConstraints="NO" id="fEv-dO-kPp" customClass="logo_icon">
-                                <rect key="frame" x="157" y="60" width="100" height="40"/>
+                                <rect key="frame" x="199" y="60" width="16" height="16"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQ0-fn-GIk">
                                 <rect key="frame" x="0.0" y="774" width="414" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Exp-Zz-5Vd" userLabel="close_Button">
-                                        <rect key="frame" x="194.5" y="9.5" width="25" height="25"/>
+                                        <rect key="frame" x="199" y="14" width="16" height="16"/>
                                         <state key="normal" backgroundImage="tabbar_compose_background_icon_close"/>
                                         <connections>
                                             <action selector="closeAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="eHQ-ma-GgP"/>
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqh-5o-cd5" userLabel="back_Button">
-                                        <rect key="frame" x="194.5" y="9.5" width="25" height="25"/>
+                                        <rect key="frame" x="199" y="11" width="16" height="22"/>
                                         <state key="normal" image="tabbar_compose_background_icon_return"/>
                                         <connections>
                                             <action selector="backButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="XmC-Bv-fAO"/>
@@ -52,8 +52,8 @@
                                     <constraint firstItem="Exp-Zz-5Vd" firstAttribute="centerX" secondItem="xQ0-fn-GIk" secondAttribute="centerX" id="lE3-LX-dPe"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="riv-Pg-ESq">
-                                <rect key="frame" x="0.0" y="310" width="414" height="408"/>
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="riv-Pg-ESq">
+                                <rect key="frame" x="0.0" y="286" width="414" height="432"/>
                             </scrollView>
                         </subviews>
                         <constraints>

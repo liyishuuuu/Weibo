@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import pop
 
 // 撰写微博类型视图
 class WBComposeTypeView: UIView {
@@ -48,7 +49,13 @@ class WBComposeTypeView: UIView {
         guard let vc = UIApplication.shared.keyWindow?.rootViewController else {
             return
         }
+
+        // 添加视图
         vc.view.addSubview(self)
+
+        // 开始动画
+        showCurrentView()
+        
     }
 
     // MARK: - 监听方法
@@ -92,7 +99,86 @@ class WBComposeTypeView: UIView {
     }
     // 关闭视图
     @IBAction func closeAction(_ sender: UIButton) {
-        removeFromSuperview()
+        hideButtons()
+    }
+}
+
+// 动画方法扩展
+private extension WBComposeTypeView {
+
+    // MARK: 消除部分动画
+    
+    // 隐藏按钮动画
+    private func hideButtons() {
+        
+        // 根据contentOffset 判断当前视图的子视图
+        let page = Int(scrollView.contentOffset.x / scrollView.bounds.width)
+        let v = scrollView.subviews[page]
+
+        // 遍历v中的所有按钮
+        for (i, btn) in v.subviews.enumerated().reversed() {
+
+            // i 从最后一个 开始 5 4 3 2 1
+            // 创建动画
+            let anim: POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
+
+            // 设置动画属性
+            anim.fromValue = btn.centerY
+            anim.toValue = btn.centerY + 350
+
+            // 设置时间
+            anim.beginTime = CACurrentMediaTime() + CFTimeInterval(v.subviews.count - i) * 0.025
+            
+            // 添加动画
+            btn.layer.pop_add(anim, forKey: nil)
+            
+        }
+    }
+    
+    // MARK: 显示部分的动画
+
+    // 动画显示当前视图
+    private func showCurrentView() {
+
+        // 创建动画
+        let anim: POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+        anim.fromValue = 0
+        anim.toValue = 1
+        anim.duration = 0.25
+        
+        // 添加到视图
+        pop_add(anim, forKey: nil)
+
+        // 添加动画按钮
+        showButtons()
+    }
+
+    // 弹力显示所有的按钮
+    private func showButtons() {
+
+        // 获取scrollView 子视图的第0个视图
+        let v = scrollView.subviews[0]
+        for (i,btn) in v.subviews.enumerated() {
+
+            // 创建动画
+            let anim: POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
+
+            // 设置动画属性
+            anim.fromValue = btn.center.y + 350
+            anim.toValue = btn.center.y
+
+            // 设置弹性
+            anim.springBounciness = 6
+
+            // 弹力速度
+            anim.springSpeed = 10
+
+            // 设置动画启动时间
+            anim.beginTime = CACurrentMediaTime() + CFTimeInterval(i) * 0.025
+
+            // 添加动画
+            btn.pop_add(anim, forKey: nil)
+        }
     }
 }
 
