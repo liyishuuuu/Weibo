@@ -77,7 +77,7 @@ class WBComposeTypeView: UIView {
         let v = scrollView.subviews[page]
 
         // 遍历当前视图，选中的视图放大，未选中的石视图缩小， 整体透明度变浅
-        for btn in v.subviews {
+        for (i, btn) in v.subviews.enumerated() {
 
             // 缩放动画
             let scaleAnim: POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewScaleXY)
@@ -93,6 +93,25 @@ class WBComposeTypeView: UIView {
 
             // 添加动画
             btn.pop_add(scaleAnim, forKey: nil)
+
+            // 渐变动画(动画组)
+            let alphaAnim: POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+
+            // 设置动画
+            alphaAnim.toValue = 0.2
+            alphaAnim.duration = 0.25
+
+            // 添加动画
+            btn.pop_add(alphaAnim, forKey: nil)
+
+            // 添加动画监听
+            if i == 0 {
+                alphaAnim.completionBlock = {(_, _) in
+
+                    // 需要执行的回调
+                    print("完成回调")
+                }
+            }
         }
     }
 
