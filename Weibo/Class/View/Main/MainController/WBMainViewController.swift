@@ -59,7 +59,22 @@ class WBMainViewController: UITabBarController {
         let v = WBComposeTypeView.composeTypeView()
 
         // 显示视图
-        v.show()
+        v.show() {[weak v](clsName) in
+            print("\(String(describing: clsName))")
+
+            // x展现微博控制器
+            guard let clsName = clsName,
+                    let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? UIViewController.Type else {
+                        v?.removeFromSuperview()
+                        return
+            }
+
+            let vc = cls.init()
+            let nav = UINavigationController(rootViewController: vc)
+            self.present(nav, animated: true) {
+                v?.removeFromSuperview()
+            }
+        }
     }
 
     //懒加载一个button

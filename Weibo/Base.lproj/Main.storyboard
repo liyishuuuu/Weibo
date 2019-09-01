@@ -197,5 +197,50 @@
             </objects>
             <point key="canvasLocation" x="2290" y="80"/>
         </scene>
+        <!--Compose View Controller-->
+        <scene sceneID="cHk-V1-gSc">
+            <objects>
+                <viewController storyboardIdentifier="WBComposeViewController" id="5GH-n3-aUf" customClass="WBComposeViewController" customModule="Weibo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I5l-hC-0Gv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6O6-jF-JJ2">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FOl-pg-F2e">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXS-Fq-zuw">
+                                        <rect key="frame" x="184" y="218" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="FOl-pg-F2e" firstAttribute="centerY" secondItem="6O6-jF-JJ2" secondAttribute="centerY" id="2ar-U9-h2a"/>
+                                    <constraint firstItem="FOl-pg-F2e" firstAttribute="top" secondItem="6O6-jF-JJ2" secondAttribute="top" id="7pp-Ee-Bo3"/>
+                                    <constraint firstItem="FOl-pg-F2e" firstAttribute="leading" secondItem="6O6-jF-JJ2" secondAttribute="leading" id="Nmq-77-kik"/>
+                                    <constraint firstAttribute="trailing" secondItem="FOl-pg-F2e" secondAttribute="trailing" id="PSV-p1-3xF"/>
+                                    <constraint firstAttribute="bottom" secondItem="FOl-pg-F2e" secondAttribute="bottom" id="UMg-WT-bGB"/>
+                                    <constraint firstItem="FOl-pg-F2e" firstAttribute="centerX" secondItem="6O6-jF-JJ2" secondAttribute="centerX" id="sNC-nj-i4k"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6O6-jF-JJ2" firstAttribute="top" secondItem="K7D-HJ-zbI" secondAttribute="top" id="9rd-cJ-aKm"/>
+                            <constraint firstItem="6O6-jF-JJ2" firstAttribute="leading" secondItem="K7D-HJ-zbI" secondAttribute="leading" id="X6y-Nw-0Bi"/>
+                            <constraint firstItem="K7D-HJ-zbI" firstAttribute="bottom" secondItem="6O6-jF-JJ2" secondAttribute="bottom" id="aP2-1M-JcP"/>
+                            <constraint firstItem="K7D-HJ-zbI" firstAttribute="trailing" secondItem="6O6-jF-JJ2" secondAttribute="trailing" id="bcj-eP-aer"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="K7D-HJ-zbI"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fqZ-Nd-Y0k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2939" y="80"/>
+        </scene>
     </scenes>
 </document>

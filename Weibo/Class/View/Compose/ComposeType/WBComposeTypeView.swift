@@ -41,6 +41,10 @@ class WBComposeTypeView: UIView {
                                ["imageName": "tabbar_compose_video", "title": "视频",
                                 "clsName": "WBComposeViewController"],
                                ]
+
+    // 完成回调
+    private var completionBlock: ((_ clsName: String?)->())?
+
     class func composeTypeView() -> WBComposeTypeView {
         let nib = UINib(nibName: "WBComposeTypeView", bundle: nil)
         let v = nib.instantiate(withOwner: nil, options: nil)[0] as! WBComposeTypeView
@@ -52,8 +56,11 @@ class WBComposeTypeView: UIView {
         return v
     }
 
-    func show(){
-        
+    func show(completion: @escaping (_ clsName: String?)->()){
+
+        // 记录闭包
+        completionBlock = completion
+
         // 将当前视图添加到更视图控制器上
         guard let vc = UIApplication.shared.keyWindow?.rootViewController else {
             return
@@ -69,8 +76,8 @@ class WBComposeTypeView: UIView {
 
     // MARK: - 监听方法
     
-    @objc private func buttonClick(button: WBComposeTypeButton) {
-        print("clicked\(button)")
+    @objc private func buttonClick(selectedButton: WBComposeTypeButton) {
+        print("clicked\(selectedButton)")
 
         // 判断当前显示视图
         let page = Int(scrollView.contentOffset.x / scrollView.bounds.width)
@@ -83,7 +90,7 @@ class WBComposeTypeView: UIView {
             let scaleAnim: POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewScaleXY)
 
             // 放大比例
-            let scale = (btn == button) ? 2 : 0.2
+            let scale = (btn == selectedButton) ? 2 : 0.2
 
             // 选中按钮放大，未选中按钮缩小
             scaleAnim.toValue = NSValue(cgPoint: CGPoint(x: scale, y: scale))
@@ -110,6 +117,8 @@ class WBComposeTypeView: UIView {
 
                     // 需要执行的回调
                     print("完成回调")
+
+                    self.completionBlock?(selectedButton.clsName)
                 }
             }
         }
