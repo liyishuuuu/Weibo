@@ -21,16 +21,25 @@ class WBComposeTypeView: UIView {
     // 关闭按钮约束
     @IBOutlet weak var closeButtonCenterXCons: NSLayoutConstraint!
 
-    private let buttonsInfo = [["imageName": "tabbar_compose_idea", "title": "文字"],
-                               ["imageName": "tabbar_compose_photo", "title": "照片"],
-                               ["imageName": "tabbar_compose_weibo", "title": "长微博"],
-                               ["imageName": "tabbar_compose_lbs", "title": "签到"],
-                               ["imageName": "tabbar_compose_review", "title": "点评"],
+    private let buttonsInfo = [["imageName": "tabbar_compose_idea", "title": "文字",
+                                "clsName": "WBComposeViewController"],
+                               ["imageName": "tabbar_compose_photo", "title": "照片",
+                                "clsName": "WBComposeViewController"],
+                               ["imageName": "tabbar_compose_weibo", "title": "长微博",
+                                "clsName": "WBComposeViewController"],
+                               ["imageName": "tabbar_compose_lbs", "title": "签到",
+                                "clsName": "WBComposeViewController"],
+                               ["imageName": "tabbar_compose_review", "title": "点评",
+                                "clsName": "WBComposeViewController"],
                                ["imageName": "tabbar_compose_more", "title": "更多", "actionName": "clickMore"],
-                               ["imageName": "tabbar_compose_music", "title": "音乐"],
-                               ["imageName": "tabbar_compose_shooting", "title": "录像"],
-                               ["imageName": "tabbar_compose_transfer", "title": "转账"],
-                               ["imageName": "tabbar_compose_video", "title": "视频"],
+                               ["imageName": "tabbar_compose_music", "title": "音乐",
+                                "clsName": "WBComposeViewController"],
+                               ["imageName": "tabbar_compose_shooting", "title": "录像",
+                                "clsName": "WBComposeViewController"],
+                               ["imageName": "tabbar_compose_transfer", "title": "转账",
+                                "clsName": "WBComposeViewController"],
+                               ["imageName": "tabbar_compose_video", "title": "视频",
+                                "clsName": "WBComposeViewController"],
                                ]
     class func composeTypeView() -> WBComposeTypeView {
         let nib = UINib(nibName: "WBComposeTypeView", bundle: nil)
@@ -60,8 +69,31 @@ class WBComposeTypeView: UIView {
 
     // MARK: - 监听方法
     
-    @objc private func buttonClick() {
-     print("clicked")
+    @objc private func buttonClick(button: WBComposeTypeButton) {
+        print("clicked\(button)")
+
+        // 判断当前显示视图
+        let page = Int(scrollView.contentOffset.x / scrollView.bounds.width)
+        let v = scrollView.subviews[page]
+
+        // 遍历当前视图，选中的视图放大，未选中的石视图缩小， 整体透明度变浅
+        for btn in v.subviews {
+
+            // 缩放动画
+            let scaleAnim: POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewScaleXY)
+
+            // 放大比例
+            let scale = (btn == button) ? 2 : 0.2
+
+            // 选中按钮放大，未选中按钮缩小
+            scaleAnim.toValue = NSValue(cgPoint: CGPoint(x: scale, y: scale))
+
+            // 时间
+            scaleAnim.duration = 0.25
+
+            // 添加动画
+            btn.pop_add(scaleAnim, forKey: nil)
+        }
     }
 
     // 点击更多按钮
@@ -265,8 +297,15 @@ private extension WBComposeTypeView {
             // 添加监听方法
             if let actionName = dict["actionName"] {
                 btn.addTarget(self, action: Selector(actionName), for: .touchUpInside)
+            } else {
+                btn.addTarget(self, action: #selector(buttonClick), for: .touchUpInside)
             }
+
+            // 设置要展现的类名
+            btn.clsName = dict["clsName"]
+            
         }
+        
         // 遍历视图的子视图，布局按钮
         let btnSize = CGSize(width: 100, height: 100)
         let margin = (v.bounds.width - 3 * btnSize.width) / 4
