@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// 屏幕的宽度
+// 屏幕的宽度
 let deviceScreenWith = UIScreen.main.bounds.size.width
 
 class MDPLPasswordKeyboard: UIInputView,
@@ -84,7 +84,7 @@ class MDPLPasswordKeyboard: UIInputView,
     }
 
     // 布局视图的时候调用
-    open override func layoutSubviews() {
+    override func layoutSubviews() {
         super.layoutSubviews()
 
         // 列数
@@ -114,7 +114,7 @@ class MDPLPasswordKeyboard: UIInputView,
      
      - Parameter rect: 绘图
      */
-    open override func draw(_ rect: CGRect) {
+    override func draw(_ rect: CGRect) {
 
         // 列数
         let columnsNum = 3
@@ -148,6 +148,8 @@ class MDPLPasswordKeyboard: UIInputView,
         bezierPath.lineWidth = 1
         bezierPath.stroke()
     }
+
+    // MARK: - private method
 
     /**
      添加键盘视图
@@ -216,35 +218,6 @@ class MDPLPasswordKeyboard: UIInputView,
             button.tag = index + 1
         }
     }
-
-    /**
-     键盘视图按钮点击事件
-
-     - Parameter sender: 按钮
-     */
-    @objc func clickAction(_ sender: UIButton) {
-
-        // 获取按钮的当前文字
-        guard let text = sender.currentTitle else {
-            return
-        }
-
-        // 因为上文button的tag值加1, 所以值改变了
-        switch sender.tag {
-
-        // (9+1).
-        case 10:
-            checkPoint(button: sender)
-
-        // (11+1)x
-        case 12:
-            deleteAction(button: sender)
-
-        // 数字
-        default:
-            firstResponder()?.insertText(text)
-        }
-    }
     
     /**
      检查小数点
@@ -295,25 +268,6 @@ class MDPLPasswordKeyboard: UIInputView,
     }
 
     /**
-     删除按钮长按事件
-     
-     - Parameter sender: 长按手势
-     */
-    @objc private func deleteLongPressed(_ sender: UILongPressGestureRecognizer) {
-        
-        guard sender.state == .began else {
-            print("长按响应结束")
-            return
-        }
-        print("长按响应开始")
-
-        // 根据文本输入框的文字的个数, 多次循环删除
-        for _ in 0...(firstResponder()?.text?.count)! {
-            firstResponder()?.deleteBackward()
-        }
-    }
-
-    /**
      高亮状态
      
      - Parameter heghlight: 是否高亮
@@ -357,6 +311,54 @@ class MDPLPasswordKeyboard: UIInputView,
             }
         }
         return firstResponder
+    }
+
+    /**
+     键盘视图按钮点击事件
+     
+     - Parameter sender: 按钮
+     */
+    @objc func clickAction(_ sender: UIButton) {
+        
+        // 获取按钮的当前文字
+        guard let text = sender.currentTitle else {
+            return
+        }
+
+        // 因为上文button的tag值加1, 所以值改变了
+        switch sender.tag {
+
+        // (9+1).
+        case 10:
+            checkPoint(button: sender)
+
+        // (11+1)x
+        case 12:
+            deleteAction(button: sender)
+
+        // 数字
+        default:
+            firstResponder()?.insertText(text)
+        }
+    }
+
+    /**
+     删除按钮长按事件
+     
+     - Parameter sender: 长按手势
+     */
+    @objc private func deleteLongPressed(_ sender: UILongPressGestureRecognizer) {
+        
+        guard sender.state == .began else {
+            print("长按响应结束")
+            return
+        }
+        print("长按响应开始")
+        
+        // 根据文本输入框的文字的个数, 多次循环删除
+        for _ in 0...(firstResponder()?.text?.count)! {
+            firstResponder()?.deleteBackward()
+        }
     }
 
     /**
