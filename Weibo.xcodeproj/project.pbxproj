@@ -81,6 +81,7 @@
 		44A5FBF722DA958C00408B68 /* WBStatusToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A5FBF622DA958C00408B68 /* WBStatusToolBar.swift */; };
 		44A5FBF922DABCC700408B68 /* WBStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A5FBF822DABCC700408B68 /* WBStatusPictureView.swift */; };
 		44A5FBFB22DAD6B100408B68 /* WBStatusPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A5FBFA22DAD6B100408B68 /* WBStatusPicture.swift */; };
+		44B82C88231E8A0B009A568B /* WBPasswordKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B82C87231E8A0B009A568B /* WBPasswordKeyboard.swift */; };
 		44C2B3F722BC4D0700B014F6 /* WBStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C2B3F622BC4D0700B014F6 /* WBStatusModel.swift */; };
 		44C2B3F922BC50A900B014F6 /* WBStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C2B3F822BC50A900B014F6 /* WBStatusListViewModel.swift */; };
 		44C2B40022BE7AD300B014F6 /* WBBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C2B3FF22BE7AD300B014F6 /* WBBlogViewController.swift */; };
@@ -192,6 +193,7 @@
 		44A5FBF622DA958C00408B68 /* WBStatusToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusToolBar.swift; sourceTree = "<group>"; };
 		44A5FBF822DABCC700408B68 /* WBStatusPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusPictureView.swift; sourceTree = "<group>"; };
 		44A5FBFA22DAD6B100408B68 /* WBStatusPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusPicture.swift; sourceTree = "<group>"; };
+		44B82C87231E8A0B009A568B /* WBPasswordKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBPasswordKeyboard.swift; sourceTree = "<group>"; };
 		44C2B3F622BC4D0700B014F6 /* WBStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusModel.swift; sourceTree = "<group>"; };
 		44C2B3F822BC50A900B014F6 /* WBStatusListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusListViewModel.swift; sourceTree = "<group>"; };
 		44C2B3FE22BE70B000B014F6 /* Weibo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Weibo-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 				4446889523124E77002722CD /* CZMeituanRefreshView.xib */,
 				442169702308D2D5009BB476 /* CZRefreshView.swift */,
 				4446889323124692002722CD /* CZMeituanRefreshView.swift */,
+				44B82C87231E8A0B009A568B /* WBPasswordKeyboard.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -910,6 +913,7 @@
 				4498E28C22B641B8007D8E64 /* UIImage+JHExtension.swift in Sources */,
 				4498E28B22B641B8007D8E64 /* UIView+JHExtension.swift in Sources */,
 				4468600C22FCE7C500F1C94F /* TestViewController.swift in Sources */,
+				44B82C88231E8A0B009A568B /* WBPasswordKeyboard.swift in Sources */,
 				449855FA22AC9DA50077653C /* WBHomeViewController.swift in Sources */,
 				4498E29222B641B8007D8E64 /* UITapGestureRecognizer+JHExtension.swift in Sources */,
 				44F02EEE22AFFB58004D25CD /* WBRegisterViewController.swift in Sources */,

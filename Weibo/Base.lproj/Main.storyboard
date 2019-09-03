@@ -212,15 +212,22 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXS-Fq-zuw">
-                                        <rect key="frame" x="184" y="218" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cvY-0y-Yyj">
+                                        <rect key="frame" x="15" y="30" width="384" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Miz-pR-zYP"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="FOl-pg-F2e" firstAttribute="centerY" secondItem="6O6-jF-JJ2" secondAttribute="centerY" id="2ar-U9-h2a"/>
+                                    <constraint firstItem="cvY-0y-Yyj" firstAttribute="leading" secondItem="6O6-jF-JJ2" secondAttribute="leading" constant="15" id="4kg-ay-aJi"/>
                                     <constraint firstItem="FOl-pg-F2e" firstAttribute="top" secondItem="6O6-jF-JJ2" secondAttribute="top" id="7pp-Ee-Bo3"/>
+                                    <constraint firstAttribute="trailing" secondItem="cvY-0y-Yyj" secondAttribute="trailing" constant="15" id="Dr5-sx-QQj"/>
+                                    <constraint firstItem="cvY-0y-Yyj" firstAttribute="top" secondItem="6O6-jF-JJ2" secondAttribute="top" constant="30" id="FxI-2E-xzb"/>
                                     <constraint firstItem="FOl-pg-F2e" firstAttribute="leading" secondItem="6O6-jF-JJ2" secondAttribute="leading" id="Nmq-77-kik"/>
                                     <constraint firstAttribute="trailing" secondItem="FOl-pg-F2e" secondAttribute="trailing" id="PSV-p1-3xF"/>
                                     <constraint firstAttribute="bottom" secondItem="FOl-pg-F2e" secondAttribute="bottom" id="UMg-WT-bGB"/>
@@ -237,6 +244,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="K7D-HJ-zbI"/>
                     </view>
+                    <connections>
+                        <outlet property="testField" destination="cvY-0y-Yyj" id="uH3-8E-LPg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqZ-Nd-Y0k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

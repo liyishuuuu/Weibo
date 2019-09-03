@@ -62,7 +62,7 @@ class WBMainViewController: UITabBarController {
         v.show() {[weak v](clsName) in
             print("\(String(describing: clsName))")
 
-            // x展现微博控制器
+            // 展现微博控制器
             guard let clsName = clsName,
                     let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? UIViewController.Type else {
                         v?.removeFromSuperview()
