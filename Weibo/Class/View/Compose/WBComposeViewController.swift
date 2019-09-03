@@ -24,7 +24,7 @@ class WBComposeViewController: UIViewController {
     private func test() {
     let keyboard = MDPLPasswordKeyboard(view, field: testField)
     keyboard.isEnableKeyboard = true
-    keyboard.frame.size.height = 300
+//    keyboard.frame.size.height = 220
     testField.becomeFirstResponder()
     }
 }

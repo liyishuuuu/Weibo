@@ -17,9 +17,6 @@ class MDPLPasswordKeyboard: UIInputView,
 
     // MARK: - 属性
 
-    /** 存储属性 */
-    public static let `default` = MDPLPasswordKeyboard(frame: CGRect(x: 0, y: 0, width: deviceScreenWith, height: 400), inputViewStyle: .keyboard)
-
     /** 文本输入框 */
     private var textFields = [UITextField]()
 
@@ -30,15 +27,12 @@ class MDPLPasswordKeyboard: UIInputView,
     private let buttonsCount: Int = 12
 
     /** 按钮数组 */
-    private var buttions: [UIButton] = []
-
-    /** 按钮文字 */
-    private lazy var titles = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    private var buttions = [UIButton]()
 
     /** 是否高亮 */
     public var withHighlight = false {
         didSet {
-            highlight(heghlight: withHighlight)
+            highlightButton(withHighlight: withHighlight)
         }
     }
 
@@ -82,17 +76,18 @@ class MDPLPasswordKeyboard: UIInputView,
      */
     public override init(frame: CGRect, inputViewStyle: UIInputView.Style) {
         super.init(frame: frame, inputViewStyle: inputViewStyle)
+        self.frame.size.height = 240
     }
 
-    public required init?(coder _: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
 
     // 布局视图的时候调用
     open override func layoutSubviews() {
         super.layoutSubviews()
 
-        /// 纵列数
+        // 列数
         let columnsNum = 3
 
         // 行数
@@ -114,8 +109,6 @@ class MDPLPasswordKeyboard: UIInputView,
         }
     }
 
-    // 调用情况: 1.UIView初始化后自动调用； 2.调用setNeedsDisplay方法时会自动调用）
-
     /**
      绘制界面
      
@@ -123,7 +116,7 @@ class MDPLPasswordKeyboard: UIInputView,
      */
     open override func draw(_ rect: CGRect) {
 
-        // 纵列数
+        // 列数
         let columnsNum = 3
 
         // 行数
@@ -139,7 +132,7 @@ class MDPLPasswordKeyboard: UIInputView,
         let bezierPath = UIBezierPath()
 
         // 4条横线
-        for i in 0 ... 3 {
+        for i in 0...lineNum - 1 {
 
             //开始绘制
             bezierPath.move(to: CGPoint(x: 0, y: btnHeight * CGFloat(i)))
@@ -147,7 +140,7 @@ class MDPLPasswordKeyboard: UIInputView,
         }
 
         // 2条竖线
-        for i in 1 ... 2 {
+        for i in 1...columnsNum - 1 {
             bezierPath.move(to: CGPoint(x: btnWidth * CGFloat(i), y: 0))
             bezierPath.addLine(to: CGPoint(x: btnWidth * CGFloat(i), y: frame.height))
         }
@@ -184,12 +177,9 @@ class MDPLPasswordKeyboard: UIInputView,
      自定义视图
      */
     private func customSubview() {
-        
-        // 删除键 图片视图
-        var backSpace: UIImage?
-        
+
         // 设置图片
-        backSpace = UIImage(named: "Keyboard_Backspace")
+        let backSpace = UIImage(named: "Keyboard_Backspace")
         
         // 创建键盘视图上所有的按钮
         for index in 0 ..< buttonsCount {
@@ -275,7 +265,7 @@ class MDPLPasswordKeyboard: UIInputView,
 
         // 是否包含字符 '.'
         let subStr = str.contains(".")
-        
+
         if subStr {
             print("小数点已存在....")
         } else {
@@ -297,7 +287,7 @@ class MDPLPasswordKeyboard: UIInputView,
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(deleteLongPressed))
         longPress.delegate = self
         
-        // 设置最低长按时长 ( 以秒为单位 )
+        // 设置最低长按时长(以秒为单位)
         longPress.minimumPressDuration = 0.5
         
         // 添加长按手势
@@ -318,7 +308,7 @@ class MDPLPasswordKeyboard: UIInputView,
         print("长按响应开始")
 
         // 根据文本输入框的文字的个数, 多次循环删除
-        for _ in 0 ... (firstResponder()?.text?.count)! {
+        for _ in 0...(firstResponder()?.text?.count)! {
             firstResponder()?.deleteBackward()
         }
     }
@@ -328,14 +318,14 @@ class MDPLPasswordKeyboard: UIInputView,
      
      - Parameter heghlight: 是否高亮
      */
-    private func highlight(heghlight: Bool) {
+    private func highlightButton(withHighlight: Bool) {
         
         print(subviews.count)
         
-        /// 获取当前视图的所有子视图的个数
+        // 获取当前视图的所有子视图的个数
         let subviewCount = subviews.count
         
-        /// 获取当前视图的所有按钮的个数
+        // 获取当前视图的所有按钮的个数
         let subviewBtnCout = subviewCount
         
         for i in 0...subviewBtnCout {
@@ -344,7 +334,7 @@ class MDPLPasswordKeyboard: UIInputView,
             guard let button = subviews[i] as? UIButton else {
                 return
             }
-            if heghlight {
+            if withHighlight {
                 button.setBackgroundImage(UIImage(named: ""), for: .normal)
                 button.setBackgroundImage(UIImage(named: ""), for: .highlighted)
             } else {
@@ -368,29 +358,13 @@ class MDPLPasswordKeyboard: UIInputView,
         }
         return firstResponder
     }
-    
-    /**
-     通过按钮的 tag 值，获取按钮
-     
-     - Parameter tag: tag值
-     - Returns UIButton: 按钮
-     */
-    private func findButton(by tag: Int) -> UIButton? {
-        for button in subviews {
-            if button.tag == tag {
-                return button as? UIButton
-            }
-        }
-        return nil
-    }
-    
+
     /**
      键盘即将显示 (弹起)
      
      - Parameter notification: 通知
      */
     @objc private func keyboardWillShow(_ notification: NSNotification) {
-        print("成为第一响应者 (弹起键盘)")
     }
 
     /**
@@ -399,6 +373,5 @@ class MDPLPasswordKeyboard: UIInputView,
      - Parameter notification: 通知
      */
     @objc private func keyboardWillHide(_ notification: NSNotification) {
-        print("辞去第一响应者 (收起键盘)")
     }
 }
