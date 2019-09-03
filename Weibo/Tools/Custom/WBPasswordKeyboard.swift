@@ -34,13 +34,6 @@ class WBPasswordKeyboard: UIInputView,
     /// 按钮文字
     fileprivate lazy var titles = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
     
-    /// 键盘样式
-//    public var keyboardStyle = KeyboardStyle.idcard {
-//        didSet {        // 监听 `style` 数值的改变, 从而设置数字键盘的样式
-//            setDigitButton(keyboardStyle)
-//        }
-//    }
-    
     /// 是否高亮
     public var whetherHighlight = false {
         didSet {        // 监听 `whetherHighlight` 数值的改变, 从而设置按钮高亮状态
@@ -373,24 +366,6 @@ class WBPasswordKeyboard: UIInputView,
             }
         }
     }
-    
-    /// 设置数字按钮的样式
-    ///
-    /// - Parameter style: 样式
-//    private func setDigitButton(_ style: KeyboardStyle) {
-//        guard let button = findButton(by: 12) else {
-//            fatalError("not found the button with the tag")
-//        }
-//        switch keyboardStyle {
-//        case .idcard:
-//            button.setTitle("X", for: .normal)
-//        case .number:
-//            let locale = Locale.current
-//            // 返回地区的十进制分隔符。例如，对于“en_US”，返回“.”
-//            let decimalSeparator = locale.decimalSeparator! as String
-//            button.setTitle(decimalSeparator, for: .normal)
-//        }
-//    }
     
     /// 第一响应者
     ///

@@ -82,6 +82,7 @@
 		44A5FBF922DABCC700408B68 /* WBStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A5FBF822DABCC700408B68 /* WBStatusPictureView.swift */; };
 		44A5FBFB22DAD6B100408B68 /* WBStatusPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A5FBFA22DAD6B100408B68 /* WBStatusPicture.swift */; };
 		44B82C88231E8A0B009A568B /* WBPasswordKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B82C87231E8A0B009A568B /* WBPasswordKeyboard.swift */; };
+		44B82C8A231E95F4009A568B /* MDPLPasswordKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B82C89231E95F4009A568B /* MDPLPasswordKeyboard.swift */; };
 		44C2B3F722BC4D0700B014F6 /* WBStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C2B3F622BC4D0700B014F6 /* WBStatusModel.swift */; };
 		44C2B3F922BC50A900B014F6 /* WBStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C2B3F822BC50A900B014F6 /* WBStatusListViewModel.swift */; };
 		44C2B40022BE7AD300B014F6 /* WBBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C2B3FF22BE7AD300B014F6 /* WBBlogViewController.swift */; };
@@ -194,6 +195,7 @@
 		44A5FBF822DABCC700408B68 /* WBStatusPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusPictureView.swift; sourceTree = "<group>"; };
 		44A5FBFA22DAD6B100408B68 /* WBStatusPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusPicture.swift; sourceTree = "<group>"; };
 		44B82C87231E8A0B009A568B /* WBPasswordKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBPasswordKeyboard.swift; sourceTree = "<group>"; };
+		44B82C89231E95F4009A568B /* MDPLPasswordKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPLPasswordKeyboard.swift; sourceTree = "<group>"; };
 		44C2B3F622BC4D0700B014F6 /* WBStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusModel.swift; sourceTree = "<group>"; };
 		44C2B3F822BC50A900B014F6 /* WBStatusListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusListViewModel.swift; sourceTree = "<group>"; };
 		44C2B3FE22BE70B000B014F6 /* Weibo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Weibo-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				442169702308D2D5009BB476 /* CZRefreshView.swift */,
 				4446889323124692002722CD /* CZMeituanRefreshView.swift */,
 				44B82C87231E8A0B009A568B /* WBPasswordKeyboard.swift */,
+				44B82C89231E95F4009A568B /* MDPLPasswordKeyboard.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -882,6 +885,7 @@
 				4498E29022B641B8007D8E64 /* UITextField+JHExtension.swift in Sources */,
 				4401619622C10920008D48E0 /* WBOAuthViewController.swift in Sources */,
 				449855FE22AC9DF50077653C /* WBMessageViewController.swift in Sources */,
+				44B82C8A231E95F4009A568B /* MDPLPasswordKeyboard.swift in Sources */,
 				441AEAE022DA06180054276A /* UIImageView+WebImage.swift in Sources */,
 				4498E29322B641B8007D8E64 /* JHPOPAlertView.swift in Sources */,
 				44F02EEC22AFFB40004D25CD /* WBLoginViewController.swift in Sources */,

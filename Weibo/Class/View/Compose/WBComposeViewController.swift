@@ -22,14 +22,9 @@ class WBComposeViewController: UIViewController {
     }
     
     private func test() {
-
-    /* -- CustomKeyboard --- */
-    let keyboard = WBPasswordKeyboard(view, field: testField)
-//    keyboard.keyboardStyle = .number
+    let keyboard = MDPLPasswordKeyboard(view, field: testField)
     keyboard.isEnableKeyboard = true
-//    keyboard.whetherHighlight = true
     keyboard.frame.size.height = 300
-//    keyboard.customDoneButton(title: "确定", titleColor: .white, theme: UIColor.blue, target: self, callback: nil)
     testField.becomeFirstResponder()
     }
 }
