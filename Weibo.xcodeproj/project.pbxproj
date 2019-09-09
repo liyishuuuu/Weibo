@@ -16,6 +16,8 @@
 		441AEAE222DA0BD20054276A /* UIImage+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441AEAE122DA0BD20054276A /* UIImage+extensions.swift */; };
 		4420E7632312B7CA0061124C /* WBComposeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4420E7622312B7CA0061124C /* WBComposeTypeView.swift */; };
 		442169712308D2D5009BB476 /* CZRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442169702308D2D5009BB476 /* CZRefreshView.swift */; };
+		44216B87232697F600412F1C /* WBPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44216B86232697F600412F1C /* WBPasswordView.swift */; };
+		44216B892326986A00412F1C /* WBPasswordKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44216B882326986A00412F1C /* WBPasswordKeyboard.swift */; };
 		44408786231BE5AF00478917 /* WBComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44408785231BE5AF00478917 /* WBComposeViewController.swift */; };
 		4440A7C522D61ABE00D159C0 /* WBStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4440A7C422D61ABE00D159C0 /* WBStatusCell.swift */; };
 		4440A7C722D61B1D00D159C0 /* WBStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4440A7C622D61B1D00D159C0 /* WBStatusNormalCell.xib */; };
@@ -121,6 +123,8 @@
 		441AEAE122DA0BD20054276A /* UIImage+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+extensions.swift"; sourceTree = "<group>"; };
 		4420E7622312B7CA0061124C /* WBComposeTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBComposeTypeView.swift; sourceTree = "<group>"; };
 		442169702308D2D5009BB476 /* CZRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CZRefreshView.swift; sourceTree = "<group>"; };
+		44216B86232697F600412F1C /* WBPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBPasswordView.swift; sourceTree = "<group>"; };
+		44216B882326986A00412F1C /* WBPasswordKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBPasswordKeyboard.swift; sourceTree = "<group>"; };
 		44408785231BE5AF00478917 /* WBComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBComposeViewController.swift; sourceTree = "<group>"; };
 		4440A7C422D61ABE00D159C0 /* WBStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusCell.swift; sourceTree = "<group>"; };
 		4440A7C622D61B1D00D159C0 /* WBStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBStatusNormalCell.xib; sourceTree = "<group>"; };
@@ -325,6 +329,8 @@
 				4446889523124E77002722CD /* CZMeituanRefreshView.xib */,
 				442169702308D2D5009BB476 /* CZRefreshView.swift */,
 				4446889323124692002722CD /* CZMeituanRefreshView.swift */,
+				44216B86232697F600412F1C /* WBPasswordView.swift */,
+				44216B882326986A00412F1C /* WBPasswordKeyboard.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -917,7 +923,9 @@
 				449855BC22AC88EF0077653C /* AppDelegate.swift in Sources */,
 				449855F622AC9D1B0077653C /* WBNavigationController.swift in Sources */,
 				44C2B3F722BC4D0700B014F6 /* WBStatusModel.swift in Sources */,
+				44216B892326986A00412F1C /* WBPasswordKeyboard.swift in Sources */,
 				44F5A79222ED461E0002531A /* CZRefreshControl.swift in Sources */,
+				44216B87232697F600412F1C /* WBPasswordView.swift in Sources */,
 				4468601022FD922200F1C94F /* String_StringHeight.swift in Sources */,
 				4498E27E22B641B8007D8E64 /* EntryView.swift in Sources */,
 				4498E28822B641B8007D8E64 /* Date+JHExtension.swift in Sources */,

@@ -22,9 +22,11 @@ class WBComposeViewController: UIViewController {
     }
     
     private func test() {
-    let keyboard = MDPLPasswordKeyboard(view, field: testField)
-    keyboard.isEnableKeyboard = true
-//    keyboard.frame.size.height = 220
-    testField.becomeFirstResponder()
+        _ = WBPasswordKeyboard(view, field: testField, withDelPicture: true)
+        let vi = WBPasswordView(frame: CGRect(x: (view.bounds.width - 300) / 2,
+                                              y:250,
+                                              width: 300,
+                                              height: 50))
+        view.addSubview(vi)
     }
 }
