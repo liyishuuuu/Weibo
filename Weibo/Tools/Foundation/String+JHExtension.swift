@@ -91,6 +91,26 @@ extension String{
     func split(string:String) -> [String] {
         return NSString(string: self).components(separatedBy: string)
     }
+
+    /**
+     从当前字符串中提取链接和文本
+     
+     */
+    func href() -> (link: String, text: String)? {
+
+        // 匹配方案
+        let pattern = "<a href=\"(.*?)\".*?>(.*?)</a>"
+        // 创建正则表达式，如果创建失败，抛出异常,  并且匹配第一项
+        guard let regx = try? NSRegularExpression(pattern: pattern, options: []),
+              let result = regx.firstMatch(in: self, options: [], range: NSRange(location: 0, length: self.count)) else {
+            return nil
+        }
+        let link = (self as NSString).substring(with: result.range(at: 1))
+        let text = (self as NSString).substring(with: result.range(at: 2))
+        
+        print(link + "--" + text)
+        return (link, text)
+    }
 }
 
 // MARK: -- 类型判断 --

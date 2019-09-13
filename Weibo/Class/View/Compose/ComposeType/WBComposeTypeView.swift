@@ -24,7 +24,7 @@ class WBComposeTypeView: UIView {
     private let buttonsInfo = [["imageName": "tabbar_compose_idea", "title": "文字",
                                 "clsName": "WBComposeViewController"],
                                ["imageName": "tabbar_compose_photo", "title": "照片",
-                                "clsName": "WBComposeViewController"],
+                                "clsName": "WBTestURLViewController"],
                                ["imageName": "tabbar_compose_weibo", "title": "长微博",
                                 "clsName": "WBComposeViewController"],
                                ["imageName": "tabbar_compose_lbs", "title": "签到",

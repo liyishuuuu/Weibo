@@ -23,6 +23,8 @@ class WBStatusViewModel: CustomStringConvertible {
     @objc var commentStr: String?
     /** 赞文字 */
     @objc var likeStr: String?
+    /** 来源文字 */
+    @objc var sourceStr: String?
     /** 配图视图大小 */
     @objc var pictureViewSize = CGSize()
     /** 如果是被转发的微博，原创微博一定没有图 */
@@ -73,6 +75,10 @@ class WBStatusViewModel: CustomStringConvertible {
         // 设置被转发微博文字
         let retweetedTextTemp: String = "@" + (status.retweeted_status?.user?.screen_name ?? "") + ":"
         retweetedText = retweetedTextTemp + (status.retweeted_status?.text ?? "")
+
+        // 设置来源字符串
+        sourceStr = "来自:" + (model.source?.href()?.text ?? "")
+
         // 计算行高
         self.updateRowHeight()
     }

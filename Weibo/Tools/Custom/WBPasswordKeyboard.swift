@@ -9,8 +9,8 @@
 import UIKit
 
 class WBPasswordKeyboard: UIView,
-    UITextFieldDelegate,
-UIGestureRecognizerDelegate {
+                          UITextFieldDelegate,
+                          UIGestureRecognizerDelegate {
     
     // MARK: - 属性
 

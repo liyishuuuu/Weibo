@@ -43,7 +43,7 @@ class WBStatusCell: UITableViewCell {
             retweetedLabel?.text = viewModel?.retweetedText
     
             // 来源
-            sourceLabel.text = viewModel?.status.source
+            sourceLabel.text = viewModel?.sourceStr
             
         }
     }
